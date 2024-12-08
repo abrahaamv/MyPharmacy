@@ -1647,11 +1647,8 @@ namespace WebAPI.Data.Migrations
 
             modelBuilder.Entity("WebAPI.Entities.Products.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
@@ -1708,7 +1705,7 @@ namespace WebAPI.Data.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Values")
+                    b.Property<string>("Value")
                         .IsRequired()
                         .HasColumnType("longtext");
 
