@@ -25,6 +25,8 @@
 
     <ItemGroup>
       <Folder Include="Data\Migrations\" />
+      <Folder Include="Dtos\Users\" />
+      <Folder Include="Entities\Users\" />
     </ItemGroup>
 
 </Project>
