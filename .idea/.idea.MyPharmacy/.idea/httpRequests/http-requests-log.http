@@ -1,0 +1,10 @@
+GET http://localhost:5094/products
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.2.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-12-08T153003.200.json
+
+###
+
