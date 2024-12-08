@@ -689,7 +689,7 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     },
     new {
         Id= 169,
-        Name= "BAYER  HEALTHCARE P"
+        Name= "BAYER HEALTHCARE P"
     },
     new {
         Id= 170,
@@ -1375,7 +1375,7 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
         CategoryId = 4
     },
     new {
-        Id = 18, Name = " Embarazo",
+        Id = 18, Name = "Embarazo",
         CategoryId = 11
     },
     new {
