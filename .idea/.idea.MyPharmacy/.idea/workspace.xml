@@ -7,10 +7,6 @@
     <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Data/ProductsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Data/ProductsContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Brand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Brand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Subcategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,15 +16,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2pwf8N7lQ5cWFV3mYIvS7ONxEkI" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.WebAPI: http.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: http">
@@ -107,8 +116,20 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="" />
+      <created>1733681899690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733681899690</updated>
+      <workItem from="1733681901853" duration="3665000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
 </project>
