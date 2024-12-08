@@ -882,7 +882,7 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 169,
-                            Name = "BAYER  HEALTHCARE P"
+                            Name = "BAYER HEALTHCARE P"
                         },
                         new
                         {
@@ -1843,7 +1843,7 @@ namespace WebAPI.Data.Migrations
                         {
                             Id = 18,
                             CategoryId = 11,
-                            Name = " Embarazo"
+                            Name = "Embarazo"
                         },
                         new
                         {
