@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WebAPI/Data/DataExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208083745_InitialCreateProducts.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208083745_InitialCreateProducts.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208193903_SeedBrandsCategoriesAndSubcategories.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208193903_SeedBrandsCategoriesAndSubcategories.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/ProductsContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Data/ProductsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Data/ProductsContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Specification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Specification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +133,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733681899690</updated>
-      <workItem from="1733681901853" duration="3665000" />
+      <workItem from="1733681901853" duration="5973000" />
     </task>
     <servers />
   </component>
