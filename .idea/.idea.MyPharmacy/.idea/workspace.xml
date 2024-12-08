@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.WebAPI: http.executor": "Run",
+    "git-widget-placeholder": "master",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: http">
     <configuration name="WebAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebAPI/WebAPI.csproj" />
@@ -53,11 +79,17 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
@@ -70,4 +102,8 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
 </project>
