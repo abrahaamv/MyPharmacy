@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace WebAPI.Entities.Products;
 
 public class Product
@@ -17,6 +19,7 @@ public class Product
     public int? SubCategoryId { get; set; }
     public Subcategory? SubCategory { get; set; }
     //PRODUCT SPECIFICATIONS
+    [NotMapped]
     public List<Specification>? Specifications { get; set; }
     public required List<string> ImageUrls { get; set; }
     //PRICE
