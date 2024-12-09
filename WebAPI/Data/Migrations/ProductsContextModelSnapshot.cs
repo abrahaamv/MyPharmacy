@@ -1647,8 +1647,11 @@ namespace WebAPI.Data.Migrations
 
             modelBuilder.Entity("WebAPI.Entities.Products.Product", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
@@ -1675,7 +1678,7 @@ namespace WebAPI.Data.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<decimal>("SellPrice")
+                    b.Property<decimal>("SellingPrice")
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("Slug")
@@ -1728,8 +1731,6 @@ namespace WebAPI.Data.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Subcategories");
 
@@ -1967,19 +1968,19 @@ namespace WebAPI.Data.Migrations
             modelBuilder.Entity("WebAPI.Entities.Products.Product", b =>
                 {
                     b.HasOne("WebAPI.Entities.Products.Brand", "Brand")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebAPI.Entities.Products.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebAPI.Entities.Products.Subcategory", "SubCategory")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("SubCategoryId");
 
                     b.Navigation("Brand");
@@ -1987,32 +1988,6 @@ namespace WebAPI.Data.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("SubCategory");
-                });
-
-            modelBuilder.Entity("WebAPI.Entities.Products.Subcategory", b =>
-                {
-                    b.HasOne("WebAPI.Entities.Products.Category", null)
-                        .WithMany("Subcategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("WebAPI.Entities.Products.Brand", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("WebAPI.Entities.Products.Category", b =>
-                {
-                    b.Navigation("Products");
-
-                    b.Navigation("Subcategories");
-                });
-
-            modelBuilder.Entity("WebAPI.Entities.Products.Subcategory", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
