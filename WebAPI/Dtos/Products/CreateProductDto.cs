@@ -3,7 +3,6 @@ using WebAPI.Entities.Products;
 namespace WebAPI.Dtos.Products;
 
 public record CreateProductDto(
-    string Id,
     string Ean,
     string Name,
     string Description,
@@ -11,8 +10,8 @@ public record CreateProductDto(
     int BrandId,
     int CategoryId,
     int SubCategoryId,
-    List<Specification> Specifications,
+    Specification[] Specifications,
     List<string> ImageUrls,
     int ListPrice,
-    int SellPrice, 
+    int SellingPrice, 
     int Stock);
