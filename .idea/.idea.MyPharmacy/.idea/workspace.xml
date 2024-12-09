@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebAPI/Data/UsersContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Dtos/Products/CreateProductDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Dtos/Products/ProductDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Dtos/Products/SpecificationDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Testing/Products.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208202223_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208202223_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208214649_InitialCreateAndSeed.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241208214649_InitialCreateAndSeed.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/ProductsContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Dtos/Products/CreateProductDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Dtos/Products/CreateProductDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Dtos/Products/ProductDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Dtos/Products/ProductDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Brand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Brand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Category.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Specification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Specification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Entities/Products/Subcategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Entities/Products/Subcategory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Testing/Products.http" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Testing/Products.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +37,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2pwf8N7lQ5cWFV3mYIvS7ONxEkI" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,19 +51,27 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.WebAPI: http.executor": "Run",
+    "HTTP Request.Products | GET /products.executor": "Run",
     "HTTP Request.Products | GET request to example server.executor": "Run",
+    "HTTP Request.Products | POST /products.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: http">
+    <configuration name="Products | GET /products" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" requestIdentifier="GET /products" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Products | GET request to example server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" requestIdentifier="GET request to example server" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Products | POST /products" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="2" requestIdentifier="POST /products" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="WebAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -142,6 +150,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.Products | POST /products" />
+        <item itemvalue="HTTP Request.Products | GET /products" />
         <item itemvalue="HTTP Request.Products | GET request to example server" />
       </list>
     </recent_temporary>
@@ -155,6 +165,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733681899690</updated>
       <workItem from="1733681901853" duration="13070000" />
+      <workItem from="1733778818726" duration="5090000" />
     </task>
     <servers />
   </component>
