@@ -28,7 +28,8 @@ Content-Type: application/json
     "https://walmartgt.vtexassets.com/arquivos/ids/383387/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-6-19742.jpg?v=638264254523400000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383388/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-7-19742.jpg?v=638264254527100000"
   ],
-  "specifications": [
+  "specifications": "this is a specification",
+  "specification": [
     {
       "name": "Artículo funciona principalmente para la siguiente parte del cuerpo",
       "value": "Corporal"
