@@ -22,8 +22,9 @@ public class Product
     //AVAILABLE QUANTITY
     public int Stock { get; set; }
     public bool IsInStock => Stock > 0;
-    //PRODUCT SPECIFICATIONS
-    public string? Specifications { get; set; }
     //IMAGES
     public required List<string> ImageUrls { get; set; }
+    //PRODUCT SPECIFICATIONS
+    public List<Specification>? Specifications { get; set; }
 }
+
