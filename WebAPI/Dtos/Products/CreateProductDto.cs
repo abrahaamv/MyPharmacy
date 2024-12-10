@@ -13,5 +13,5 @@ public record CreateProductDto(
     decimal ListPrice,
     decimal SellingPrice, 
     int Stock,
-    string Specifications,
-    List<string> ImageUrls);
+    List<string> ImageUrls,
+    List<Specification> Specifications);
