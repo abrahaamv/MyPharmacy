@@ -39,4 +39,23 @@ public static class ProductsMapping
                 product.IsInStock,
                 product.ImageUrls?.Take(1).ToList() ?? new List<string>());
         }
+
+        public static Product ToEntity(this CreateProductDto dto)
+        {
+            return new Product()
+            {
+                Ean = dto.Ean,
+                Name = dto.Name,
+                Description = dto.Description,
+                Slug = dto.Slug,
+                BrandId = dto.BrandId,
+                CategoryId = dto.CategoryId,
+                SubCategoryId = 1,
+                Specifications = dto.Specifications,
+                ImageUrls = dto.ImageUrls,
+                ListPrice = dto.ListPrice,
+                SellingPrice = dto.SellingPrice,
+                Stock = dto.Stock
+            };
+        }
 }
