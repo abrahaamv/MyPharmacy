@@ -7,12 +7,13 @@ namespace WebAPI.Endpoints;
 
 public static class ProductsEndpoints
 {
+    const string GetProductsEndpointName = "GetProducts";
     public static RouteGroupBuilder MapProductsEndpoints(this WebApplication app)
     {
         
         var group = app.MapGroup("products");
-
-        //GET /products
+        
+//GET /products
         group.MapGet("/", async (ProductsContext dbContext) =>
         {
             var products = await dbContext.Products
@@ -23,7 +24,35 @@ public static class ProductsEndpoints
 
             return Results.Ok(products);
         });
+        
+//GET /products/{id}        
+        group.MapGet("/{id}", async (int id, ProductsContext dbContext) =>
+        {
+            var product = await dbContext.Products.FindAsync(id);
+            
+            var brand = await dbContext.Brands.FindAsync(product?.BrandId);
+            var category = await dbContext.Categories.FindAsync(product?.CategoryId);
+            var subcategory = await dbContext.Subcategories.FindAsync(product?.SubCategoryId);
 
+            
+            var productSummary = new ProductSummaryDto (
+                id,
+                product!.Ean,
+                product.Name,
+                product.Slug,
+                brand!.Name,
+                category!.Name,
+                subcategory?.Name,
+                product.ListPrice,
+                product.SellingPrice,
+                product.IsInStock,
+                product.ImageUrls?.Take(1).ToList() ?? new List<string>()
+            );
+            
+            return Results.Ok(productSummary);
+        }) .WithName(GetProductsEndpointName);
+
+//POST /products
         group.MapPost("/", async (CreateProductDto dto, ProductsContext dbContext) =>
         {
             var brand = dbContext.Brands.Find(dto.BrandId);
