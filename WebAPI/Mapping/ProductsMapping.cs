@@ -19,10 +19,9 @@ public static class ProductsMapping
             product.SubCategoryId,
             product.ListPrice,
             product.SellingPrice,
-            product.Stock,
             product.IsInStock,
-            product.Specifications,
-            product.ImageUrls);
+            product.ImageUrls,
+            product.Specifications);
     }
     
         public static ProductSummaryDto ToProductSummaryDto(this Product product)
