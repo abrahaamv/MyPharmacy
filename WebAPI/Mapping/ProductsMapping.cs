@@ -1,0 +1,43 @@
+using System.Linq;
+using WebAPI.Dtos.Products;
+using WebAPI.Entities.Products;
+
+namespace WebAPI.Mapping;
+
+public static class ProductsMapping
+{
+    public static ProductDetailsDto ToProductDetailsDto(this Product product)
+    {
+        return new ProductDetailsDto(
+            product.Id,
+            product.Ean,
+            product.Name,
+            product.Description,
+            product.Slug,
+            product.BrandId,
+            product.CategoryId,
+            product.SubCategoryId,
+            product.ListPrice,
+            product.SellingPrice,
+            product.Stock,
+            product.IsInStock,
+            product.Specifications,
+            product.ImageUrls);
+    }
+    
+        public static ProductSummaryDto ToProductSummaryDto(this Product product)
+        {
+            return new ProductSummaryDto(
+                product.Id,
+                product.Ean,
+                product.Name,
+                product.Slug,
+                product.Brand!.Name,
+                product.Category!.Name,
+                product.SubCategory!.Name,
+                product.ListPrice,
+                product.SellingPrice,
+                product.IsInStock,
+                product.ImageUrls?.Take(1).ToList() ?? new List<string>());
+        }
+}
