@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAPI.Data;
 using WebAPI.Dtos.Products;
 using WebAPI.Entities.Products;
+using WebAPI.Mapping;
 
 namespace WebAPI.Endpoints;
 
@@ -16,10 +17,11 @@ public static class ProductsEndpoints
 //GET /products
         group.MapGet("/", async (ProductsContext dbContext) =>
         {
-            var products = await dbContext.Products
+            var products =  await dbContext.Products
                 .Include(p => p.Brand)
                 .Include(p => p.Category)
                 .Include(p => p.SubCategory)
+                .Select(game => game.ToProductSummaryDto())
                 .ToListAsync();
 
             return Results.Ok(products);
@@ -30,32 +32,18 @@ public static class ProductsEndpoints
         {
             var product = await dbContext.Products.FindAsync(id);
             
-            var brand = await dbContext.Brands.FindAsync(product?.BrandId);
-            var category = await dbContext.Categories.FindAsync(product?.CategoryId);
-            var subcategory = await dbContext.Subcategories.FindAsync(product?.SubCategoryId);
-
+            product!.Brand = await dbContext.Brands.FindAsync(product?.BrandId);
+            product!.Category = await dbContext.Categories.FindAsync(product?.CategoryId);
+            product!.SubCategory = await dbContext.Subcategories.FindAsync(product?.SubCategoryId);
             
-            var productSummary = new ProductSummaryDto (
-                id,
-                product!.Ean,
-                product.Name,
-                product.Slug,
-                brand!.Name,
-                category!.Name,
-                subcategory?.Name,
-                product.ListPrice,
-                product.SellingPrice,
-                product.IsInStock,
-                product.ImageUrls?.Take(1).ToList() ?? new List<string>()
-            );
             
-            return Results.Ok(productSummary);
+            return Results.Ok(product!.ToProductDetailsDto());
         }) .WithName(GetProductsEndpointName);
 
 //POST /products
         group.MapPost("/", async (CreateProductDto dto, ProductsContext dbContext) =>
         {
-            var brand = dbContext.Brands.Find(dto.BrandId);
+            var brand = await dbContext.Brands.FindAsync(dto.BrandId);
             var category = await dbContext.Categories.FindAsync(dto.CategoryId);
             var subCategory = await dbContext.Subcategories.FindAsync(dto.SubCategoryId);
 
@@ -74,7 +62,7 @@ public static class ProductsEndpoints
                 Brand = brand,
                 CategoryId = dto.CategoryId,
                 Category = category,
-                SubCategoryId = dto.SubCategoryId,
+                SubCategoryId = 1,
                 SubCategory = subCategory,
                 Specifications = dto.Specifications,
                 ImageUrls = dto.ImageUrls,
@@ -86,7 +74,7 @@ public static class ProductsEndpoints
             dbContext.Products.Add(product);
             await dbContext.SaveChangesAsync();
 
-            return Results.Ok(product);
+            return Results.Ok(product.ToProductDetailsDto());
         });
 
         return group;
