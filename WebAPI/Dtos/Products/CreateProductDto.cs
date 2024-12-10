@@ -10,8 +10,8 @@ public record CreateProductDto(
     int BrandId,
     int CategoryId,
     int? SubCategoryId,
-    Specification[] Specifications,
+    decimal ListPrice,
+    decimal SellingPrice, 
+    int Stock,
     List<string> ImageUrls,
-    int ListPrice,
-    int SellingPrice, 
-    int Stock);
+    Specification[] Specifications);
