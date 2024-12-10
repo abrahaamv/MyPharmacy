@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Data;
 using WebAPI.Dtos.Products;
-using WebAPI.Entities.Products;
 using WebAPI.Mapping;
 
 namespace WebAPI.Endpoints;
@@ -12,7 +11,8 @@ public static class ProductsEndpoints
     public static RouteGroupBuilder MapProductsEndpoints(this WebApplication app)
     {
         
-        var group = app.MapGroup("products");
+        var group = app.MapGroup("products")
+                        .WithParameterValidation();
         
 //GET /products
         group.MapGet("/", async (ProductsContext dbContext) =>
@@ -43,34 +43,12 @@ public static class ProductsEndpoints
 //POST /products
         group.MapPost("/", async (CreateProductDto dto, ProductsContext dbContext) =>
         {
-            var brand = await dbContext.Brands.FindAsync(dto.BrandId);
-            var category = await dbContext.Categories.FindAsync(dto.CategoryId);
-            var subCategory = await dbContext.Subcategories.FindAsync(dto.SubCategoryId);
+            var product = dto.ToEntity();
 
-            if (brand == null || category == null )
-            {
-                return Results.BadRequest("Invalid Brand, Category, or SubCategory");
-            }
-
-            var product = new Product
-            {
-                Ean = dto.Ean,
-                Name = dto.Name,
-                Description = dto.Description,
-                Slug = dto.Slug,
-                BrandId = dto.BrandId,
-                Brand = brand,
-                CategoryId = dto.CategoryId,
-                Category = category,
-                SubCategoryId = 1,
-                SubCategory = subCategory,
-                Specifications = dto.Specifications,
-                ImageUrls = dto.ImageUrls,
-                ListPrice = dto.ListPrice,
-                SellingPrice = dto.SellingPrice,
-                Stock = dto.Stock
-            };
-
+            product.Brand = await dbContext.Brands.FindAsync(dto.BrandId);
+            product.Category = await dbContext.Categories.FindAsync(dto.CategoryId);
+            product.SubCategory = await dbContext.Subcategories.FindAsync(dto.SubCategoryId);
+            
             dbContext.Products.Add(product);
             await dbContext.SaveChangesAsync();
 
