@@ -1,5 +1,9 @@
 ### GET /products
 GET  http://localhost:5094/products
+
+### GET /products/{id}
+GET  http://localhost:5094/products/1
+
 ### POST /products
 POST  http://localhost:5094/products
 Content-Type: application/json
@@ -8,22 +12,22 @@ Content-Type: application/json
   "ean": "3337875597272",
   "name": "Crema Facial Cerave Reparadora Para Contorno De Ojos, Sin Perfume - 14ml",
   "description": "La Crema Reparadora para el Contorno de Ojos de Cerave ayuda a hidratar la zona de los ojos, a reducir ojeras y bolsas de los ojos. Al ser un área delicada hay que brindarle la mejor hidratación. Es una crema no grasosa, compuesta por 3 ceramidas esenciales y ácido hialurónico logrando una piel más brillante y suave. Su fórmula es libre de fragancia.",
-  "slug": "cerave-contorno-ojos-crma-14ml", 
+  "slug": "cerave-contorno-ojos-crma-14ml",
   "brandId": 16,
-  "categoryId": 8, 
+  "categoryId": 8,
   "subcategoryId": null,
   "listPrice": 130,
   "sellingPrice": 130,
+  "stock": 1000,
   "imageUrls": [
-    "https://walmartgt.vtexassets.com/arquivos/ids/383671/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-1-19742.jpg?v=638264255798330000", 
+    "https://walmartgt.vtexassets.com/arquivos/ids/383671/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-1-19742.jpg?v=638264255798330000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383383/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-2-19742.jpg?v=638264254504100000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383384/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-3-19742.jpg?v=638264254508800000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383385/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-4-19742.jpg?v=638264254512070000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383386/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-5-19742.jpg?v=638264254515330000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383387/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-6-19742.jpg?v=638264254523400000",
     "https://walmartgt.vtexassets.com/arquivos/ids/383388/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-7-19742.jpg?v=638264254527100000"
-    ],
-  "stock": 10000,
+  ],
   "specifications": [
     {
       "name": "Artículo funciona principalmente para la siguiente parte del cuerpo",
@@ -35,8 +39,7 @@ Content-Type: application/json
     },
     {
       "name": "Es producto sensible a la temperatura?",
-      "value": 
-        "Si"
+      "value": "Si"
     },
     {
       "name": "Forma",
@@ -56,51 +59,35 @@ Content-Type: application/json
     },
     {
       "name": "Medida de ancho",
-      "value": 
-        "3.1"
-      
+      "value": "3.1"
     },
     {
       "name": "Producto sujeto a expiración?",
-      "value": 
-        "Sí"
-      
+      "value": "Sí"
     },
     {
       "name": "Tamaño (Gramaje, Volumen)",
-      "value": 
-        "14Ml"
-      
+      "value": "14Ml"
     },
     {
       "name": "Uso recomendado",
-      "value": 
-        "Dermatologos"
-      
+      "value": "Dermatologos"
     },
     {
       "name": "Es comedogénico o libre de aceite",
-      "value": 
-        "No Comedogenico"
-      
+      "value": "No Comedogenico"
     },
     {
       "name": "Medida de profundidad",
-      "value": 
-        "2.2"
-      
+      "value": "2.2"
     },
     {
       "name": "Producto especializado para adultos",
-      "value": 
-        "Adultos"
-      
+      "value": "Adultos"
     },
     {
       "name": "Tipo de especialización en cuidado de la piel",
-      "value": 
-        "Hidratante"
-      
+      "value": "Hidratante"
     }
   ]
 }
