@@ -12,8 +12,6 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Specification>().HasNoKey();
-        
         modelBuilder.Entity<Brand>().HasData(
     new   {
         Id= 1,
