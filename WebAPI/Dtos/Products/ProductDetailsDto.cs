@@ -8,12 +8,11 @@ public record ProductDetailsDto(
     string Name,
     string Description,
     string Slug,
-    int Brand,
+    int BrandId,
     int CategoryId,
     int SubCategoryId,
     decimal ListPrice,
     decimal SellingPrice, 
-    int Stock,
     bool IsInStock,
-    string? Specifications,
-    List<string> ImageUrls);
+    List<string> ImageUrls,
+    List<Specification>? Specifications);
