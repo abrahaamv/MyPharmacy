@@ -8,10 +8,10 @@ Content-Type: application/json
   "ean": "3337875597272",
   "name": "Crema Facial Cerave Reparadora Para Contorno De Ojos, Sin Perfume - 14ml",
   "description": "La Crema Reparadora para el Contorno de Ojos de Cerave ayuda a hidratar la zona de los ojos, a reducir ojeras y bolsas de los ojos. Al ser un área delicada hay que brindarle la mejor hidratación. Es una crema no grasosa, compuesta por 3 ceramidas esenciales y ácido hialurónico logrando una piel más brillante y suave. Su fórmula es libre de fragancia.",
-  "slug": "cerave-contorno-ojos-crma-14ml",
+  "slug": "cerave-contorno-ojos-crma-14ml", 
   "brandId": 16,
   "categoryId": 8, 
-  "subcategoryId": 3,
+  "subcategoryId": null,
   "listPrice": 130,
   "sellingPrice": 130,
   "imageUrls": [
