@@ -30,14 +30,14 @@ public static class ProductsEndpoints
 //GET /products/{id}        
         group.MapGet("/{id}", async (int id, ProductsContext dbContext) =>
         {
-            var product = await dbContext.Products.FindAsync(id);
-            
-            product!.Brand = await dbContext.Brands.FindAsync(product?.BrandId);
-            product!.Category = await dbContext.Categories.FindAsync(product?.CategoryId);
-            product!.SubCategory = await dbContext.Subcategories.FindAsync(product?.SubCategoryId);
-            
-            
-            return Results.Ok(product!.ToProductDetailsDto());
+              var product = await dbContext.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.SubCategory)
+                .FirstOrDefaultAsync(p => p.Id == id);
+              
+            if(product is null) return Results.NotFound();
+            return Results.Ok(product.ToProductDetailsDto());
         }) .WithName(GetProductsEndpointName);
 
 //POST /products
