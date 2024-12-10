@@ -9,7 +9,7 @@ public record CreateProductDto(
     string Slug,
     int BrandId,
     int CategoryId,
-    int SubCategoryId,
+    int? SubCategoryId,
     Specification[] Specifications,
     List<string> ImageUrls,
     int ListPrice,
