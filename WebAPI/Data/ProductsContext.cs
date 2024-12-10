@@ -1,3 +1,5 @@
+using System.Text.Json;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Entities.Products;
 
@@ -12,6 +14,19 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        var specificationComparer = new ValueComparer<List<Specification>>(
+            (c1, c2) => c1.SequenceEqual(c2), // Comparación por secuencia
+            c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())), // Cálculo del hash
+            c => c.ToList() // Clon para snapshots
+        );
+
+        modelBuilder.Entity<Product>()
+            .Property(p => p.Specifications)
+            .HasConversion(
+                v => JsonSerializer.Serialize(v, new JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }),
+                v => JsonSerializer.Deserialize<List<Specification>>(v, new JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }) ?? new List<Specification>())
+            .Metadata.SetValueComparer(specificationComparer);
+        
         modelBuilder.Entity<Brand>().HasData(
     new   {
         Id= 1,
