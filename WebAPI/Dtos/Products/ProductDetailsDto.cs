@@ -1,4 +1,6 @@
+using WebAPI.Entities.Products;
 namespace WebAPI.Dtos.Products;
+
 
 public record ProductDetailsDto(
     int Id,
@@ -12,5 +14,6 @@ public record ProductDetailsDto(
     decimal ListPrice,
     decimal SellingPrice, 
     int Stock,
-    List<string> ImageUrls,
-    SpecificationDto[] Specifications);
+    bool IsInStock,
+    string? Specifications,
+    List<string> ImageUrls);
