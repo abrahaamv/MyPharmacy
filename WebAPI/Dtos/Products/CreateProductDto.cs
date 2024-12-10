@@ -1,17 +1,18 @@
+using System.ComponentModel.DataAnnotations;
 using WebAPI.Entities.Products;
 
 namespace WebAPI.Dtos.Products;
 
 public record CreateProductDto(
-    string Ean,
-    string Name,
-    string Description,
+    [Required] string Ean,
+    [Required] string Name,
+    [Required]string Description,
     string Slug,
-    int BrandId,
+    [Required] int BrandId,
     int CategoryId,
     int? SubCategoryId,
-    decimal ListPrice,
-    decimal SellingPrice, 
-    int Stock,
-    List<string> ImageUrls,
+    [Required] decimal ListPrice,
+    [Required] decimal SellingPrice, 
+    [Required] int Stock,
+    [Required] List<string> ImageUrls,
     List<Specification> Specifications);
