@@ -18,14 +18,15 @@ public class Product
     //SUBCATEGORY
     public int? SubCategoryId { get; set; }
     public Subcategory? SubCategory { get; set; }
-    //PRODUCT SPECIFICATIONS
-    [NotMapped]
-    public Specification[]? Specifications { get; set; }
-    public required List<string> ImageUrls { get; set; }
     //PRICE
     public decimal ListPrice { get; set; }
     public decimal SellingPrice { get; set; }
     //AVAILABLE QUANTITY
     public int Stock { get; set; }
     public bool IsInStock => Stock > 0;
+    //IMAGES
+    public required List<string> ImageUrls { get; set; }
+    //PRODUCT SPECIFICATIONS
+    [NotMapped]
+    public Specification[]? Specifications { get; set; }
 }
