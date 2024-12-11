@@ -58,4 +58,24 @@ public static class ProductsMapping
                 Stock = dto.Stock
             };
         }
+        public static Product ToEntity(this UpdateProductDto dto, int id)
+        {
+            return new Product()
+            {
+                Id = id,
+                Ean = dto.Ean,
+                Name = dto.Name,
+                Description = dto.Description,
+                Slug = dto.Slug,
+                BrandId = dto.BrandId,
+                CategoryId = dto.CategoryId,
+                SubCategoryId = dto.SubCategoryId,
+                Specifications = dto.Specifications,
+                ImageUrls = dto.ImageUrls,
+                ListPrice = dto.ListPrice,
+                SellingPrice = dto.SellingPrice,
+                Stock = dto.Stock
+            };
+        }
+        
 }
