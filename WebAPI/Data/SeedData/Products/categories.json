@@ -1,0 +1,118 @@
+[
+    {
+        "id": 1,
+        "name": "Sistema digestivo y Antiparasitarios"
+    },
+    {
+        "id": 2,
+        "name": "OTC"
+    },
+    {
+        "id": 3,
+        "name": "Estomacales"
+    },
+    {
+        "id": 4,
+        "name": "Analgésicos"
+    },
+    {
+        "id": 5,
+        "name": "Dolor e inflamación"
+    },
+    {
+        "id": 6,
+        "name": "Multivitamínicos, Suplementos & Sistema Óseo"
+    },
+    {
+        "id": 7,
+        "name": "Respiratorios"
+    },
+    {
+        "id": 8,
+        "name": "Dermatología"
+    },
+    {
+        "id": 9,
+        "name": "Cuidado Personal"
+    },
+    {
+        "id": 10,
+        "name": "Antiviral, gripe y tos"
+    },
+    {
+        "id": 11,
+        "name": "Vitaminas y Suplementos"
+    },
+    {
+        "id": 12,
+        "name": "Asma, alergias y nasal"
+    },
+    {
+        "id": 13,
+        "name": "Bienestar, equipo médico y soluciones hospitalarias"
+    },
+    {
+        "id": 14,
+        "name": "Cuidado de los Pies"
+    },
+    {
+        "id": 15,
+        "name": "Anticonceptivos, hormonal y salud sexual"
+    },
+    {
+        "id": 16,
+        "name": "Cardiovascular & Hipertensivo"
+    },
+    {
+        "id": 17,
+        "name": "Material de Curación"
+    },
+    {
+        "id": 18,
+        "name": "Antimicótico"
+    },
+    {
+        "id": 19,
+        "name": "Sistema Nervioso"
+    },
+    {
+        "id": 20,
+        "name": "Bienestar Sexual"
+    },
+    {
+        "id": 21,
+        "name": "Oftálmicos y Óticos"
+    },
+    {
+        "id": 22,
+        "name": "Salud Bucal, Oftalmológico & Oído"
+    },
+    {
+        "id": 23,
+        "name": "Diabetes"
+    },
+    {
+        "id": 24,
+        "name": "Diabetes y tiroides"
+    },
+    {
+        "id": 25,
+        "name": "Embarazo & lactancia infantil"
+    },
+    {
+        "id": 26,
+        "name": "Medicamentos de Alta Especialidad"
+    },
+    {
+        "id": 27,
+        "name": "Colesterol y Triglicérido"
+    },
+    {
+        "id": 28,
+        "name": "Sistema Urinario"
+    },
+    {
+        "id": 29,
+        "name": "Antibiótico"
+    }
+]
