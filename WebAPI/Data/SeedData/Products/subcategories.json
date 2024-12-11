@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "categoryId": 3,
+        "name": "Sueros"
+    },
+    {
+        "id": 2,
+        "categoryId": 4,
+        "name": "Dolor"
+    },
+    {
+        "id": 3,
+        "categoryId": 7,
+        "name": "Resfríos"
+    },
+    {
+        "id": 4,
+        "categoryId": 9,
+        "name": "Dermocosméticos"
+    },
+    {
+        "id": 5,
+        "categoryId": 11,
+        "name": "Preventivos"
+    },
+    {
+        "id": 6,
+        "categoryId": 14,
+        "name": "Talcos"
+    },
+    {
+        "id": 7,
+        "categoryId": 11,
+        "name": "Vitaminas"
+    },
+    {
+        "id": 8,
+        "categoryId": 3,
+        "name": "Dolor y Malestar"
+    },
+    {
+        "id": 9,
+        "categoryId": 7,
+        "name": "Congestión Nasal"
+    },
+    {
+        "id": 10,
+        "categoryId": 17,
+        "name": "Otros Materiales"
+    },
+    {
+        "id": 11,
+        "categoryId": 3,
+        "name": "Antiácidos"
+    },
+    {
+        "id": 12,
+        "categoryId": 20,
+        "name": "Condones"
+    },
+    {
+        "id": 13,
+        "categoryId": 21,
+        "name": "Gotas para los ojos"
+    },
+    {
+        "id": 14,
+        "categoryId": 14,
+        "name": "Accesorios cuidado de pies"
+    },
+    {
+        "id": 15,
+        "categoryId": 11,
+        "name": "Suplementos Nutricionales"
+    },
+    {
+        "id": 16,
+        "categoryId": 23,
+        "name": "Equipos y Accesorios"
+    },
+    {
+        "id": 17,
+        "categoryId": 4,
+        "name": "Musculares e Inflamación"
+    },
+    {
+        "id": 18,
+        "categoryId": 11,
+        "name": " Embarazo"
+    },
+    {
+        "id": 19,
+        "categoryId": 9,
+        "name": "Aceites y Cremas"
+    },
+    {
+        "id": 20,
+        "categoryId": 17,
+        "name": "Gasas y Vendas"
+    },
+    {
+        "id": 21,
+        "categoryId": 9,
+        "name": "Para Cuidado Bucal"
+    },
+    {
+        "id": 22,
+        "categoryId": 7,
+        "name": "Tos"
+    },
+    {
+        "id": 23,
+        "categoryId": 7,
+        "name": "Alergias"
+    },
+    {
+        "id": 24,
+        "categoryId": 21,
+        "name": "Oídos"
+    },
+    {
+        "id": 25,
+        "categoryId": 20,
+        "name": "Suplementos"
+    },
+    {
+        "id": 26,
+        "categoryId": 17,
+        "name": "Guantes y Cubrebocas"
+    },
+    {
+        "id": 27,
+        "categoryId": 3,
+        "name": "Antiparasitarios"
+    },
+    {
+        "id": 28,
+        "categoryId": 3,
+        "name": "Antidiarreicos"
+    },
+    {
+        "id": 29,
+        "categoryId": 26,
+        "name": "Alta Especialidad"
+    },
+    {
+        "id": 30,
+        "categoryId": 20,
+        "name": "Anticonceptivos"
+    },
+    {
+        "id": 31,
+        "categoryId": 9,
+        "name": "Antiacné PX"
+    },
+    {
+        "id": 32,
+        "categoryId": 3,
+        "name": "Antiulcerantes"
+    },
+    {
+        "id": 33,
+        "categoryId": 14,
+        "name": "Antimicóticos Pies"
+    },
+    {
+        "id": 34,
+        "categoryId": 11,
+        "name": "Multivitamínicos"
+    },
+    {
+        "id": 35,
+        "categoryId": 3,
+        "name": "Probióticos"
+    },
+    {
+        "id": 36,
+        "categoryId": 17,
+        "name": "Banditas y telas adhesivas"
+    },
+    {
+        "id": 37,
+        "categoryId": 3,
+        "name": "Laxante"
+    },
+    {
+        "id": 38,
+        "categoryId": 23,
+        "name": "Tratamiento Diabetes"
+    }
+]
