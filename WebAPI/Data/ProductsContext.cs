@@ -1050,7 +1050,7 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     },
     new {
         Id= 256,
-        Name= "BAYER HEALTHCARE P"
+        Name= "SANDOZ"
     },
     new {
         Id= 257,
@@ -1175,10 +1175,6 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     new {
         Id= 287,
         Name= "NIELSEN BAINBRIDGE"
-    },
-    new {
-        Id= 288,
-        Name= "SANDOZ"
     }
         );
 
@@ -1492,7 +1488,11 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
         Name = "Tratamiento Diabetes",
         CategoryId = 23
        
-    }
-            );
+    },
+    new {
+        Id = 39,
+        Name = "Calcio",
+        CategoryId = 6
+    });
     }
 }
