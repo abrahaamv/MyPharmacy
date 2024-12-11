@@ -1503,8 +1503,7 @@ for product in products:
             "subcategoryId": subcategory_id,
             "listPrice": product['listPrice'],
             "sellingPrice": product['sellingPrice'],
-            #"stock": product['availableQuantity'],
-            "stock": 12,
+            "stock": product['availableQuantity'],
             "imageUrls": [clean_image_url(image['imageUrl']) for image in product['images']],
             "specifications": [
                 {
