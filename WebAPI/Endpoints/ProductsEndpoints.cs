@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Data;
 using WebAPI.Dtos.Products;
@@ -52,9 +53,24 @@ public static class ProductsEndpoints
             dbContext.Products.Add(product);
             await dbContext.SaveChangesAsync();
 
-            return Results.Ok(product.ToProductDetailsDto());
+            return Results.Ok(product.ToProductSummaryDto());
         });
+        
+//PUT /products/{id}
+    group.MapPut("/{id}", async (int id, UpdateProductDto dto, ProductsContext dbContext) =>
+    {
+        var product = await dbContext.Products.FindAsync(id);
+        
+        if (product is null) return Results.NotFound();
+        
+        dbContext.Entry(product)
+                 .CurrentValues
+                 .SetValues(dto.ToEntity(id));
 
+        await dbContext.SaveChangesAsync();
+
+        return Results.NoContent();
+    });
         return group;
     }
 }
