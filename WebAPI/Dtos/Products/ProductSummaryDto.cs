@@ -7,7 +7,7 @@ public record ProductSummaryDto(
     string Slug,
     string Brand, 
     string Category,
-    string SubCategory,
+    string? SubCategory,
     decimal ListPrice,
     decimal SellingPrice, 
     bool IsInStock,
