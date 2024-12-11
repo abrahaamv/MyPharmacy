@@ -6,24 +6,6 @@ namespace WebAPI.Mapping;
 
 public static class ProductsMapping
 {
-    public static ProductDetailsDto ToProductDetailsDto(this Product product)
-    {
-        return new ProductDetailsDto(
-            product.Id,
-            product.Ean,
-            product.Name,
-            product.Description,
-            product.Slug,
-            product.BrandId,
-            product.CategoryId,
-            product.SubCategoryId,
-            product.ListPrice,
-            product.SellingPrice,
-            product.IsInStock,
-            product.ImageUrls,
-            product.Specifications);
-    }
-    
         public static ProductSummaryDto ToProductSummaryDto(this Product product)
         {
             return new ProductSummaryDto(
@@ -33,12 +15,31 @@ public static class ProductsMapping
                 product.Slug,
                 product.Brand!.Name,
                 product.Category!.Name,
-                product.SubCategory!.Name,
+                product.SubCategory?.Name,
                 product.ListPrice,
                 product.SellingPrice,
                 product.IsInStock,
                 product.ImageUrls?.Take(1).ToList() ?? new List<string>());
         }
+        
+        public static ProductDetailsDto ToProductDetailsDto(this Product product)
+        {
+            return new ProductDetailsDto(
+                product.Id,
+                product.Ean,
+                product.Name,
+                product.Description,
+                product.Slug,
+                product.BrandId,
+                product.CategoryId,
+                product.SubCategoryId,
+                product.ListPrice,
+                product.SellingPrice,
+                product.IsInStock,
+                product.ImageUrls,
+                product.Specifications);
+        }
+    
 
         public static Product ToEntity(this CreateProductDto dto)
         {
