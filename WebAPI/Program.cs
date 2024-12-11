@@ -12,5 +12,5 @@ builder.Services.AddDbContext<ProductsContext>(options =>
 var app = builder.Build();
 
 app.MapProductsEndpoints();
-app.MigrateDb();
+await app.MigrateDbAsync();
 app.Run();
