@@ -15,7 +15,7 @@ public class Product
     public  Category? Category { get; set; }
     //SUBCATEGORY
     public int SubCategoryId { get; set; }
-    public Subcategory? SubCategory { get; set; }
+    public SubCategory? SubCategory { get; set; }
     //PRICE
     public decimal ListPrice { get; set; }
     public decimal SellingPrice { get; set; }
