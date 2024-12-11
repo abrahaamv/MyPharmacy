@@ -1,0 +1,1154 @@
+[
+    {
+        "id": 1,
+        "name": "DISFAVIL"
+    },
+    {
+        "id": 2,
+        "name": "ZUUM"
+    },
+    {
+        "id": 3,
+        "name": "ENSURE"
+    },
+    {
+        "id": 4,
+        "name": "ALKOH"
+    },
+    {
+        "id": 5,
+        "name": "VESA"
+    },
+    {
+        "id": 6,
+        "name": "SUPERIOR"
+    },
+    {
+        "id": 7,
+        "name": "SAL ANDREWS"
+    },
+    {
+        "id": 8,
+        "name": "ALKA-SELTZER"
+    },
+    {
+        "id": 9,
+        "name": "HIDRAVIDA"
+    },
+    {
+        "id": 10,
+        "name": "PANADOL"
+    },
+    {
+        "id": 11,
+        "name": "MK"
+    },
+    {
+        "id": 12,
+        "name": "GLUCERNA"
+    },
+    {
+        "id": 13,
+        "name": "CASTILLA"
+    },
+    {
+        "id": 14,
+        "name": "GENESIS"
+    },
+    {
+        "id": 15,
+        "name": "VITAFLENACO"
+    },
+    {
+        "id": 16,
+        "name": "CERAVE"
+    },
+    {
+        "id": 17,
+        "name": "ATLEVIT"
+    },
+    {
+        "id": 18,
+        "name": "HANSAPLAST"
+    },
+    {
+        "id": 19,
+        "name": "ALKA EXTREME"
+    },
+    {
+        "id": 20,
+        "name": "TUMS"
+    },
+    {
+        "id": 21,
+        "name": "SANTA FE NATURA"
+    },
+    {
+        "id": 22,
+        "name": "EUCERIN"
+    },
+    {
+        "id": 23,
+        "name": "EXCELLENT"
+    },
+    {
+        "id": 24,
+        "name": "TYLENOL"
+    },
+    {
+        "id": 25,
+        "name": "PEDIASURE"
+    },
+    {
+        "id": 26,
+        "name": "DEOPIES"
+    },
+    {
+        "id": 27,
+        "name": "TABCIN"
+    },
+    {
+        "id": 28,
+        "name": "AFFECTIVE"
+    },
+    {
+        "id": 29,
+        "name": "ADVIL"
+    },
+    {
+        "id": 30,
+        "name": "GATORADE"
+    },
+    {
+        "id": 31,
+        "name": "DORIVAL"
+    },
+    {
+        "id": 32,
+        "name": "METAMUCIL"
+    },
+    {
+        "id": 33,
+        "name": "ASPIRINA"
+    },
+    {
+        "id": 34,
+        "name": "VIROGRIP"
+    },
+    {
+        "id": 35,
+        "name": "SAVORÂ"
+    },
+    {
+        "id": 36,
+        "name": "VIJOSA"
+    },
+    {
+        "id": 37,
+        "name": "GELA-KIN"
+    },
+    {
+        "id": 38,
+        "name": "PEDEX"
+    },
+    {
+        "id": 39,
+        "name": "INFASA"
+    },
+    {
+        "id": 40,
+        "name": "SIETE MARES"
+    },
+    {
+        "id": 41,
+        "name": "VICK"
+    },
+    {
+        "id": 42,
+        "name": "VICK VAPORUB"
+    },
+    {
+        "id": 43,
+        "name": "LA BONNE VIE"
+    },
+    {
+        "id": 44,
+        "name": "DRIVE MEDICAL"
+    },
+    {
+        "id": 45,
+        "name": "FARMANDINA"
+    },
+    {
+        "id": 46,
+        "name": "MEDIMART"
+    },
+    {
+        "id": 47,
+        "name": "PRUDENCE"
+    },
+    {
+        "id": 48,
+        "name": "QUALIPHARM"
+    },
+    {
+        "id": 49,
+        "name": "ALKA AD"
+    },
+    {
+        "id": 50,
+        "name": "JOHNSON & JOHNSON"
+    },
+    {
+        "id": 51,
+        "name": "PEPTO BISMOL"
+    },
+    {
+        "id": 52,
+        "name": "PASINERVA"
+    },
+    {
+        "id": 53,
+        "name": "VITABIOTICS"
+    },
+    {
+        "id": 54,
+        "name": "BENET"
+    },
+    {
+        "id": 55,
+        "name": "BEPANTHENE"
+    },
+    {
+        "id": 56,
+        "name": "BAYER"
+    },
+    {
+        "id": 57,
+        "name": "CUREBAND"
+    },
+    {
+        "id": 58,
+        "name": "PIEX"
+    },
+    {
+        "id": 59,
+        "name": "CENTRUM"
+    },
+    {
+        "id": 60,
+        "name": "GOOD BRANDS"
+    },
+    {
+        "id": 61,
+        "name": "DEL PILAR"
+    },
+    {
+        "id": 62,
+        "name": "NEXCARE"
+    },
+    {
+        "id": 63,
+        "name": "LA ROCHE-POSAY"
+    },
+    {
+        "id": 64,
+        "name": "ENTEREX"
+    },
+    {
+        "id": 65,
+        "name": "MASCARA"
+    },
+    {
+        "id": 66,
+        "name": "REDOXITOS"
+    },
+    {
+        "id": 67,
+        "name": "OMRON"
+    },
+    {
+        "id": 68,
+        "name": "DUREX"
+    },
+    {
+        "id": 69,
+        "name": "AMBIDERM"
+    },
+    {
+        "id": 70,
+        "name": "DONOVAN"
+    },
+    {
+        "id": 71,
+        "name": "GUTIS"
+    },
+    {
+        "id": 72,
+        "name": "CANESTEN"
+    },
+    {
+        "id": 73,
+        "name": "VIVE"
+    },
+    {
+        "id": 74,
+        "name": "SUKROL"
+    },
+    {
+        "id": 75,
+        "name": "BEBERÂ"
+    },
+    {
+        "id": 76,
+        "name": "NEXT-TABS"
+    },
+    {
+        "id": 77,
+        "name": "ALKA  GASTRIC"
+    },
+    {
+        "id": 78,
+        "name": "ROEMMERS"
+    },
+    {
+        "id": 79,
+        "name": "MEDIHEALTH"
+    },
+    {
+        "id": 80,
+        "name": "MENARINI"
+    },
+    {
+        "id": 81,
+        "name": "REDOXON"
+    },
+    {
+        "id": 82,
+        "name": "CAPLIN POINT LABORAT"
+    },
+    {
+        "id": 83,
+        "name": "UNESIA"
+    },
+    {
+        "id": 84,
+        "name": "CEBION"
+    },
+    {
+        "id": 85,
+        "name": "RENU"
+    },
+    {
+        "id": 86,
+        "name": "MEDIPRODUCTS"
+    },
+    {
+        "id": 87,
+        "name": "NEUMONIL"
+    },
+    {
+        "id": 88,
+        "name": "VISINA"
+    },
+    {
+        "id": 89,
+        "name": "NIPRO"
+    },
+    {
+        "id": 90,
+        "name": "ALDO UNION"
+    },
+    {
+        "id": 91,
+        "name": "FARKOT"
+    },
+    {
+        "id": 92,
+        "name": "ANCALMO"
+    },
+    {
+        "id": 93,
+        "name": "VITAL FUERTE"
+    },
+    {
+        "id": 94,
+        "name": "ALCON"
+    },
+    {
+        "id": 95,
+        "name": "CARDIOASPIRINA"
+    },
+    {
+        "id": 96,
+        "name": "DIQUIVA"
+    },
+    {
+        "id": 97,
+        "name": "ISDIN"
+    },
+    {
+        "id": 98,
+        "name": "NUTRAMEDIX"
+    },
+    {
+        "id": 99,
+        "name": "ALEVE"
+    },
+    {
+        "id": 100,
+        "name": "BALLENA AZUL"
+    },
+    {
+        "id": 101,
+        "name": "FRYCIA"
+    },
+    {
+        "id": 102,
+        "name": "ABL PHARMA"
+    },
+    {
+        "id": 103,
+        "name": "GRIIN"
+    },
+    {
+        "id": 104,
+        "name": "SIN MARCA"
+    },
+    {
+        "id": 105,
+        "name": "COFAL"
+    },
+    {
+        "id": 106,
+        "name": "B&J"
+    },
+    {
+        "id": 107,
+        "name": "VICHY"
+    },
+    {
+        "id": 108,
+        "name": "K-Y GEL"
+    },
+    {
+        "id": 109,
+        "name": "PEDIALYTE"
+    },
+    {
+        "id": 110,
+        "name": "NEUROFORTAN"
+    },
+    {
+        "id": 111,
+        "name": "BABE"
+    },
+    {
+        "id": 112,
+        "name": "CHINOIN"
+    },
+    {
+        "id": 113,
+        "name": "ABBOTT CFR"
+    },
+    {
+        "id": 114,
+        "name": "PIERSAN"
+    },
+    {
+        "id": 115,
+        "name": "MERCK"
+    },
+    {
+        "id": 116,
+        "name": "JALOMA"
+    },
+    {
+        "id": 117,
+        "name": "LEUKOPLAST"
+    },
+    {
+        "id": 118,
+        "name": "FERRER"
+    },
+    {
+        "id": 119,
+        "name": "DOLOKALORUB"
+    },
+    {
+        "id": 120,
+        "name": "BABARIA"
+    },
+    {
+        "id": 121,
+        "name": "GENERIX"
+    },
+    {
+        "id": 122,
+        "name": "ASOFARMA"
+    },
+    {
+        "id": 123,
+        "name": "QUINFICA"
+    },
+    {
+        "id": 124,
+        "name": "LEMON GRASS"
+    },
+    {
+        "id": 125,
+        "name": "BONIN"
+    },
+    {
+        "id": 126,
+        "name": "PROCTER & GAMBLE"
+    },
+    {
+        "id": 127,
+        "name": "SANOFI CHC"
+    },
+    {
+        "id": 128,
+        "name": "COREGA"
+    },
+    {
+        "id": 129,
+        "name": "ISIS PHARMA"
+    },
+    {
+        "id": 130,
+        "name": "UNIPHARM"
+    },
+    {
+        "id": 131,
+        "name": "SCOTT"
+    },
+    {
+        "id": 132,
+        "name": "GMS"
+    },
+    {
+        "id": 133,
+        "name": "VERDE VITA"
+    },
+    {
+        "id": 134,
+        "name": "CHEMILCO"
+    },
+    {
+        "id": 135,
+        "name": "QUIFARMA"
+    },
+    {
+        "id": 136,
+        "name": "VITAMIN SHOPPE"
+    },
+    {
+        "id": 137,
+        "name": "BMA PHARMA"
+    },
+    {
+        "id": 138,
+        "name": "ICN GROSMAN"
+    },
+    {
+        "id": 139,
+        "name": "EXELTIS"
+    },
+    {
+        "id": 140,
+        "name": "MED PHARMA"
+    },
+    {
+        "id": 141,
+        "name": "GEX"
+    },
+    {
+        "id": 142,
+        "name": "GASTRO-BISMOL"
+    },
+    {
+        "id": 143,
+        "name": "CIRUELAX"
+    },
+    {
+        "id": 144,
+        "name": "GNC"
+    },
+    {
+        "id": 145,
+        "name": "BAYKID"
+    },
+    {
+        "id": 146,
+        "name": "ACIERTO"
+    },
+    {
+        "id": 147,
+        "name": "HIMALAYA"
+    },
+    {
+        "id": 148,
+        "name": "LEONFLAX"
+    },
+    {
+        "id": 149,
+        "name": "PHILLIPS"
+    },
+    {
+        "id": 150,
+        "name": "RUSSELL STOVER"
+    },
+    {
+        "id": 151,
+        "name": "ACON"
+    },
+    {
+        "id": 152,
+        "name": "GLAXOSMITHKLINE"
+    },
+    {
+        "id": 153,
+        "name": "PROTEINOL"
+    },
+    {
+        "id": 154,
+        "name": "SANTA FE"
+    },
+    {
+        "id": 155,
+        "name": "CARDIO VITAL"
+    },
+    {
+        "id": 156,
+        "name": "DENK"
+    },
+    {
+        "id": 157,
+        "name": "LANCASCO"
+    },
+    {
+        "id": 158,
+        "name": "BENADRYL"
+    },
+    {
+        "id": 159,
+        "name": "LAXMI PHARMAC."
+    },
+    {
+        "id": 160,
+        "name": "VIZCAINO"
+    },
+    {
+        "id": 161,
+        "name": "LAINEZ"
+    },
+    {
+        "id": 162,
+        "name": "ZEPOL"
+    },
+    {
+        "id": 163,
+        "name": "BUSSIE"
+    },
+    {
+        "id": 164,
+        "name": "BIODERMA"
+    },
+    {
+        "id": 165,
+        "name": "SEBAPHARMA"
+    },
+    {
+        "id": 166,
+        "name": "MEFASA"
+    },
+    {
+        "id": 167,
+        "name": "PROFOOT"
+    },
+    {
+        "id": 168,
+        "name": "GHL INTERNACION"
+    },
+    {
+        "id": 169,
+        "name": "BAYER  HEALTHCARE P"
+    },
+    {
+        "id": 170,
+        "name": "SAFEGUARD"
+    },
+    {
+        "id": 171,
+        "name": "JANSSEN"
+    },
+    {
+        "id": 172,
+        "name": "CHOLSAMAJ"
+    },
+    {
+        "id": 173,
+        "name": "PINGUINO"
+    },
+    {
+        "id": 174,
+        "name": "NIKZON"
+    },
+    {
+        "id": 175,
+        "name": "ROCHE"
+    },
+    {
+        "id": 176,
+        "name": "PRUMISA"
+    },
+    {
+        "id": 177,
+        "name": "ABBOTT LAB."
+    },
+    {
+        "id": 178,
+        "name": "GUASURE"
+    },
+    {
+        "id": 179,
+        "name": "GRUPO FARMA"
+    },
+    {
+        "id": 180,
+        "name": "ROWE"
+    },
+    {
+        "id": 181,
+        "name": "BOEHRINGER INGELHEIM"
+    },
+    {
+        "id": 182,
+        "name": "GLOBAL FARMA"
+    },
+    {
+        "id": 183,
+        "name": "ACCU-ANSWER"
+    },
+    {
+        "id": 184,
+        "name": "BIOCLEAN"
+    },
+    {
+        "id": 185,
+        "name": "LAFAGE"
+    },
+    {
+        "id": 186,
+        "name": "DAVIS LAB."
+    },
+    {
+        "id": 187,
+        "name": "ODDENT"
+    },
+    {
+        "id": 188,
+        "name": "CHURCH&DWIGHT"
+    },
+    {
+        "id": 189,
+        "name": "PROCAPS"
+    },
+    {
+        "id": 190,
+        "name": "FERRIDOCE"
+    },
+    {
+        "id": 191,
+        "name": "HEIDELG"
+    },
+    {
+        "id": 192,
+        "name": "ROWA WAGNER"
+    },
+    {
+        "id": 193,
+        "name": "ALFER"
+    },
+    {
+        "id": 194,
+        "name": "PHARMALAT"
+    },
+    {
+        "id": 195,
+        "name": "ASTRA ZENECA"
+    },
+    {
+        "id": 196,
+        "name": "EUROFARMA"
+    },
+    {
+        "id": 197,
+        "name": "PAILL"
+    },
+    {
+        "id": 198,
+        "name": "BIO TRUE"
+    },
+    {
+        "id": 199,
+        "name": "LABORATORIOS MIDI"
+    },
+    {
+        "id": 200,
+        "name": "TERAMED"
+    },
+    {
+        "id": 201,
+        "name": "LUNDBECK"
+    },
+    {
+        "id": 202,
+        "name": "ORGANON"
+    },
+    {
+        "id": 203,
+        "name": "ACINO PHARMA"
+    },
+    {
+        "id": 204,
+        "name": "ESCUDO"
+    },
+    {
+        "id": 205,
+        "name": "NUTRISON"
+    },
+    {
+        "id": 206,
+        "name": "NOVARTIS PHARMA"
+    },
+    {
+        "id": 207,
+        "name": "GLAXO PHARMA"
+    },
+    {
+        "id": 208,
+        "name": "PFIZER"
+    },
+    {
+        "id": 209,
+        "name": "VIU"
+    },
+    {
+        "id": 210,
+        "name": "BENESTAR"
+    },
+    {
+        "id": 211,
+        "name": "BENESSI"
+    },
+    {
+        "id": 212,
+        "name": "CRAYOLA SILLY SCENTS"
+    },
+    {
+        "id": 213,
+        "name": "EXELTIS NOVARTIS"
+    },
+    {
+        "id": 214,
+        "name": "HIDRATOMIC"
+    },
+    {
+        "id": 215,
+        "name": "SERVIER"
+    },
+    {
+        "id": 216,
+        "name": "PHARBEST"
+    },
+    {
+        "id": 217,
+        "name": "VITAGEL"
+    },
+    {
+        "id": 218,
+        "name": "OSHI"
+    },
+    {
+        "id": 219,
+        "name": "MERZ"
+    },
+    {
+        "id": 220,
+        "name": "CHEMINTER"
+    },
+    {
+        "id": 221,
+        "name": "SANOFI"
+    },
+    {
+        "id": 222,
+        "name": "FARMAMEDICA"
+    },
+    {
+        "id": 223,
+        "name": "FUTURO"
+    },
+    {
+        "id": 224,
+        "name": "GARDEN HOUSE"
+    },
+    {
+        "id": 225,
+        "name": "NOVARTIS-COHEN"
+    },
+    {
+        "id": 226,
+        "name": "DRIVE DEVILBISS HEALTHCARE"
+    },
+    {
+        "id": 227,
+        "name": "SAVAL"
+    },
+    {
+        "id": 228,
+        "name": "VIFOR"
+    },
+    {
+        "id": 229,
+        "name": "IPROFASA"
+    },
+    {
+        "id": 230,
+        "name": "BONLIFE"
+    },
+    {
+        "id": 231,
+        "name": "MILAGRO DE LA SELVA"
+    },
+    {
+        "id": 232,
+        "name": "OM"
+    },
+    {
+        "id": 233,
+        "name": "HARRY POTTER"
+    },
+    {
+        "id": 234,
+        "name": "MEDITEMP"
+    },
+    {
+        "id": 235,
+        "name": "PANALAB"
+    },
+    {
+        "id": 236,
+        "name": "CHALVER"
+    },
+    {
+        "id": 237,
+        "name": "KRAL"
+    },
+    {
+        "id": 238,
+        "name": "CHILE"
+    },
+    {
+        "id": 239,
+        "name": "QG5"
+    },
+    {
+        "id": 240,
+        "name": "SESDERMA S.A"
+    },
+    {
+        "id": 241,
+        "name": "GRUNENTHAL"
+    },
+    {
+        "id": 242,
+        "name": "HIDRISAGE"
+    },
+    {
+        "id": 243,
+        "name": "INTECFA"
+    },
+    {
+        "id": 244,
+        "name": "ROHAPHARMA"
+    },
+    {
+        "id": 245,
+        "name": "EISAI"
+    },
+    {
+        "id": 246,
+        "name": "ROTTA"
+    },
+    {
+        "id": 247,
+        "name": "MERCK SHARP & D"
+    },
+    {
+        "id": 248,
+        "name": "QUIMIFAR"
+    },
+    {
+        "id": 249,
+        "name": "ASPEN"
+    },
+    {
+        "id": 250,
+        "name": "ARSAL"
+    },
+    {
+        "id": 251,
+        "name": "BIOTA"
+    },
+    {
+        "id": 252,
+        "name": "PHARMAKON"
+    },
+    {
+        "id": 253,
+        "name": "ANGELINI"
+    },
+    {
+        "id": 254,
+        "name": "OFTISOL"
+    },
+    {
+        "id": 255,
+        "name": "PHISA"
+    },
+    {
+        "id": 256,
+        "name": "BAYER HEALTHCARE P"
+    },
+    {
+        "id": 257,
+        "name": "LEVEN"
+    },
+    {
+        "id": 258,
+        "name": "NOVARTIS"
+    },
+    {
+        "id": 259,
+        "name": "BALIARDA"
+    },
+    {
+        "id": 260,
+        "name": "SILANES"
+    },
+    {
+        "id": 261,
+        "name": "SOPHIA"
+    },
+    {
+        "id": 262,
+        "name": "BIOCODEX"
+    },
+    {
+        "id": 263,
+        "name": "LANSIER"
+    },
+    {
+        "id": 264,
+        "name": "MEGALABS"
+    },
+    {
+        "id": 265,
+        "name": "PROTEC"
+    },
+    {
+        "id": 266,
+        "name": "WELLCO"
+    },
+    {
+        "id": 267,
+        "name": "LUVECK"
+    },
+    {
+        "id": 268,
+        "name": "MICROLIFE"
+    },
+    {
+        "id": 269,
+        "name": "TOP MODEL"
+    },
+    {
+        "id": 270,
+        "name": "ELI LILLY"
+    },
+    {
+        "id": 271,
+        "name": "JR PHARMA"
+    },
+    {
+        "id": 272,
+        "name": "PRODES"
+    },
+    {
+        "id": 273,
+        "name": "ALLERGAN"
+    },
+    {
+        "id": 274,
+        "name": "BAGO"
+    },
+    {
+        "id": 275,
+        "name": "SANAMIEL"
+    },
+    {
+        "id": 276,
+        "name": "BEBES LLORONES"
+    },
+    {
+        "id": 277,
+        "name": "RUBIOS"
+    },
+    {
+        "id": 278,
+        "name": "SANOFI-ETICO"
+    },
+    {
+        "id": 279,
+        "name": "SAN GERMAN"
+    },
+    {
+        "id": 280,
+        "name": "MEMBER'S MARK"
+    },
+    {
+        "id": 281,
+        "name": "ROSCOE"
+    },
+    {
+        "id": 282,
+        "name": "GRISI"
+    },
+    {
+        "id": 283,
+        "name": "GENFAR"
+    },
+    {
+        "id": 284,
+        "name": "CUMLAUDE LAB"
+    },
+    {
+        "id": 285,
+        "name": "EQUATE"
+    },
+    {
+        "id": 286,
+        "name": "BOSTON"
+    },
+    {
+        "id": 287,
+        "name": "NIELSEN BAINBRIDGE"
+    },
+    {
+        "id": 288,
+        "name": "SANDOZ"
+    }
+]
