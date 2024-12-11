@@ -10,7 +10,7 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Brand> Brands => Set<Brand>();
     public DbSet<Category> Categories => Set<Category>();
-    public DbSet<Subcategory> Subcategories => Set<Subcategory>();
+    public DbSet<SubCategory> Subcategories => Set<SubCategory>();
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -1301,7 +1301,7 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     }
             );
 
-        modelBuilder.Entity<Subcategory>().HasData(
+        modelBuilder.Entity<SubCategory>().HasData(
     new {
         Id = 1,
         Name = "Sueros",
