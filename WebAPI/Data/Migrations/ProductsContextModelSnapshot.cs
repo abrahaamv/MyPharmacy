@@ -1316,7 +1316,7 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 256,
-                            Name = "BAYER HEALTHCARE P"
+                            Name = "SANDOZ"
                         },
                         new
                         {
@@ -1472,11 +1472,6 @@ namespace WebAPI.Data.Migrations
                         {
                             Id = 287,
                             Name = "NIELSEN BAINBRIDGE"
-                        },
-                        new
-                        {
-                            Id = 288,
-                            Name = "SANDOZ"
                         });
                 });
 
@@ -1951,6 +1946,12 @@ namespace WebAPI.Data.Migrations
                             Id = 38,
                             CategoryId = 23,
                             Name = "Tratamiento Diabetes"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            CategoryId = 6,
+                            Name = "Calcio"
                         });
                 });
 
