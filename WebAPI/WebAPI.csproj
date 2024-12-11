@@ -25,6 +25,7 @@
 
     <ItemGroup>
       <Folder Include="Data\Migrations\" />
+      <Folder Include="Data\SeedData\" />
       <Folder Include="Dtos\Users\" />
       <Folder Include="Entities\Users\" />
     </ItemGroup>
