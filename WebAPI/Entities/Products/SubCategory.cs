@@ -1,6 +1,6 @@
 namespace WebAPI.Entities.Products;
 
-public class Subcategory
+public class SubCategory
 {
     public int Id { get; set; }
     public required string Name { get; set; }
