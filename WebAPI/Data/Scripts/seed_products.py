@@ -682,7 +682,11 @@ BRANDS = [
            },
            {
              "Id": 169,
-             "Name": "BAYER HEALTHCARE P"
+             "Name": "BAYER  HEALTHCARE P"
+           },
+           {
+              "Id": 169,
+              "Name": "BAYER HEALTHCARE P"
            },
            {
              "Id": 170,
@@ -1030,7 +1034,7 @@ BRANDS = [
            },
            {
              "Id": 256,
-             "Name": "BAYER HEALTHCARE P"
+             "Name": "SANDOZ"
            },
            {
              "Id": 257,
@@ -1155,12 +1159,9 @@ BRANDS = [
            {
              "Id": 287,
              "Name": "NIELSEN BAINBRIDGE"
-           },
-           {
-             "Id": 288,
-             "Name": "SANDOZ"
            }
          ]
+         
 CATEGORIES = [
                {
                  "Id": 1,
@@ -1431,6 +1432,10 @@ SUBCATEGORIES = [
                   {
                     "Id": 38,
                     "Name": "Tratamiento Diabetes"
+                  },
+                  {
+                    "Id": 39,
+                    "Name": "Calcio "
                   }
                 ]
                 
@@ -1516,12 +1521,13 @@ for product in products:
 
         # Log payload
         #logging.info(f"Processing product {product['id']}: {payload}") // Full object log
-        logging.info(f"Processing product {product['id']}")
+        logging.info(f" ")
 
         # Make POST request
         response = requests.post(API_URL, headers=HEADERS, json=payload)
         if response.status_code == 201:
-            logging.info(f"Product {product['id']} created successfully.")
+           # logging.info(f"Product {product['id']} created successfully.")
+           logging.info(f"")
         else:
             logging.error(f"Failed to create product {product['id']}: {response.status_code}")
             break
