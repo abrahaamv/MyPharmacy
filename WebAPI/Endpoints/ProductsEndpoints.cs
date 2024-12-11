@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Data;
 using WebAPI.Dtos.Products;
@@ -53,7 +52,7 @@ public static class ProductsEndpoints
             dbContext.Products.Add(product);
             await dbContext.SaveChangesAsync();
 
-            return Results.Ok(product.ToProductSummaryDto());
+            return Results.CreatedAtRoute(GetProductsEndpointName, new {id = product.Id}, product.ToProductSummaryDto());
         });
         
 //PUT /products/{id}
@@ -68,6 +67,15 @@ public static class ProductsEndpoints
                  .SetValues(dto.ToEntity(id));
 
         await dbContext.SaveChangesAsync();
+
+        return Results.NoContent();
+    });
+    
+//DELETE /products/{id}
+    group.MapDelete("/{id}", async (int id, ProductsContext dbContext) =>
+    {
+        await dbContext.Products.Where(p => p.Id == id)
+                                .ExecuteDeleteAsync();
 
         return Results.NoContent();
     });
