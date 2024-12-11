@@ -1704,7 +1704,7 @@ namespace WebAPI.Data.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("WebAPI.Entities.Products.Subcategory", b =>
+            modelBuilder.Entity("WebAPI.Entities.Products.SubCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1968,7 +1968,7 @@ namespace WebAPI.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebAPI.Entities.Products.Subcategory", "SubCategory")
+                    b.HasOne("WebAPI.Entities.Products.SubCategory", "SubCategory")
                         .WithMany()
                         .HasForeignKey("SubCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
