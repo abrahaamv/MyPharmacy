@@ -2,6 +2,7 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Entities.Products;
+using System.IO;
 
 namespace WebAPI.Data;
 
