@@ -15,18 +15,18 @@ Content-Type: application/json
   "slug": "cerave-contorno-ojos-crma-14ml",
   "brandId": 16,
   "categoryId": 8,
-  "subcategoryId": 9,
+  "subcategoryId": null,
   "listPrice": 130,
   "sellingPrice": 130,
   "stock": 1000,
   "imageUrls": [
-    "https://walmartgt.vtexassets.com/arquivos/ids/383671/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-1-19742.jpg?v=638264255798330000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383383/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-2-19742.jpg?v=638264254504100000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383384/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-3-19742.jpg?v=638264254508800000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383385/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-4-19742.jpg?v=638264254512070000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383386/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-5-19742.jpg?v=638264254515330000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383387/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-6-19742.jpg?v=638264254523400000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383388/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-7-19742.jpg?v=638264254527100000"
+    "https://walmartgt.vtexassets.com/arquivos/ids/383671/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-1-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383383/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-2-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383384/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-3-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383385/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-4-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383386/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-5-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383387/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-6-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383388/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-7-19742.jpg"
   ],
   "specifications": [
     {
@@ -108,13 +108,13 @@ Content-Type: application/json
   "sellingPrice": 130,
   "stock": 1000,
   "imageUrls": [
-    "https://walmartgt.vtexassets.com/arquivos/ids/383671/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-1-19742.jpg?v=638264255798330000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383383/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-2-19742.jpg?v=638264254504100000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383384/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-3-19742.jpg?v=638264254508800000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383385/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-4-19742.jpg?v=638264254512070000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383386/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-5-19742.jpg?v=638264254515330000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383387/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-6-19742.jpg?v=638264254523400000",
-    "https://walmartgt.vtexassets.com/arquivos/ids/383388/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-7-19742.jpg?v=638264254527100000"
+    "https://walmartgt.vtexassets.com/arquivos/ids/383671/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-1-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383383/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-2-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383384/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-3-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383385/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-4-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383386/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-5-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383387/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-6-19742.jpg",
+    "https://walmartgt.vtexassets.com/arquivos/ids/383388/Crema-Facial-Marca-Cerave-Reparadora-Para-Contorno-De-Ojos-Sin-Perfume-14ml-7-19742.jpg"
   ],
   "specifications": [
     {
@@ -179,3 +179,6 @@ Content-Type: application/json
     }
   ]
 }
+
+### DELETE /products/{id}
+DELETE http://localhost:5094/products/1
