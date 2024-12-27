@@ -1,6 +1,6 @@
 namespace Frontend.Models;
 
-public class Product
+public class ProductSummary
 {
     public int Id { get; set; }
     public required string Ean { get; set; }
