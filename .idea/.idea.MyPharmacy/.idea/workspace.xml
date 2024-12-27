@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Frontend/Models/ProductSummary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyPharmacy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241211152531_InitialCreateAndSeed.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/20241211152531_InitialCreateAndSeed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Migrations/ProductsContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/ProductsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Data/ProductsContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Data/Scripts/seed_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Data/Scripts/seed_products.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Testing/Products.http" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Testing/Products.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Components/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Components/App.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Components/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Components/Pages/Home.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Properties/launchSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.WebAPI: http.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.Products | DELETE /products/{id}.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.Products | GET /products.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.Products | GET /products/{id}.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.Products | GET request to example server.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.Products | POST /products.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.WebAPI: http.executor": "Run",
+    "HTTP Request.Products | DELETE /products/{id}.executor": "Run",
+    "HTTP Request.Products | GET /products.executor": "Run",
+    "HTTP Request.Products | GET /products/{id}.executor": "Run",
+    "HTTP Request.Products | GET request to example server.executor": "Run",
+    "HTTP Request.Products | POST /products.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/abrahaam/Documents/GitHub/MyPharmacy/Frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: http">
     <configuration name="Products | DELETE /products/{id}" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="5" runType="Run single request">
       <method v="2" />
@@ -174,6 +175,7 @@
       <updated>1733681899690</updated>
       <workItem from="1733681901853" duration="13070000" />
       <workItem from="1733778818726" duration="5090000" />
+      <workItem from="1735313295511" duration="8353000" />
     </task>
     <servers />
   </component>
