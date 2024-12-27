@@ -1,5 +1,4 @@
 ﻿@page "/"
-@using Models
 
 <PageTitle>My Pharmacy</PageTitle>
 
@@ -20,7 +19,25 @@
     <th>ImageUrls</th>
     </thead>
     <tbody>
-    
+    @foreach (var product in _products)
+    {
+        <tr>
+        <td> @product.Id</td>
+        <td> @product.Ean</td>
+        <td> @product.Name</td>
+        <td> @product.Slug</td>
+        <td> @product.Brand</td>
+        <td> @product.Category</td>
+        <td> @product.SubCategory</td>
+        <td> @product.ListPrice</td>
+        <td> @product.SellingPrice</td>
+        <td> @product.IsInStock</td>
+        <td> @foreach (string url in product.ImageUrls)
+             { 
+                 @url
+             }</td>
+        </tr>
+    }
     </tbody>
 </table>
 
@@ -35,11 +52,27 @@
         Brand = "BAYER",
         Category = "Sistema digestivo y Antiparasitarios",
         SubCategory = "Sueros",
-        ListPrice = 2,
-        SellingPrice =  12,
+        ListPrice = 25.99M,
+        SellingPrice =  12.99M,
         IsInStock = true,
         ImageUrls = [
             "https://walmartgt.vtexassets.com/arquivos/ids/536543/907_01.jpg"
             ]
+    },
+    new()
+    {
+        Id = 2,
+        Ean = "0011418462823",
+        Name = "Alka Seltzer 2 Efervescente Extreme Boost Caja X 50 Tabletas - Precio Indicado Por Unidad -",
+        Slug = "efervecente-alka-seltzer-extreme-boost-50-tabletas-precio-indicado-por-unidad",
+        Brand = "BAYER",
+        Category = "Sistema digestivo y Antiparasitarios",
+        SubCategory = "Sueros",
+        ListPrice = 25.99M,
+        SellingPrice =  12.99M,
+        IsInStock = true,
+        ImageUrls = [
+            "https://walmartgt.vtexassets.com/arquivos/ids/536543/907_01.jpg"
+        ]
     }];
 }
