@@ -1,8 +1,9 @@
 ﻿@page "/"
+@using Models
 
 <PageTitle>My Pharmacy</PageTitle>
 
-<h1>Hello, Blazr!</h1>
+<h1>PRODUCTS:</h1>
 
 <table>
     <thead>
@@ -22,3 +23,23 @@
     
     </tbody>
 </table>
+
+@code {
+    private ProductSummary[] _products = [
+    new()
+    {
+        Id = 1,
+        Ean = "0011418462823",
+        Name = "Alka Seltzer Efervescente Extreme Boost Caja X 50 Tabletas - Precio Indicado Por Unidad -",
+        Slug = "efervecente-alka-seltzer-extreme-boost-50-tabletas-precio-indicado-por-unidad",
+        Brand = "BAYER",
+        Category = "Sistema digestivo y Antiparasitarios",
+        SubCategory = "Sueros",
+        ListPrice = 2,
+        SellingPrice =  12,
+        IsInStock = true,
+        ImageUrls = [
+            "https://walmartgt.vtexassets.com/arquivos/ids/536543/907_01.jpg"
+            ]
+    }];
+}
