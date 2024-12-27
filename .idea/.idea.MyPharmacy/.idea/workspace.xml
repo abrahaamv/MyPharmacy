@@ -65,19 +65,19 @@
   }
 }</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: http">
-    <configuration name="Products | DELETE /products/{id}" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="5" requestIdentifier="DELETE /products/{id}" runType="Run single request">
+    <configuration name="Products | DELETE /products/{id}" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="5" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Products | GET /products" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" requestIdentifier="GET /products" runType="Run single request">
+    <configuration name="Products | GET /products" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Products | GET /products/{id}" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="2" requestIdentifier="GET /products/{id}" runType="Run single request">
+    <configuration name="Products | GET /products/{id}" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Products | GET request to example server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" requestIdentifier="GET request to example server" runType="Run single request">
+    <configuration name="Products | GET request to example server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Products | POST /products" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="2" requestIdentifier="POST /products" runType="Run single request">
+    <configuration name="Products | POST /products" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/WebAPI/Testing/Products.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="WebAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
