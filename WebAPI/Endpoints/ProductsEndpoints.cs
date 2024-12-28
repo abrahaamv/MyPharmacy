@@ -38,6 +38,19 @@ public static class ProductsEndpoints
               
             if(product is null) return Results.NotFound();
             return Results.Ok(product.ToProductDetailsDto());
+        }) ;
+        
+        //GET /products/{id}        
+        group.MapGet("/{slug}", async (string slug, ProductsContext dbContext) =>
+        {
+            var product = await dbContext.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.SubCategory)
+                .FirstOrDefaultAsync(p => p.Slug == slug);
+              
+            if(product is null) return Results.NotFound();
+            return Results.Ok(product.ToProductDetailsDto());
         }) .WithName(GetProductsEndpointName);
 
 //POST /products
