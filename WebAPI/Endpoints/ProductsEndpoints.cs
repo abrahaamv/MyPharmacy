@@ -27,31 +27,25 @@ public static class ProductsEndpoints
             return Results.Ok(products);
         });
         
-//GET /products/{id}        
-        group.MapGet("/{id}", async (int id, ProductsContext dbContext) =>
+//GET /products/{idOrSlug}        
+        group.MapGet("/{idOrSlug}", async (string idOrSlug, ProductsContext dbContext) =>
         {
-              var product = await dbContext.Products
-                .Include(p => p.Brand)
-                .Include(p => p.Category)
-                .Include(p => p.SubCategory)
-                .FirstOrDefaultAsync(p => p.Id == id);
-              
-            if(product is null) return Results.NotFound();
+            var product = int.TryParse(idOrSlug, out var id)
+                ? await dbContext.Products
+                    .Include(p => p.Brand)
+                    .Include(p => p.Category)
+                    .Include(p => p.SubCategory)
+                    .FirstOrDefaultAsync(p => p.Id == id)
+                : await dbContext.Products
+                    .Include(p => p.Brand)
+                    .Include(p => p.Category)
+                    .Include(p => p.SubCategory)
+                    .FirstOrDefaultAsync(p => p.Slug == idOrSlug);
+
+            if (product is null) return Results.NotFound();
             return Results.Ok(product.ToProductDetailsDto());
-        }) ;
-        
-        //GET /products/{id}        
-        group.MapGet("/{slug}", async (string slug, ProductsContext dbContext) =>
-        {
-            var product = await dbContext.Products
-                .Include(p => p.Brand)
-                .Include(p => p.Category)
-                .Include(p => p.SubCategory)
-                .FirstOrDefaultAsync(p => p.Slug == slug);
-              
-            if(product is null) return Results.NotFound();
-            return Results.Ok(product.ToProductDetailsDto());
-        }) .WithName(GetProductsEndpointName);
+        }).WithName("GetProductsEndpointName");
+
 
 //POST /products
         group.MapPost("/", async (CreateProductDto dto, ProductsContext dbContext) =>
