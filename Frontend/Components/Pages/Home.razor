@@ -1,78 +1,10 @@
 ﻿@page "/"
-
 <PageTitle>My Pharmacy</PageTitle>
 
-<h1>PRODUCTS:</h1>
-
-<table>
-    <thead>
-    <th>Id</th>
-    <th>Ean</th>
-    <th>Name</th>
-    <th>Slug</th>
-    <th>Brand</th>
-    <th>Category</th>
-    <th>SubCategory</th>
-    <th>ListPrice</th>
-    <th>Selling Price</th>
-    <th>Is in stock</th>
-    <th>ImageUrls</th>
-    </thead>
-    <tbody>
-    @foreach (var product in _products)
-    {
-        <tr>
-        <td> @product.Id</td>
-        <td> @product.Ean</td>
-        <td> @product.Name</td>
-        <td> @product.Slug</td>
-        <td> @product.Brand</td>
-        <td> @product.Category</td>
-        <td> @product.SubCategory</td>
-        <td> @product.ListPrice</td>
-        <td> @product.SellingPrice</td>
-        <td> @product.IsInStock</td>
-        <td> @foreach (string url in product.ImageUrls)
-             { 
-                 @url
-             }</td>
-        </tr>
-    }
-    </tbody>
-</table>
-
-@code {
-    private ProductSummary[] _products = [
-    new()
-    {
-        Id = 1,
-        Ean = "0011418462823",
-        Name = "Alka Seltzer Efervescente Extreme Boost Caja X 50 Tabletas - Precio Indicado Por Unidad -",
-        Slug = "efervecente-alka-seltzer-extreme-boost-50-tabletas-precio-indicado-por-unidad",
-        Brand = "BAYER",
-        Category = "Sistema digestivo y Antiparasitarios",
-        SubCategory = "Sueros",
-        ListPrice = 25.99M,
-        SellingPrice =  12.99M,
-        IsInStock = true,
-        ImageUrls = [
-            "https://walmartgt.vtexassets.com/arquivos/ids/536543/907_01.jpg"
-            ]
-    },
-    new()
-    {
-        Id = 2,
-        Ean = "0011418462823",
-        Name = "Alka Seltzer 2 Efervescente Extreme Boost Caja X 50 Tabletas - Precio Indicado Por Unidad -",
-        Slug = "efervecente-alka-seltzer-extreme-boost-50-tabletas-precio-indicado-por-unidad",
-        Brand = "BAYER",
-        Category = "Sistema digestivo y Antiparasitarios",
-        SubCategory = "Sueros",
-        ListPrice = 25.99M,
-        SellingPrice =  12.99M,
-        IsInStock = true,
-        ImageUrls = [
-            "https://walmartgt.vtexassets.com/arquivos/ids/536543/907_01.jpg"
-        ]
-    }];
-}
+<main class="home-page">
+    <CategoriesSection />
+    <FeaturedProductsSection />
+    <Banner />
+    <LatestProductsSection />
+    <BlogSection />
+</main>
