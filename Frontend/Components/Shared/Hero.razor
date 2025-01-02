@@ -2,37 +2,49 @@
 <section class="hero @(!IsHomePage ? "hero-normal" : "")">
     <div class="container">
         <div class="row">
+
             <div class="col-lg-3">
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>Categorías</span>
                     </div>
-                    <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                    <ul class="hero__categories__list">
+                        <li><a href="#">Sistema digestivo y Antiparasitarios</a></li>
+                        <li><a href="#">OTC</a></li>
+                        <li><a href="#">Estomacales</a></li>
+                        <li><a href="#">Analgésicos</a></li>
+                        <li><a href="#">Dolor e inflamación</a></li>
+                        <li><a href="#">Multivitamínicos, Suplementos & Sistema Óseo</a></li>
+                        <li><a href="#">Respiratorios</a></li>
+                        <li><a href="#">Dermatología</a></li>
+                        <li><a href="#">Cuidado Personal</a></li>
+                        <li><a href="#">Antiviral, gripe y tos</a></li>
+                        <li><a href="#">Vitaminas y Suplementos</a></li>
+                        <li><a href="#">Asma, alergias y nasal</a></li>
+                        <li><a href="#">Bienestar, equipo médico y soluciones hospitalarias</a></li>
+                        <li><a href="#">Cuidado de los Pies</a></li>
+                        <li><a href="#">Anticonceptivos, hormonal y salud sexual</a></li>
+                        <li><a href="#">Cardiovascular & Hipertensivo</a></li>
+                        <li><a href="#">Material de Curación</a></li>
+                        <li><a href="#">Antimicótico</a></li>
+                        <li><a href="#">Sistema Nervioso</a></li>
+                        <li><a href="#">Bienestar Sexual</a></li>
+                        <li><a href="#">Oftálmicos y Óticos</a></li>
+                        <li><a href="#">Diabetes</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
                             <div class="hero__search__categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
+                                ¿Qué necesitas?
                             </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
+                            <input type="text" placeholder="Inserta el nombre de producto">
+                            <button type="submit" class="site-btn">Buscar</button>
                         </form>
                     </div>
                     <div class="hero__search__phone">
@@ -40,21 +52,29 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
+                            <h5>+502 27750586</h5>
+                            <span>Atención al cliente 24/7</span>
                         </div>
                     </div>
                 </div>
                 @if (IsHomePage)
                 {
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                    <div class="hero__item set-bg">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <span>TU SALUD, NUESTRA PRIORIDAD</span>
+                            <h2>Cuando el tiempo es Vital <br />Nosotros respondemos</h2>
+                            <p>Resolvemos tus emergencias con envíos inmediatos y un servicio confiable para que cuides de tí y de los que más amas</p>
+                            <a href="#" class="primary-btn">COMPRAR AHORA</a>
                         </div>
-                    </div>
+                        <dotlottie-player
+                            src="https://lottie.host/17b3d8b0-f6b8-4376-ac00-133f8490c863/oX6qVJP45K.lottie"
+                            background="transparent"
+                            speed="1"
+                            style="width: 300px; height: 300px"
+                            loop
+                            autoplay
+                        ></dotlottie-player>
+                        </div>
                 }
             </div>
         </div>
