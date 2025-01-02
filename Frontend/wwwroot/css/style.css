@@ -349,6 +349,8 @@ ol {
 
 .header__top__right__language img {
 	margin-right: 6px;
+	width: 27px;
+	height: 14px;
 }
 
 .header__top__right__language div {
@@ -752,6 +754,35 @@ ol {
 .hero__text p {
 	margin-bottom: 35px;
 }
+
+.hero__categories ul {
+	max-height: 400px;
+	overflow-y: auto;
+	list-style: none;
+}
+
+.hero__categories ul li {
+	border-bottom: 1px solid lightgrey;
+}
+
+.hero__categories ul li:last-child {
+	border-bottom: none;
+}
+
+.hero__categories ul li a {
+	font-size: 14px;
+	color: #1c1c1c;
+	line-height: 39px;
+	display: block;
+
+	transition: background-color 0.2s ease;
+}
+
+.hero__categories ul li a:hover {
+	background-color: #f9fafc;
+	color: #7fad39;
+}
+
 
 /*---------------------
   Categories
