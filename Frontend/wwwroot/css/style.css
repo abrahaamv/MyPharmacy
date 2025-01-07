@@ -1569,7 +1569,16 @@ ol {
 	height: 220px;
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 8px;
 }
+
+
 
 .product__item__pic__hover {
 	position: absolute;
@@ -1643,7 +1652,16 @@ ol {
 
 .product__item__text h6 a {
 	color: #252525;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal; 
+	line-height: 1.2em; 
+	max-height: 2.4em;
 }
+
 
 .product__item__text h5 {
 	color: #252525;
