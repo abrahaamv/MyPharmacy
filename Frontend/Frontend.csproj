@@ -6,4 +6,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\Source\bootstrap-4.4.1-dist.zip" />
+    <_ContentIncludedByDefault Remove="wwwroot\Source\font-awesome-4.7.0.zip" />
+    <_ContentIncludedByDefault Remove="wwwroot\Source\jquery-nice-select-1.1.0.zip" />
+    <_ContentIncludedByDefault Remove="wwwroot\Source\jquery-ui-1.12.1.zip" />
+    <_ContentIncludedByDefault Remove="wwwroot\Source\OwlCarousel2-2.3.4.zip" />
+    <_ContentIncludedByDefault Remove="wwwroot\Source\sass.zip" />
+    <_ContentIncludedByDefault Remove="wwwroot\Source\SlickNav-master.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
+  </ItemGroup>
+
 </Project>
