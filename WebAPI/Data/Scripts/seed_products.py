@@ -1439,7 +1439,7 @@ SUBCATEGORIES = [
                   }
                 ]
                 
-API_URL = "http://localhost:5094/products"
+API_URL = "http://localhost:5094/productos"
 HEADERS = {"Content-Type": "application/json"}
 
 # Helper functions
