@@ -2,7 +2,7 @@ using Frontend.Models;
 
 namespace Frontend.Clients;
 
-public class ProductsClient
+public class ProductsClient(HttpClient httpClient)
 {
     private readonly List<ProductSummary> products = [
     new()
