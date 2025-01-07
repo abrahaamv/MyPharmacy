@@ -11,7 +11,7 @@ public static class ProductsEndpoints
     public static RouteGroupBuilder MapProductsEndpoints(this WebApplication app)
     {
         
-        var group = app.MapGroup("products")
+        var group = app.MapGroup("productos")
                         .WithParameterValidation();
         
 //GET /products
