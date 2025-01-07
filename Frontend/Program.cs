@@ -4,8 +4,15 @@ using Frontend.Components;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents();
-builder.Services.AddSingleton<ProductsClient>();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
+
+var myPharmacyApiUrl = builder.Configuration["MyPharmacyApiUrl"] // ??
+                  //     throw new Exception("MyPharmacyApiUrl is not set")
+                  ;
+
+builder.Services.AddHttpClient<ProductsClient>(
+    client => client.BaseAddress = new Uri(myPharmacyApiUrl));
 
 var app = builder.Build();
 
