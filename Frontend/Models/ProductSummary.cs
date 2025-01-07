@@ -6,22 +6,22 @@ public class ProductSummary
     public int Id { get; set; }
 
     [JsonPropertyName("ean")]
-    public string Ean { get; set; }
+    public  required string Ean { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonPropertyName("slug")]
-    public string Slug { get; set; }
+    public required string Slug { get; set; }
 
     [JsonPropertyName("brand")]
-    public string Brand { get; set; }
+    public required string Brand { get; set; }
 
     [JsonPropertyName("category")]
-    public string Category { get; set; }
+    public required  string Category { get; set; }
 
     [JsonPropertyName("subCategory")]
-    public string SubCategory { get; set; }
+    public string? SubCategory { get; set; }
 
     [JsonPropertyName("listPrice")]
     public decimal ListPrice { get; set; }
@@ -33,5 +33,5 @@ public class ProductSummary
     public bool IsInStock { get; set; }
 
     [JsonPropertyName("imageUrls")]
-    public List<string> ImageUrls { get; set; }
+    public required List<string> ImageUrls { get; set; }
 }
