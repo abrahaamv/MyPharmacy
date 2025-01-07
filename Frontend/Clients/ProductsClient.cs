@@ -150,5 +150,6 @@ public class ProductsClient(HttpClient httpClient)
     }
 ];
 
-    public ProductSummary[] GetProducts() => [..products];
+    public async Task<ProductSummary[]> GetProductsAsync()
+        => await httpClient.GetFromJsonAsync<ProductSummary[]>("productos") ?? [];
 }
