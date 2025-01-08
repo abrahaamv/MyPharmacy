@@ -1588,9 +1588,14 @@ ol {
 
 .product__item {
 	margin-bottom: 24px;
-	border: 1px solid gray;
+	border-right: 1px solid #D2D2D2;
+	border-bottom: 1px solid #D2D2D2;
 	padding: 12px;
+	transition: box-shadow 0.2s;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
+
 
 .product__item:hover .product__item__pic .product__item__pic__hover {
 	bottom: 20px;
