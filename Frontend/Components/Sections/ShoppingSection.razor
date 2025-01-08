@@ -209,13 +209,23 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="filter__sort">
                                 <span>Ordenar por</span>
-                                <select>
-                                    <option value="0">Precio: menor a mayor</option>
-                                    <option value="0">Precio: mayor a menor  </option>
+                                <select style="display: none;">
+                                    <option class="nice-select" value="0">Precio: menor a mayor</option>
+                                    <option value="0">Precio: mayor a menor </option>
                                     <option value="0">Nombre, ascendente</option>
-                                    <option value="0">Nombre, descendente</option> 
-                                    <option value="0">Descuento</option> 
+                                    <option value="0">Nombre, descendente</option>
+                                    <option value="0">Descuento</option>
                                 </select>
+                                <div class="nice-select" tabindex="0">
+                                    <span class="current">Precio: menor a mayor</span>
+                                    <ul class="list">
+                                        <li data-value="0" class="option selected">Precio: menor a mayor</li>
+                                        <li data-value="0" class="option">Precio: mayor a menor </li>
+                                        <li data-value="0" class="option">Nombre, ascendente</li>
+                                        <li data-value="0" class="option">Nombre, descendente</li>
+                                        <li data-value="0" class="option">Descuento</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
