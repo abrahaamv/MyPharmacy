@@ -1587,9 +1587,9 @@ ol {
 }
 
 .product__item {
-	margin-bottom: 50px;
+	margin-bottom: 24px;
 	border: 1px solid gray;
-	padding: 20px;
+	padding: 12px;
 }
 
 .product__item:hover .product__item__pic .product__item__pic__hover {
