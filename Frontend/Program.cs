@@ -12,7 +12,7 @@ var myPharmacyApiUrl = builder.Configuration["MyPharmacyApiUrl"] // ??
                   ;
 
 builder.Services.AddHttpClient<ProductsClient>(
-    client => client.BaseAddress = new Uri(myPharmacyApiUrl));
+    client => client.BaseAddress = new Uri(myPharmacyApiUrl ?? throw new InvalidOperationException()));
 
 var app = builder.Build();
 
