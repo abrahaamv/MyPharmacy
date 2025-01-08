@@ -196,13 +196,9 @@
             <div class="col-lg-9 col-md-7">
                 <div class="filter__item">
                     <div class="row">
-                        <div class="col-lg-4 col-md-5">
-                            <div class="filter__sort">
-                                <span>Sort By</span>
-                                <select>
-                                    <option value="0">Default</option>
-                                    <option value="0">Default</option>
-                                </select>
+                        <div class="col-lg-4 col-md-3">
+                            <div class="filter__option">
+                                
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
@@ -210,10 +206,16 @@
                                 <h6><span>@products?.Length</span> Products found</h6>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-3">
-                            <div class="filter__option">
-                                <span class="icon_grid-2x2"></span>
-                                <span class="icon_ul"></span>
+                        <div class="col-lg-4 col-md-5">
+                            <div class="filter__sort">
+                                <span>Ordenar por</span>
+                                <select>
+                                    <option value="0">Precio: menor a mayor</option>
+                                    <option value="0">Precio: mayor a menor  </option>
+                                    <option value="0">Nombre, ascendente</option>
+                                    <option value="0">Nombre, descendente</option> 
+                                    <option value="0">Descuento</option> 
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -232,6 +234,7 @@
                                   <div class="product__item__pic">
                                       <img src="@product.ImageUrls[0]" alt="@product.Name">
                                       <ul class="product__item__pic__hover">
+                                          <li><a href="#"><i class="fa fa-info"></i></a></li>
                                           <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                           <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                       </ul>
