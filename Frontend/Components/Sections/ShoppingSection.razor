@@ -3,31 +3,33 @@
 @inject ProductsClient Client;
 
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="breadcrumb__text">
-                    <h2>Tu Farmacia</h2>
-                    <div class="breadcrumb__option">
-                        <a href="/">Inicio</a>
-                        <span>Productos</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list container">
+        <li class="breadcrumb__item">
+            <a href="/" class="breadcrumb__link">
+                <svg class="breadcrumb__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span class="visually-hidden">Inicio</span>
+            </a>
+        </li>
+        <li class="breadcrumb__item">
+            <span class="breadcrumb__divider">/</span>
+            <a href="/articles" class="breadcrumb__link">Productos</a>
+        </li>
+    </ol>
+</nav>
 <!-- Breadcrumb Section End -->
 
 <!-- Product Section Begin -->
-<section class="product spad">
+<section class="product">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-5">
                 <div class="sidebar">
                     <div class="sidebar__item">
-                        <h4>Department</h4>
+                        <h4>Subcategory</h4>
                         <ul>
                             <li><a href="#">Fresh Meat</a></li>
                             <li><a href="#">Vegetables</a></li>
