@@ -11,16 +11,8 @@ var myPharmacyApiUrl = builder.Configuration["MyPharmacyApiUrl"] // ??
                   //     throw new Exception("MyPharmacyApiUrl is not set")
                   ;
 
-builder.Services.AddHttpClient<ProductsClient>(client =>
-{
-    client.BaseAddress = new Uri(myPharmacyApiUrl ?? throw new InvalidOperationException());
-}).ConfigurePrimaryHttpMessageHandler(() =>
-{
-    return new HttpClientHandler
-    {
-        ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-    };
-});
+builder.Services.AddHttpClient<ProductsClient>(
+    client => client.BaseAddress = new Uri(myPharmacyApiUrl ?? throw new InvalidOperationException()));
 
 var app = builder.Build();
 
