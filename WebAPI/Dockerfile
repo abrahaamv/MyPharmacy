@@ -10,11 +10,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
-# Copia el archivo del proyecto directamente desde la raíz
+# Copiar el archivo del proyecto
 COPY ["WebAPI.csproj", "./"]
 RUN dotnet restore "WebAPI.csproj"
 
-# Copia todos los archivos en la raíz
+# Copiar el resto del contenido
 COPY . .
 RUN dotnet build "WebAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
