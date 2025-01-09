@@ -16,7 +16,7 @@ public class ProductService
     {
         try
         {
-            var response = await _httpClient.GetAsync("https://intuitive-blessing-production.up.railway.app/productos");
+            var response = await _httpClient.GetAsync("https://intuitive-blessing-production.up.railway.app");
 
             if (response.IsSuccessStatusCode)
             {
