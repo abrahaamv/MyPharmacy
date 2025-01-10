@@ -1185,7 +1185,7 @@ ol {
 	right: 0;
 }
 .scrollable-list {
-	max-height: 200px;
+	max-height: 400px;
 	overflow-y: auto;
 	padding: 5px 0;
 	margin: 0;
@@ -1222,6 +1222,21 @@ ol {
 
 .scrollable-list::-webkit-scrollbar-thumb:hover {
 	background: #63a727;
+}
+
+input[type="checkbox"] {
+	accent-color: #7fad39; 
+	margin-right: 10px;
+}
+
+label {
+	font-size: 16px;
+	color: #6f6f6f;
+	cursor: pointer;
+}
+
+label:hover {
+	color: #7fad39;
 }
 
 .price-range-wrap .range-slider {
@@ -1362,7 +1377,7 @@ ol {
 -----------------------*/
 
 .product {
-	padding-top: 24px;
+	padding-top: 8px;
 	padding-bottom: 80px;
 }
 
