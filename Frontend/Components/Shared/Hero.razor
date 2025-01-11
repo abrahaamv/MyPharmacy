@@ -1,8 +1,10 @@
+@using Services
+@inject ProductService ProductService
 @inject NavigationManager NavigationManager
+
 <section class="hero @(!IsHomePage ? "hero-normal" : "")">
     <div class="container">
         <div class="row">
-
             <div class="col-lg-3">
                 <div class="hero__categories">
                     <div class="hero__categories__all">
@@ -10,28 +12,23 @@
                         <span>Categorías</span>
                     </div>
                     <ul class="hero__categories__list">
-                        <li><a href="#">Sistema digestivo y Antiparasitarios</a></li>
-                        <li><a href="#">OTC</a></li>
-                        <li><a href="#">Estomacales</a></li>
-                        <li><a href="#">Analgésicos</a></li>
-                        <li><a href="#">Dolor e inflamación</a></li>
-                        <li><a href="#">Multivitamínicos, Suplementos & Sistema Óseo</a></li>
-                        <li><a href="#">Respiratorios</a></li>
-                        <li><a href="#">Dermatología</a></li>
-                        <li><a href="#">Cuidado Personal</a></li>
-                        <li><a href="#">Antiviral, gripe y tos</a></li>
-                        <li><a href="#">Vitaminas y Suplementos</a></li>
-                        <li><a href="#">Asma, alergias y nasal</a></li>
-                        <li><a href="#">Bienestar, equipo médico y soluciones hospitalarias</a></li>
-                        <li><a href="#">Cuidado de los Pies</a></li>
-                        <li><a href="#">Anticonceptivos, hormonal y salud sexual</a></li>
-                        <li><a href="#">Cardiovascular & Hipertensivo</a></li>
-                        <li><a href="#">Material de Curación</a></li>
-                        <li><a href="#">Antimicótico</a></li>
-                        <li><a href="#">Sistema Nervioso</a></li>
-                        <li><a href="#">Bienestar Sexual</a></li>
-                        <li><a href="#">Oftálmicos y Óticos</a></li>
-                        <li><a href="#">Diabetes</a></li>
+                        @if (ProductService.Products != null)
+                        {
+                            var categories = ProductService.Products
+                                .Where(p => p.Category != null)
+                                .Select(p => p.Category)
+                                .Distinct()
+                                .OrderBy(c => c);
+
+                            foreach (var category in categories)
+                            {
+                                <li><a href="#">@category</a></li>
+                            }
+                        }
+                        else
+                        {
+                            <li><span>Cargando categorías...</span></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -74,12 +71,13 @@
                             loop
                             autoplay
                         ></dotlottie-player>
-                        </div>
+                    </div>
                 }
             </div>
         </div>
     </div>
 </section>
+
 
 @code {
     private bool IsHomePage { get; set; }
