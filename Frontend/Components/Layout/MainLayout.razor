@@ -1,17 +1,8 @@
-﻿@using Services
-@using Clients
-@inject ProductsClient Client
-@inject ProductService ProductService
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 
 <HeaderComponent/>
 <HeroComponent/>
 <div class="main-content">
     @Body
 </div>
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        await ProductService.LoadProductsAsync(Client.GetProductsAsync);
-    }
-}
+
