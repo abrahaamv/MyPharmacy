@@ -1,6 +1,7 @@
-@using Models
+@using Services
 @using Clients
 @inject ProductsClient Client;
+@inject ProductService ProductService
 
 <!-- Breadcrumb Section Begin -->
 <nav class="breadcrumb container" aria-label="Breadcrumb">
@@ -305,7 +306,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter__found">
-                                <h6><span>@products?.Length</span> Productos</h6>
+                                <h6><span>@ProductService.Products?.Length</span> Productos</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-5">
@@ -333,45 +334,36 @@
                     </div>
                 </div>
                 <div class="row product__grid">
-                  @if (products is null)
-                  {
-                      <p>No products found</p>
-                  }
-                  else
-                  {
-                      @foreach (var product in products)
-                      {
-                          <div class="col-lg-3 col-md-4 col-sm-6">
-                              <div class="product__item">
-                                  <div class="product__item__pic">
-                                      <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
-                                      <ul class="product__item__pic__hover">
-                                          <li><a href="#"><i class="fa fa-info"></i></a></li>
-                                          <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                          <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                      </ul>
-                                  </div>
-                                  <div class="product__item__text">
-                                      <h6><a href="#">@product.Name</a></h6>
-                                      <h5>Q @product.ListPrice.ToString("F2")</h5>
-                                  </div>
-                              </div>
-                          </div>
-                      }
-                  }
+                    @if (ProductService.Products is null)
+                    {
+                        <p>Cargando productos...</p>
+                    }
+                    else
+                    {
+                        <div class="row product__grid">
+                            @foreach (var product in ProductService.Products)
+                            {
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic">
+                                            <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
+                                            <ul class="product__item__pic__hover">
+                                                <li><a href="#"><i class="fa fa-info"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <h6><a href="#">@product.Name</a></h6>
+                                            <h5>Q @product.ListPrice.ToString("F2")</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Product Section End -->
-
-@code {
-
-    private ProductSummary[]? products;
-
-    protected override async Task OnInitializedAsync()
-    {
-        products = await Client.GetProductsAsync();
-    }
-}; 
