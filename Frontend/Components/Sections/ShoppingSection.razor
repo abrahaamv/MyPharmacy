@@ -39,265 +39,50 @@
                     <div class="sidebar__item">
                         <h4>Subcategoría</h4>
                         <ul class="scrollable-list">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Medicamentos">
-                                    Medicamentos
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Vitaminas y Suplementos">
-                                    Vitaminas y Suplementos
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Cuidado Personal">
-                                    Cuidado Personal
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Productos para Bebés">
-                                    Productos para Bebés
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Equipo Médico">
-                                    Equipo Médico
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Alivio del Dolor">
-                                    Alivio del Dolor
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Medicamentos">
-                                    Medicamentos
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Vitaminas y Suplementos">
-                                    Vitaminas y Suplementos
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Cuidado Personal">
-                                    Cuidado Personal
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Productos para Bebés">
-                                    Productos para Bebés
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Equipo Médico">
-                                    Equipo Médico
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Alivio del Dolor">
-                                    Alivio del Dolor
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Medicamentos">
-                                    Medicamentos
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Vitaminas y Suplementos">
-                                    Vitaminas y Suplementos
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Cuidado Personal">
-                                    Cuidado Personal
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Productos para Bebés">
-                                    Productos para Bebés
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Equipo Médico">
-                                    Equipo Médico
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="subcategory" value="Alivio del Dolor">
-                                    Alivio del Dolor
-                                </label>
-                            </li>
+                            @if (ProductService.Products != null)
+                            {
+                                var subcategories = ProductService.Products
+                                    .Where(p => p.SubCategory != null)
+                                    .Select(p => p.SubCategory)
+                                    .Distinct()
+                                    .OrderBy(s => s);
+
+                                foreach (var subcategory in subcategories)
+                                {
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="subcategory" value="@subcategory">
+                                            @subcategory
+                                        </label>
+                                    </li>
+                                }
+                            }
                         </ul>
                     </div>
                     <div class="sidebar__item">
                         <h4>Marca</h4>
                         <ul class="scrollable-list">
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Pfizer">
-                                    Pfizer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="GSK">
-                                    GSK
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Sanofi">
-                                    Sanofi
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Bayer">
-                                    Bayer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Abbott">
-                                    Abbott
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Novartis">
-                                    Novartis
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Pfizer">
-                                    Pfizer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="GSK">
-                                    GSK
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Sanofi">
-                                    Sanofi
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Bayer">
-                                    Bayer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Abbott">
-                                    Abbott
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Novartis">
-                                    Novartis
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Pfizer">
-                                    Pfizer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="GSK">
-                                    GSK
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Sanofi">
-                                    Sanofi
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Bayer">
-                                    Bayer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Abbott">
-                                    Abbott
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Novartis">
-                                    Novartis
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Pfizer">
-                                    Pfizer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="GSK">
-                                    GSK
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Sanofi">
-                                    Sanofi
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Bayer">
-                                    Bayer
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Abbott">
-                                    Abbott
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="brand" value="Novartis">
-                                    Novartis
-                                </label>
-                            </li>
+                            @if (ProductService.Products != null)
+                            {
+                                var brands = ProductService.Products
+                                    .Where(p => p.Brand != null)
+                                    .Select(p => p.Brand)
+                                    .Distinct()
+                                    .OrderBy(b => b);
+
+                                foreach (var brand in brands)
+                                {
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="brand" value="@brand">
+                                            @brand
+                                        </label>
+                                    </li>
+                                }
+                            }
                         </ul>
                     </div>
+
                 </div>
             </div>
             <div class="col-lg-9 col-md-7">
