@@ -1077,6 +1077,9 @@ ol {
 	width: 100%;
 }
 
+#breadcrumb-container {
+	padding-top: 6px;
+}
 .breadcrumb-list {
 	margin: 0;
 	display: flex;
