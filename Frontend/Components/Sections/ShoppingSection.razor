@@ -2,25 +2,29 @@
 @using Clients
 @inject ProductsClient Client;
 @inject ProductService ProductService
+@inject IJSRuntime JSRuntime;
+
 
 <!-- Breadcrumb Section Begin -->
-<nav class="breadcrumb container" aria-label="Breadcrumb">
-    <ol class="breadcrumb-list container">
-        <li class="breadcrumb__item">
-            <a href="/" class="breadcrumb__link">
-                <svg class="breadcrumb__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                <span class="visually-hidden">Inicio</span>
-            </a>
-        </li>
-        <li class="breadcrumb__item">
-            <span class="breadcrumb__divider">/</span>
-            <a href="/articles" class="breadcrumb__link">Productos</a>
-        </li>
-    </ol>
-</nav>
+<div id="breadcrumb-container">
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list container">
+            <li class="breadcrumb__item">
+                <a href="/" class="breadcrumb__link">
+                    <svg class="breadcrumb__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="visually-hidden">Inicio</span>
+                </a>
+            </li>
+            <li class="breadcrumb__item">
+                <span class="breadcrumb__divider">/</span>
+                <a href="/articles" class="breadcrumb__link">Productos</a>
+            </li>
+        </ol>
+    </nav>
+</div>
 <!-- Breadcrumb Section End -->
 
 <!-- Product Section Begin -->
@@ -333,7 +337,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row product__grid">
+                <div class="row">
                     @if (ProductService.Products is null)
                     {
                         <p>Cargando productos...</p>
@@ -367,3 +371,77 @@
         </div>
     </div>
 </section>
+<script>
+    let isAutoScrolling = false;
+    let lastScrollPosition = 0; // Última posición del scroll global
+    let lastGridScrollPosition = 0; // Última posición del scroll del contenedor específico
+
+    document.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const isScrollingDown = scrollPosition > lastScrollPosition;
+
+        console.log(`Global ScrollY: ${scrollPosition}, Last: ${lastScrollPosition}`);
+
+        if (
+            !isAutoScrolling &&
+            isScrollingDown &&
+            lastScrollPosition === 0 &&
+            scrollPosition > 0 &&
+            scrollPosition <= 10 // Detectar un scroll inicial entre 1 y 10
+        ) {
+            const breadcrumb = document.getElementById("breadcrumb-container");
+            if (breadcrumb) {
+                isAutoScrolling = true; // Marcar como automático
+                breadcrumb.scrollIntoView({ behavior: "smooth" });
+
+                // Resetear el estado después del desplazamiento
+                setTimeout(() => {
+                    isAutoScrolling = false;
+                }, 500);
+            }
+        }
+
+        lastScrollPosition = scrollPosition;
+    });
+
+    // Detectar scroll dentro de la product__grid
+    document.addEventListener("DOMContentLoaded", () => {
+        const productGrid = document.querySelector(".product__grid");
+
+        if (productGrid) {
+            productGrid.addEventListener("scroll", () => {
+                const gridScrollPosition = productGrid.scrollTop;
+                const isGridScrollingDown = gridScrollPosition > lastGridScrollPosition;
+
+                console.log(`Grid ScrollY: ${gridScrollPosition}, Last: ${lastGridScrollPosition}`);
+
+                if (
+                    !isAutoScrolling &&
+                    isGridScrollingDown
+                ) {
+                    const breadcrumb = document.getElementById("breadcrumb-container");
+                    if (breadcrumb) {
+                        isAutoScrolling = true; // Marcar como automático
+                        breadcrumb.scrollIntoView({ behavior: "smooth" });
+
+                        // Resetear el estado después del desplazamiento
+                        setTimeout(() => {
+                            isAutoScrolling = false;
+                        }, 500);
+                    }
+                }
+
+                lastGridScrollPosition = gridScrollPosition;
+            });
+        }
+    });
+</script>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("scrollToBreadcrumbOnFirstScroll");
+        }
+    }
+}
