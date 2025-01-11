@@ -1,6 +1,22 @@
-﻿
-@page "/"
+﻿@page "/"
+
+@using Frontend.Services
+@using Frontend.Clients
+@inject ProductService ProductService
+@inject ProductsClient Client
+@inject IJSRuntime JSRuntime
+
+
+
 <PageTitle>My Pharmacy</PageTitle>
 
 <main class="home-page">
 </main>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ProductService.LoadProductsAsync(Client.GetProductsAsync);
+    }
+}
+
