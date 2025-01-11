@@ -567,7 +567,7 @@ ol {
 }
 
 .hero.hero-normal {
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 }
 
 .hero.hero-normal .hero__categories {
@@ -1070,11 +1070,26 @@ ol {
 -----------------------*/
 .breadcrumb {
 	padding: 12px 30px;
-	background: #f7f7f7;
-	border-bottom: 1px solid #e5e5e5;
-	border-radius: 8px;
+	background: linear-gradient(to bottom, #ffffff, #F5F5F5);
+	border-bottom: 1px solid #d1e7d1;
+	border-radius: 0 0 12px 12px;
 	max-width: 100%;
 	width: 100%;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	font-weight: 500;
+	color: #333333;
+}
+
+.breadcrumb a {
+	color: #388e3c;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.breadcrumb a:hover {
+	text-decoration: underline;
+	color: #2f6b2f;
 }
 
 #breadcrumb-container {
@@ -1113,7 +1128,7 @@ ol {
 
 .breadcrumb__divider {
 	margin: 0 8px;
-	color: #999;
+	color: #a8d5a8;
 }
 
 .breadcrumb__text {
