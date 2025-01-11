@@ -1,5 +1,6 @@
 using Frontend.Clients;
 using Frontend.Components;
+using Frontend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ var myPharmacyApiUrl = builder.Configuration["MyPharmacyApiUrl"] // ??
 
 builder.Services.AddHttpClient<ProductsClient>(
     client => client.BaseAddress = new Uri(myPharmacyApiUrl ?? throw new InvalidOperationException()));
+
+builder.Services.AddSingleton<ProductService>();
 
 var app = builder.Build();
 
