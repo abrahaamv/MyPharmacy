@@ -5,6 +5,7 @@ namespace Frontend.Models;
 
 public class ProductDetails
 {
+    [JsonPropertyName("id")]
     public int Id { get; set; }
 
     [JsonPropertyName("ean")]
@@ -26,7 +27,7 @@ public class ProductDetails
     public int CategoryId { get; set; }
 
     [JsonPropertyName("subCategoryId")]
-    public int SubCategoryId { get; set; }
+    public int? SubCategoryId { get; set; }
 
     [JsonPropertyName("listPrice")]
     public decimal ListPrice { get; set; }
