@@ -1,6 +1,7 @@
-namespace Frontend.Services;
-using Microsoft.JSInterop;
 using Frontend.Models;
+using Frontend.Clients;
+namespace Frontend.Services;
+
 
 public class ProductService
 {
@@ -10,11 +11,25 @@ public class ProductService
 
     public bool IsLoaded => _products != null;
 
-    public async Task LoadProductsAsync(Func<Task<ProductSummary[]>> fetchProducts)
+    private readonly ProductsClient _productsClient;
+
+    public ProductService(ProductsClient productsClient)
+    {
+        _productsClient = productsClient;
+    }
+
+    // Load all products (optional, depending on your use case)
+    public async Task LoadProductsAsync(Func<Task<ProductSummary[]>> productsAsync)
     {
         if (_products == null)
         {
-            _products = await fetchProducts();
+            _products = await _productsClient.GetProductsAsync();
         }
+    }
+
+    // Fetch a specific product by slug
+    public async Task<ProductDetails?> GetProductBySlugAsync(string slug)
+    {
+        return await _productsClient.GetProductAsync(slug);
     }
 }
