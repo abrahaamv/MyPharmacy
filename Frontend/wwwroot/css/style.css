@@ -771,16 +771,16 @@ ol {
 
 .hero__categories ul li a {
 	font-size: 14px;
+	font-weight: 600;
 	color: #1c1c1c;
 	line-height: 39px;
 	display: block;
-
 	transition: background-color 0.2s ease;
 }
 
 .hero__categories ul li a:hover {
 	background-color: #f9fafc;
-	color: #7fad39;
+	color: #41AD39;
 }
 
 
@@ -1416,7 +1416,7 @@ label:hover {
 }
 
 .product__grid {
-	max-height: 80vh;
+	max-height: 100vh;
 	overflow-y: auto;
 	padding: 5px 0;
 	margin: 0;
@@ -1608,7 +1608,7 @@ label:hover {
 }
 
 .filter__item {
-	padding-top: 45px;
+	padding-top: 16px;
 	border-top: 1px solid #ebebeb;
 	padding-bottom: 20px;
 }
