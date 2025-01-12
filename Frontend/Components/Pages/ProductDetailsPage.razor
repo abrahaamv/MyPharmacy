@@ -1,0 +1,15 @@
+@page "/productos/{category}/{slug}"
+
+<PageTitle>Productos - @Slug</PageTitle>
+
+<main>
+    <ProductDetailsSection Category="@Slug" />
+</main>
+
+@code {
+    [Parameter]
+    public string? Category { get; set; }
+    
+    [Parameter]
+    public string? Slug { get; set; }
+}
