@@ -1069,6 +1069,9 @@ ol {
   Breadcrumb
 -----------------------*/
 .breadcrumb {
+	display: flex;
+	flex-wrap: nowrap;	
+	overflow: hidden;
 	padding: 12px 30px;
 	background: linear-gradient(to bottom, #ffffff, #F5F5F5);
 	border-bottom: 1px solid #d1e7d1;
@@ -1102,13 +1105,26 @@ ol {
 	list-style: none;
 	padding: 0;
 	font-size: 14px;
+	overflow: hidden;
 }
+
 
 .breadcrumb__item {
 	display: flex;
 	align-items: center;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
 	color: #666;
 }
+.breadcrumb__item:last-child {
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	
+	color: #666;
+}
+
 
 .breadcrumb__link {
 	color: #666;
