@@ -142,71 +142,45 @@ else
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
-                        <ul class="product__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
+            @if (RelatedProducts.Any())
+            {
+                foreach (var relatedProduct in RelatedProducts)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic">
+                                <img src="@relatedProduct.ImageUrls.FirstOrDefault()" alt="@relatedProduct.Name">
+                                <ul class="product__item__pic__hover">
+                                    <li>
+                                        <a href="/productos/@relatedProduct.Category/@relatedProduct.Slug">
+                                            <i class="fa fa-info"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6>
+                                    <a href="/productos/@relatedProduct.Category/@relatedProduct.Slug">
+                                        @relatedProduct.Name
+                                    </a>
+                                </h6>
+                                <h5>Q @relatedProduct.SellingPrice.ToString("F2")</h5>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                        <ul class="product__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
-                        <ul class="product__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
-                        <ul class="product__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Crab Pool Security</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                </div>
-            </div>
+                }
+            }
+            else
+            {
+                <p>No hay productos relacionados disponibles.</p>
+            }
         </div>
     </div>
 </section>
-<!-- Related Product Section End -->
 
+<!-- Related Product Section End -->
 @code {
     [Parameter]
     public string? Category { get; set; }
@@ -215,19 +189,62 @@ else
     public string? Slug { get; set; }
 
     private ProductDetails? Product { get; set; }
+    private ProductSummary? CurrentProductSummary { get; set; }
     private bool IsLoading { get; set; } = true;
+
+    private List<ProductSummary> RelatedProducts { get; set; } = new();
 
     protected override async Task OnParametersSetAsync()
     {
         IsLoading = true;
         try
         {
+            // Obtener los detalles del producto actual
             Product = await ProductService.GetProductBySlugAsync(Slug);
+
+            // Encontrar el ProductSummary basado en el Slug
+            CurrentProductSummary = ProductService.Products
+                .FirstOrDefault(p => p.Slug.Equals(Slug, StringComparison.OrdinalIgnoreCase));
+
+            if (Product != null && CurrentProductSummary != null)
+            {
+                // Obtener productos de la misma subcategoría, excluyendo el producto actual
+                var productsInSameSubCategory = ProductService.Products
+                    .Where(p => 
+                        p.SubCategory == CurrentProductSummary.SubCategory && 
+                        p.Id != CurrentProductSummary.Id)
+                    .ToList();
+
+                // Si hay menos de 4 productos en la subcategoría, completar con productos de la misma categoría
+                if (productsInSameSubCategory.Count < 4)
+                {
+                    var productsInSameCategory = ProductService.Products
+                        .Where(p => 
+                            p.Category.Equals(CurrentProductSummary.Category, StringComparison.OrdinalIgnoreCase) &&
+                            p.SubCategory != CurrentProductSummary.SubCategory &&
+                            p.Id != CurrentProductSummary.Id)
+                        .ToList();
+
+                    RelatedProducts = productsInSameSubCategory
+                        .Concat(productsInSameCategory)
+                        .OrderBy(_ => Guid.NewGuid()) // Mezclar aleatoriamente
+                        .Take(4) // Limitar a 4 productos
+                        .ToList();
+                }
+                else
+                {
+                    RelatedProducts = productsInSameSubCategory
+                        .OrderBy(_ => Guid.NewGuid())
+                        .Take(4)
+                        .ToList();
+                }
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error fetching product: {ex.Message}");
+            Console.WriteLine($"Error fetching product or related products: {ex.Message}");
             Product = null;
+            RelatedProducts = new List<ProductSummary>();
         }
         finally
         {
