@@ -4,8 +4,13 @@ namespace Frontend.Clients;
 
 public class ProductsClient(HttpClient httpClient)
 {
-    private readonly List<ProductSummary> products = [];
-
     public async Task<ProductSummary[]> GetProductsAsync()
         => await httpClient.GetFromJsonAsync<ProductSummary[]>("productos") ?? [];
+    
+    public async Task<ProductDetails?> GetProductAsync(string Slug)
+    {
+        var url = $"productos/{Slug}";
+        return await httpClient.GetFromJsonAsync<ProductDetails>(url);
+    }
+
 }
