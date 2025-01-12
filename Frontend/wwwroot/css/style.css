@@ -1827,6 +1827,10 @@ label:hover {
 	max-height: 2.4em;
 }
 
+.product__item__text h6 a:hover {
+	color: #388e3c;
+	text-decoration: none;
+}
 
 .product__item__text h5 {
 	color: #252525;
