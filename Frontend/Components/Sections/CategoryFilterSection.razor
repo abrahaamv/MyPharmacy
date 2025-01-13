@@ -44,7 +44,7 @@
                                     .Select(p => p.SubCategory)
                                     .Distinct()
                                     .OrderBy(s => s);
-                                if (subcategories.Count() > 0)
+                                if (subcategories.Any())
                                 {
                                     <div class="sidebar__item">
                                         <h4>Subcategoría</h4>
