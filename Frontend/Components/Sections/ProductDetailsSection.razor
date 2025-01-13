@@ -194,61 +194,67 @@ else
 
     private List<ProductSummary> RelatedProducts { get; set; } = new();
 
-    protected override async Task OnParametersSetAsync()
+ protected override async Task OnParametersSetAsync()
+{
+    IsLoading = true;
+    try
     {
-        IsLoading = true;
-        try
+        // Obtener los detalles del producto actual
+        Product = await ProductService.GetProductBySlugAsync(Slug!);
+
+        // Encontrar el ProductSummary basado en el Slug
+        CurrentProductSummary = ProductService.Products!
+            .FirstOrDefault(p => p.Slug.Equals(Slug, StringComparison.OrdinalIgnoreCase));
+
+        if (Product != null && CurrentProductSummary != null)
         {
-            // Obtener los detalles del producto actual
-            Product = await ProductService.GetProductBySlugAsync(Slug);
+            // Obtener productos de la misma subcategoría, excluyendo el producto actual
+            var productsInSameSubCategory = ProductService.Products!
+                .Where(p =>
+                    p.SubCategory?.Trim().Equals(CurrentProductSummary.SubCategory?.Trim(), StringComparison.OrdinalIgnoreCase) == true &&
+                    p.Id != CurrentProductSummary.Id)
+                .ToList();
 
-            // Encontrar el ProductSummary basado en el Slug
-            CurrentProductSummary = ProductService.Products
-                .FirstOrDefault(p => p.Slug.Equals(Slug, StringComparison.OrdinalIgnoreCase));
-
-            if (Product != null && CurrentProductSummary != null)
+            // Si hay menos de 4 productos en la subcategoría, completar con productos de la misma categoría
+            if (productsInSameSubCategory.Count < 4)
             {
-                // Obtener productos de la misma subcategoría, excluyendo el producto actual
-                var productsInSameSubCategory = ProductService.Products
-                    .Where(p => 
-                        p.SubCategory == CurrentProductSummary.SubCategory && 
+                var productsInSameCategory = ProductService.Products!
+                    .Where(p =>
+                        p.Category?.Trim().Equals(CurrentProductSummary.Category?.Trim(), StringComparison.OrdinalIgnoreCase) == true &&
                         p.Id != CurrentProductSummary.Id)
                     .ToList();
 
-                // Si hay menos de 4 productos en la subcategoría, completar con productos de la misma categoría
-                if (productsInSameSubCategory.Count < 4)
-                {
-                    var productsInSameCategory = ProductService.Products
-                        .Where(p => 
-                            p.Category.Equals(CurrentProductSummary.Category, StringComparison.OrdinalIgnoreCase) &&
-                            p.SubCategory != CurrentProductSummary.SubCategory &&
-                            p.Id != CurrentProductSummary.Id)
-                        .ToList();
+                // Unir ambas listas y remover duplicados
+                var allRelatedProducts = productsInSameSubCategory
+                    .Concat(productsInSameCategory)
+                    .GroupBy(p => p.Id)
+                    .Select(g => g.First())
+                    .ToList();
 
-                    RelatedProducts = productsInSameSubCategory
-                        .Concat(productsInSameCategory)
-                        .OrderBy(_ => Guid.NewGuid()) // Mezclar aleatoriamente
-                        .Take(4) // Limitar a 4 productos
-                        .ToList();
-                }
-                else
-                {
-                    RelatedProducts = productsInSameSubCategory
-                        .OrderBy(_ => Guid.NewGuid())
-                        .Take(4)
-                        .ToList();
-                }
+                RelatedProducts = allRelatedProducts
+                    .OrderBy(_ => Guid.NewGuid()) // Mezclar aleatoriamente
+                    .Take(4)
+                    .ToList();
+            }
+            else
+            {
+                RelatedProducts = productsInSameSubCategory
+                    .OrderBy(_ => Guid.NewGuid())
+                    .Take(4)
+                    .ToList();
             }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error fetching product or related products: {ex.Message}");
-            Product = null;
-            RelatedProducts = new List<ProductSummary>();
-        }
-        finally
-        {
-            IsLoading = false;
-        }
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error fetching product or related products: {ex.Message}");
+        Product = null;
+        RelatedProducts = new List<ProductSummary>();
+    }
+    finally
+    {
+        IsLoading = false;
+    }
+}
+
 }
