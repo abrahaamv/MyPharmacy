@@ -200,16 +200,16 @@ else
     try
     {
         // Obtener los detalles del producto actual
-        Product = await ProductService.GetProductBySlugAsync(Slug!);
+        Product = await ProductService.GetProductBySlugAsync(Slug);
 
         // Encontrar el ProductSummary basado en el Slug
-        CurrentProductSummary = ProductService.Products!
+        CurrentProductSummary = ProductService.Products
             .FirstOrDefault(p => p.Slug.Equals(Slug, StringComparison.OrdinalIgnoreCase));
 
         if (Product != null && CurrentProductSummary != null)
         {
             // Obtener productos de la misma subcategoría, excluyendo el producto actual
-            var productsInSameSubCategory = ProductService.Products!
+            var productsInSameSubCategory = ProductService.Products
                 .Where(p =>
                     p.SubCategory?.Trim().Equals(CurrentProductSummary.SubCategory?.Trim(), StringComparison.OrdinalIgnoreCase) == true &&
                     p.Id != CurrentProductSummary.Id)
@@ -218,7 +218,7 @@ else
             // Si hay menos de 4 productos en la subcategoría, completar con productos de la misma categoría
             if (productsInSameSubCategory.Count < 4)
             {
-                var productsInSameCategory = ProductService.Products!
+                var productsInSameCategory = ProductService.Products
                     .Where(p =>
                         p.Category?.Trim().Equals(CurrentProductSummary.Category?.Trim(), StringComparison.OrdinalIgnoreCase) == true &&
                         p.Id != CurrentProductSummary.Id)
