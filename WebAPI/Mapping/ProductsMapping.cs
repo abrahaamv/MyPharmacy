@@ -51,7 +51,7 @@ public static class ProductsMapping
             Slug = dto.Slug,
             BrandId = dto.BrandId,
             CategoryId = dto.CategoryId,
-            SubCategoryId = dto.SubCategoryId,
+            SubCategoryId = 1,
             Specifications = dto.Specifications,
             ImageUrls = dto.ImageUrls,
             ListPrice = dto.ListPrice,
