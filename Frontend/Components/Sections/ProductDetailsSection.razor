@@ -123,6 +123,16 @@ else
                                 <div class="product__details__tab__desc">
                                     <h6>Product Information</h6>
                                     <p>@Product.Description</p>
+                                    @if (Product?.Specifications != null)
+                                    {
+                                 
+                                            <ul>
+                                                @foreach (var spec in Product.Specifications)
+                                                { 
+                                                    <li><b>@spec.Name</b> <span>@spec.Value</span></li>
+                                                }
+                                            </ul>
+                                    }
                                 </div>
                             </div>
                             <!-- Additional Tabs -->
