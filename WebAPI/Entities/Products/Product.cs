@@ -9,12 +9,12 @@ public class Product
     public required string Slug { get; set; }
     //BRAND
     public int BrandId { get; set; }
-    public  Brand? Brand { get; set; }
+    public Brand? Brand { get; set; }
     //CATEGORY
     public required int CategoryId { get; set; }
-    public  Category? Category { get; set; }
+    public Category? Category { get; set; }
     //SUBCATEGORY
-    public int SubCategoryId { get; set; }
+    public int? SubCategoryId { get; set; }
     public SubCategory? SubCategory { get; set; }
     //PRICE
     public decimal ListPrice { get; set; }
