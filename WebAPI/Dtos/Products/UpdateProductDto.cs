@@ -9,7 +9,7 @@ public record UpdateProductDto(
     string Slug,
     [Required] int BrandId,
     int CategoryId,
-    int SubCategoryId,
+    int? SubCategoryId,
     [Required] decimal ListPrice,
     [Required] decimal SellingPrice, 
     [Required] int Stock,
