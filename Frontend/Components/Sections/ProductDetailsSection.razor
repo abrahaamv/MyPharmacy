@@ -88,7 +88,9 @@ else
                             <li><b>Envío</b> <span>Hoy mismo <samp>  *2 horas max*</samp></span></li>
                             <li><b>Marca</b> <span>@CurrentProductSummary.Brand</span></li>
                             <li><b>Categoria</b> <span>@CurrentProductSummary.Category</span></li>
-                            <li><b>Subcategoria</b> <span>@CurrentProductSummary.SubCategory</span></li>
+                            @if(@CurrentProductSummary.SubCategory != null) {
+                                <li><b>Subcategoria</b> <span>@CurrentProductSummary.SubCategory</span></li>
+                            }
                             <li><b>EAN</b> <span>@CurrentProductSummary.Ean</span></li>
                             <li><b>Compartir</b>
                                 <div class="share">
