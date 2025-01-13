@@ -81,18 +81,20 @@ else
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CART</a>
+                        <a href="#" class="primary-btn">AGREGAR AL CARRITO</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
-                            <li><b>Availability</b> <span>@(Product.IsInStock ? "In Stock" : "Out of Stock")</span></li>
-                            <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            <li><b>Brand ID</b> <span>@Product.BrandId</span></li>
-                            <li><b>Share on</b>
+                            <li><b>Existencia</b> <span>@(Product.IsInStock ? "En Stock" : "Agotado")</span></li>
+                            <li><b>Envío</b> <span>Hoy mismo <samp>  *2 horas max*</samp></span></li>
+                            <li><b>Marca</b> <span>@CurrentProductSummary.Brand</span></li>
+                            <li><b>Categoria</b> <span>@CurrentProductSummary.Category</span></li>
+                            <li><b>SubCategoria</b> <span>@CurrentProductSummary.SubCategory</span></li>
+                            <li><b>EAN</b> <span>@CurrentProductSummary.Ean</span></li>
+                            <li><b>Compartir</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-whatsapp"></i></a>
                                     <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
                                 </div>
                             </li>
                         </ul>
