@@ -116,23 +116,25 @@
                     {
                         <div class="row product__grid">
                             @foreach (var product in FilteredProducts)
-                            {
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="product__item">
-                                        <div class="product__item__pic">
-                                            <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="/productos/@product.Category/@product.Slug"><i class="fa fa-info"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__item__text">
-                                            <h6><a href="/productos/@product.Category/@product.Slug">@product.Name</a></h6>
-                                            <h5>Q @product.ListPrice.ToString("F2")</h5>
+                            {  @if (product.IsInStock)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="product__item">
+                                            <div class="product__item__pic">
+                                                <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
+                                                <ul class="product__item__pic__hover">
+                                                    <li><a href="/productos/@product.Category/@product.Slug"><i class="fa fa-info"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="product__item__text">
+                                                <h6><a href="/productos/@product.Category/@product.Slug">@product.Name</a></h6>
+                                                <h5>Q @product.ListPrice.ToString("F2")</h5>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             }
                         </div>
                     }
