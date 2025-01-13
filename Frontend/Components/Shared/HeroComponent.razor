@@ -100,8 +100,10 @@
     {
         if (!string.IsNullOrEmpty(SearchQuery))
         {
-            // Navegar a la ruta de búsqueda con el término ingresado
-            NavigationManager.NavigateTo($"/productos/buscar/{SearchQuery}");
+            var query = SearchQuery;
+            SearchQuery = string.Empty;
+            StateHasChanged();
+            NavigationManager.NavigateTo($"/productos/buscar/{query}");
         }
     }
 }
