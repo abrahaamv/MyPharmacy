@@ -1,6 +1,7 @@
 @using Services
 @inject ProductService ProductService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
 <section class="hero @(!IsHomePage ? "hero-normal" : "")">
@@ -16,7 +17,6 @@
                         @if (ProductService.Products != null)
                         {
                             var categories = ProductService.Products
-                                .Where(p => p.Category != null)
                                 .Select(p => p.Category)
                                 .Distinct()
                                 .OrderBy(c => c);
@@ -89,10 +89,18 @@
         NavigationManager.LocationChanged += (sender, args) => UpdateVisibility();
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeHeroCategories");
+        }
+    }
+
     private void UpdateVisibility()
     {
         var currentUrl = NavigationManager.Uri;
-        IsHomePage = currentUrl.EndsWith("/") || currentUrl.EndsWith("/index");
+        IsHomePage = currentUrl.EndsWith("/");
         StateHasChanged();
     }
 
