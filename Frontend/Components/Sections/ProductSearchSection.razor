@@ -18,7 +18,11 @@
             </li>
             <li class="breadcrumb__item">
                 <span class="breadcrumb__divider">/</span>
-                <span class="breadcrumb__link">Buscar productos</span>
+                <a href="/productos" class="breadcrumb__link">Productos</a>
+            </li>
+            <li class="breadcrumb__item">
+                <span class="breadcrumb__divider">/</span>
+                <span class="breadcrumb__link">Buscar</span>
             </li>
         </ol>
     </nav>
@@ -144,6 +148,7 @@
     [Parameter]
     public string? ProductName { get; set; }
 
+    private IEnumerable<ProductSummary> BaseFilteredProducts { get; set; } = new List<ProductSummary>();
     private IEnumerable<ProductSummary> FilteredProducts { get; set; } = new List<ProductSummary>();
     private IEnumerable<string> FilteredSubCategories { get; set; } = new List<string>();
     private IEnumerable<string> FilteredBrands { get; set; } = new List<string>();
@@ -166,21 +171,10 @@
     {
         if (ProductService.Products != null && !string.IsNullOrEmpty(ProductName))
         {
-            FilteredProducts = ProductService.Products
+            BaseFilteredProducts = ProductService.Products
                 .Where(p => p.Name.Contains(ProductName, StringComparison.OrdinalIgnoreCase));
 
-            FilteredSubCategories = FilteredProducts
-                .Where(p => p.SubCategory != null)
-                .Select(p => p.SubCategory!)
-                .Distinct()
-                .OrderBy(s => s);
-
-            FilteredBrands = FilteredProducts
-                .Where(p => p.Brand != null)
-                .Select(p => p.Brand!)
-                .Distinct()
-                .OrderBy(b => b);
-
+            UpdateFilters();
             ApplyFilters();
         }
     }
@@ -220,6 +214,8 @@
 
     private void ApplyFilters()
     {
+        FilteredProducts = BaseFilteredProducts;
+
         if (SelectedSubCategories.Any())
         {
             FilteredProducts = FilteredProducts
@@ -241,5 +237,20 @@
             "discount" => FilteredProducts.OrderByDescending(p => p.ListPrice - p.SellingPrice),
             _ => FilteredProducts
         };
+    }
+
+    private void UpdateFilters()
+    {
+        FilteredSubCategories = BaseFilteredProducts
+            .Where(p => p.SubCategory != null)
+            .Select(p => p.SubCategory!)
+            .Distinct()
+            .OrderBy(s => s);
+
+        FilteredBrands = BaseFilteredProducts
+            .Where(p => p.Brand != null)
+            .Select(p => p.Brand!)
+            .Distinct()
+            .OrderBy(b => b);
     }
 }
