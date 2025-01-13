@@ -1,0 +1,11 @@
+@page "/productos/buscar/{ProductName}"
+
+
+<main>
+    <ProductSearchSection ProductName="@ProductName" />
+</main>
+
+@code {
+    [Parameter]
+    public string? ProductName { get; set; }
+}
