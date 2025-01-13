@@ -10,7 +10,7 @@ public record ProductDetailsDto(
     string Slug,
     int BrandId,
     string Category,
-    string SubCategory,
+    string? SubCategory,
     decimal ListPrice,
     decimal SellingPrice, 
     bool IsInStock,
