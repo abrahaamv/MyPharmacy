@@ -3,7 +3,7 @@
 @inject ProductsClient Client;
 @inject ProductService ProductService
 @inject IJSRuntime JSRuntime;
-
+@rendermode InteractiveServer
 
 <!-- Breadcrumb Section Begin -->
 <div id="breadcrumb-container">
@@ -31,50 +31,40 @@
 <section class="product">
     <div class="container">
         <div class="row">
+            <!-- Sidebar Filters -->
             <div class="col-lg-3 col-md-4">
                 <div class="sidebar">
-                    <div class="">
+                    <div>
                         <span>Filtrar por:</span>
                     </div>
-                    <div class="sidebar__item">
-                        <h4>Subcategoría</h4>
-                        <ul class="scrollable-list">
-                            @if (ProductService.Products != null)
-                            {
-                                var subcategories = ProductService.Products
-                                    .Where(p => p.SubCategory != null)
-                                    .Select(p => p.SubCategory)
-                                    .Distinct()
-                                    .OrderBy(s => s);
-
-                                foreach (var subcategory in subcategories)
+                    @if (InitialSubCategories.Any())
+                    {
+                        <div class="sidebar__item">
+                            <h4>Subcategoría</h4>
+                            <ul class="scrollable-list">
+                                @foreach (var subcategory in InitialSubCategories)
                                 {
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="subcategory" value="@subcategory">
+                                            <input type="checkbox" @onchange="(e) => ToggleSubCategoryFilter(subcategory, e.Value)">
                                             @subcategory
                                         </label>
                                     </li>
                                 }
-                            }
-                        </ul>
-                    </div>
+                            </ul>
+                        </div>
+                    }
+
                     <div class="sidebar__item">
                         <h4>Marca</h4>
                         <ul class="scrollable-list">
-                            @if (ProductService.Products != null)
+                            @if (InitialBrands.Any())
                             {
-                                var brands = ProductService.Products
-                                    .Where(p => p.Brand != null)
-                                    .Select(p => p.Brand)
-                                    .Distinct()
-                                    .OrderBy(b => b);
-
-                                foreach (var brand in brands)
+                                foreach (var brand in InitialBrands)
                                 {
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="brand" value="@brand">
+                                            <input type="checkbox" @onchange="(e) => ToggleBrandFilter(brand, e.Value)">
                                             @brand
                                         </label>
                                     </li>
@@ -82,9 +72,9 @@
                             }
                         </ul>
                     </div>
-
                 </div>
             </div>
+            <!-- Main Product Grid & Sort -->
             <div class="col-lg-9 col-md-7">
                 <div class="filter__item">
                     <div class="row">
@@ -95,27 +85,22 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter__found">
-                                <h6><span>@ProductService.Products?.Length</span> Productos</h6>
+                                <h6><span>@FilteredProducts.Count()</span> Productos</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-5">
                             <div class="filter__sort">
                                 <span>Ordenar por</span>
-                                <select style="display: none;">
-                                    <option class="nice-select" value="0">Precio: menor a mayor</option>
-                                    <option value="0">Precio: mayor a menor </option>
-                                    <option value="0">Nombre, ascendente</option>
-                                    <option value="0">Nombre, descendente</option>
-                                    <option value="0">Descuento</option>
-                                </select>
                                 <div class="nice-select" tabindex="0">
-                                    <span class="current">Precio: menor a mayor</span>
+                                    <span class="current">@CurrentSortLabel</span>
                                     <ul class="list">
-                                        <li data-value="0" class="option selected">Precio: menor a mayor</li>
-                                        <li data-value="0" class="option">Precio: mayor a menor </li>
-                                        <li data-value="0" class="option">Nombre, ascendente</li>
-                                        <li data-value="0" class="option">Nombre, descendente</li>
-                                        <li data-value="0" class="option">Descuento</li>
+                                        @foreach (var sortOption in SortOptions)
+                                        {
+                                            <li class="option @(CurrentSortOrder == sortOption.Key ? "selected" : "")"
+                                                @onclick="@(() => ChangeSortOrder(sortOption.Key, sortOption.Value))">
+                                                @sortOption.Value
+                                            </li>
+                                        }
                                     </ul>
                                 </div>
                             </div>
@@ -123,14 +108,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    @if (ProductService.Products is null)
+                    @if (!FilteredProducts.Any())
                     {
-                        <p>Cargando productos...</p>
+                        <p>No se encontraron productos.</p>
                     }
                     else
                     {
                         <div class="row product__grid">
-                            @foreach (var product in ProductService.Products)
+                            @foreach (var product in FilteredProducts)
                             {
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="product__item">
@@ -156,77 +141,103 @@
         </div>
     </div>
 </section>
-<script>
-    let isAutoScrolling = false;
-    let lastScrollPosition = 0; // Última posición del scroll global
-    let lastGridScrollPosition = 0; // Última posición del scroll del contenedor específico
 
-    document.addEventListener("scroll", () => {
-        const scrollPosition = window.scrollY;
-        const isScrollingDown = scrollPosition > lastScrollPosition;
-
-        console.log(`Global ScrollY: ${scrollPosition}, Last: ${lastScrollPosition}`);
-
-        if (
-            !isAutoScrolling &&
-            isScrollingDown &&
-            lastScrollPosition === 0 &&
-            scrollPosition > 0 &&
-            scrollPosition <= 10 // Detectar un scroll inicial entre 1 y 10
-        ) {
-            const breadcrumb = document.getElementById("breadcrumb-container");
-            if (breadcrumb) {
-                isAutoScrolling = true; // Marcar como automático
-                breadcrumb.scrollIntoView({ behavior: "smooth" });
-
-                // Resetear el estado después del desplazamiento
-                setTimeout(() => {
-                    isAutoScrolling = false;
-                }, 500);
-            }
-        }
-
-        lastScrollPosition = scrollPosition;
-    });
-
-    // Detectar scroll dentro de la product__grid
-    document.addEventListener("DOMContentLoaded", () => {
-        const productGrid = document.querySelector(".product__grid");
-
-        if (productGrid) {
-            productGrid.addEventListener("scroll", () => {
-                const gridScrollPosition = productGrid.scrollTop;
-                const isGridScrollingDown = gridScrollPosition > lastGridScrollPosition;
-
-                console.log(`Grid ScrollY: ${gridScrollPosition}, Last: ${lastGridScrollPosition}`);
-
-                if (
-                    !isAutoScrolling &&
-                    isGridScrollingDown
-                ) {
-                    const breadcrumb = document.getElementById("breadcrumb-container");
-                    if (breadcrumb) {
-                        isAutoScrolling = true; // Marcar como automático
-                        breadcrumb.scrollIntoView({ behavior: "smooth" });
-
-                        // Resetear el estado después del desplazamiento
-                        setTimeout(() => {
-                            isAutoScrolling = false;
-                        }, 500);
-                    }
-                }
-
-                lastGridScrollPosition = gridScrollPosition;
-            });
-        }
-    });
-</script>
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    private IEnumerable<ProductSummary> FilteredProducts { get; set; } = new List<ProductSummary>();
+    private IEnumerable<string> InitialSubCategories { get; set; } = new List<string>();
+    private IEnumerable<string> InitialBrands { get; set; } = new List<string>();
+    private HashSet<string> SelectedSubCategories { get; set; } = new HashSet<string>();
+    private HashSet<string> SelectedBrands { get; set; } = new HashSet<string>();
+
+    private Dictionary<string, string> SortOptions = new Dictionary<string, string>
     {
-        if (firstRender)
+        { "price-asc", "Precio: menor a mayor" },
+        { "price-desc", "Precio: mayor a menor" },
+        { "name-asc", "Nombre, ascendente" },
+        { "name-desc", "Nombre, descendente" },
+        { "discount", "Descuento" }
+    };
+
+    private string CurrentSortOrder { get; set; } = "price-asc";
+    private string CurrentSortLabel { get; set; } = "Precio: menor a mayor";
+
+    protected override void OnInitialized()
+    {
+        if (ProductService.Products != null)
         {
-            await JSRuntime.InvokeVoidAsync("scrollToBreadcrumbOnFirstScroll");
+            InitialSubCategories = ProductService.Products
+                .Where(p => p.SubCategory != null)
+                .Select(p => p.SubCategory)
+                .Distinct()
+                .OrderBy(s => s);
+
+            InitialBrands = ProductService.Products
+                .Where(p => p.Brand != null)
+                .Select(p => p.Brand)
+                .Distinct()
+                .OrderBy(b => b);
+
+            ApplyFilters();
         }
+    }
+
+    private void ToggleSubCategoryFilter(string subcategory, object? isChecked)
+    {
+        if (isChecked is bool selected && selected)
+        {
+            SelectedSubCategories.Add(subcategory);
+        }
+        else
+        {
+            SelectedSubCategories.Remove(subcategory);
+        }
+        ApplyFilters();
+    }
+
+    private void ToggleBrandFilter(string brand, object? isChecked)
+    {
+        if (isChecked is bool selected && selected)
+        {
+            SelectedBrands.Add(brand);
+        }
+        else
+        {
+            SelectedBrands.Remove(brand);
+        }
+        ApplyFilters();
+    }
+
+    private void ChangeSortOrder(string sortOrder, string sortLabel)
+    {
+        CurrentSortOrder = sortOrder;
+        CurrentSortLabel = sortLabel;
+        ApplyFilters();
+    }
+
+    private void ApplyFilters()
+    {
+        FilteredProducts = ProductService.Products;
+
+        if (SelectedSubCategories.Any())
+        {
+            FilteredProducts = FilteredProducts
+                .Where(p => p.SubCategory != null && SelectedSubCategories.Contains(p.SubCategory));
+        }
+
+        if (SelectedBrands.Any())
+        {
+            FilteredProducts = FilteredProducts
+                .Where(p => p.Brand != null && SelectedBrands.Contains(p.Brand));
+        }
+
+        FilteredProducts = CurrentSortOrder switch
+        {
+            "price-asc"  => FilteredProducts.OrderBy(p => p.ListPrice),
+            "price-desc" => FilteredProducts.OrderByDescending(p => p.ListPrice),
+            "name-asc"   => FilteredProducts.OrderBy(p => p.Name),
+            "name-desc"  => FilteredProducts.OrderByDescending(p => p.Name),
+            "discount"   => FilteredProducts.OrderByDescending(p => p.ListPrice - p.SellingPrice),
+            _ => FilteredProducts
+        };
     }
 }
