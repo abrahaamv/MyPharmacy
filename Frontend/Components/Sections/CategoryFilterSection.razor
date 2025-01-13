@@ -1,6 +1,7 @@
 @using Services
 @inject ProductService ProductService
 @inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
 
 <!-- Breadcrumb Section Begin -->
 <div id="breadcrumb-container">
@@ -37,47 +38,34 @@
                     <div class="">
                         <span>Filtrar por:</span>
                     </div>
-                            @if (FilteredProducts.Any())
+                            @if (InitialSubCategories.Any())
                             {
-                                var subcategories = FilteredProducts
-                                    .Where(p => p.SubCategory != null)
-                                    .Select(p => p.SubCategory)
-                                    .Distinct()
-                                    .OrderBy(s => s);
-                                if (subcategories.Any())
-                                {
-                                    <div class="sidebar__item">
-                                        <h4>Subcategoría</h4>
-                                        <ul class="scrollable-list">
-                                            @foreach (var subcategory in subcategories)
-                                            {
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox" name="subcategory" value="@subcategory">
-                                                        @subcategory
-                                                    </label>
-                                                </li>
-                                            }
-                                        </ul>
-                                    </div>
-                                }
-                            }
-                    <div class="sidebar__item">
-                        <h4>Marca</h4>
-                        <ul class="scrollable-list">
-                            @if (FilteredProducts.Any())
-                            {
-                                var brands = FilteredProducts
-                                    .Where(p => p.Brand != null)
-                                    .Select(p => p.Brand)
-                                    .Distinct()
-                                    .OrderBy(b => b);
-
-                                foreach (var brand in brands)
+                                <div class="sidebar__item">
+                                    <h4>Subcategoría</h4>
+                                    <ul class="scrollable-list">
+                                @foreach (var subcategory in InitialSubCategories)
                                 {
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="brand" value="@brand">
+                                            <input type="checkbox" @onchange="(e) => ToggleSubCategoryFilter(subcategory, e.Value)">
+                                            @subcategory
+                                        </label>
+                                    </li>
+                                }
+                                    </ul>
+                                </div>
+                            }
+                   
+                    <div class="sidebar__item">
+                        <h4>Marca</h4>
+                        <ul class="scrollable-list">
+                            @if (InitialBrands.Any())
+                            {
+                                foreach (var brand in InitialBrands)
+                                {
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" @onchange="(e) => ToggleBrandFilter(brand, e.Value)">
                                             @brand
                                         </label>
                                     </li>
@@ -103,23 +91,13 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="filter__sort">
                                 <span>Ordenar por</span>
-                                <select style="display: none;">
-                                    <option class="nice-select" value="0">Precio: menor a mayor</option>
-                                    <option value="0">Precio: mayor a menor </option>
-                                    <option value="0">Nombre, ascendente</option>
-                                    <option value="0">Nombre, descendente</option>
-                                    <option value="0">Descuento</option>
+                                <select @onchange="(e) => ChangeSortOrder(e.Value.ToString())">
+                                    <option value="price-asc">Precio: menor a mayor</option>
+                                    <option value="price-desc">Precio: mayor a menor</option>
+                                    <option value="name-asc">Nombre, ascendente</option>
+                                    <option value="name-desc">Nombre, descendente</option>
+                                    <option value="discount">Descuento</option>
                                 </select>
-                                <div class="nice-select" tabindex="0">
-                                    <span class="current">Precio: menor a mayor</span>
-                                    <ul class="list">
-                                        <li data-value="0" class="option selected">Precio: menor a mayor</li>
-                                        <li data-value="0" class="option">Precio: mayor a menor </li>
-                                        <li data-value="0" class="option">Nombre, ascendente</li>
-                                        <li data-value="0" class="option">Nombre, descendente</li>
-                                        <li data-value="0" class="option">Descuento</li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -158,45 +136,95 @@
         </div>
     </div>
 </section>
-<script>
-    let isAutoScrolling = false;
-    let lastScrollPosition = 0;
 
-    document.addEventListener("scroll", () => {
-        const scrollPosition = window.scrollY;
-        const isScrollingDown = scrollPosition > lastScrollPosition;
-
-        if (
-            !isAutoScrolling &&
-            isScrollingDown &&
-            lastScrollPosition === 0 &&
-            scrollPosition > 0 &&
-            scrollPosition <= 10
-        ) {
-            const breadcrumb = document.getElementById("breadcrumb-container");
-            if (breadcrumb) {
-                isAutoScrolling = true;
-                breadcrumb.scrollIntoView({ behavior: "smooth" });
-                setTimeout(() => {
-                    isAutoScrolling = false;
-                }, 500);
-            }
-        }
-        lastScrollPosition = scrollPosition;
-    });
-</script>
 @code {
     [Parameter]
     public string? Category { get; set; }
 
     private IEnumerable<ProductSummary> FilteredProducts { get; set; } = new List<ProductSummary>();
+    private IEnumerable<string> InitialSubCategories { get; set; } = new List<string>();
+    private IEnumerable<string> InitialBrands { get; set; } = new List<string>();
+    private HashSet<string> SelectedSubCategories { get; set; } = new HashSet<string>();
+    private HashSet<string> SelectedBrands { get; set; } = new HashSet<string>();
+    private string CurrentSortOrder { get; set; } = "price-asc";
 
     protected override void OnParametersSet()
     {
         if (ProductService.Products != null && !string.IsNullOrEmpty(Category))
         {
-            FilteredProducts = ProductService.Products
-                .Where(p => p.Category?.Equals(Category, StringComparison.OrdinalIgnoreCase) == true);
+            InitialSubCategories = ProductService.Products
+                .Where(p => p.Category?.Equals(Category, StringComparison.OrdinalIgnoreCase) == true && p.SubCategory != null)
+                .Select(p => p.SubCategory!)
+                .Distinct()
+                .OrderBy(s => s);
+
+            InitialBrands = ProductService.Products
+                .Where(p => p.Category?.Equals(Category, StringComparison.OrdinalIgnoreCase) == true && p.Brand != null)
+                .Select(p => p.Brand!)
+                .Distinct()
+                .OrderBy(b => b);
+
+            ApplyFilters();
         }
+    }
+
+    private void ToggleSubCategoryFilter(string subcategory, object? isChecked)
+    {
+        if (isChecked is bool selected && selected)
+        {
+            SelectedSubCategories.Add(subcategory);
+        }
+        else
+        {
+            SelectedSubCategories.Remove(subcategory);
+        }
+        ApplyFilters();
+    }
+
+    private void ToggleBrandFilter(string brand, object? isChecked)
+    {
+        if (isChecked is bool selected && selected)
+        {
+            SelectedBrands.Add(brand);
+        }
+        else
+        {
+            SelectedBrands.Remove(brand);
+        }
+        ApplyFilters();
+    }
+
+    private void ChangeSortOrder(string sortOrder)
+    {
+        CurrentSortOrder = sortOrder;
+        ApplyFilters();
+    }
+
+    private void ApplyFilters()
+    {
+        FilteredProducts = ProductService.Products
+            .Where(p => p.Category?.Equals(Category, StringComparison.OrdinalIgnoreCase) == true);
+
+        if (SelectedSubCategories.Any())
+        {
+            FilteredProducts = FilteredProducts
+                .Where(p => p.SubCategory != null && SelectedSubCategories.Contains(p.SubCategory));
+        }
+
+        if (SelectedBrands.Any())
+        {
+            FilteredProducts = FilteredProducts
+                .Where(p => p.Brand != null && SelectedBrands.Contains(p.Brand));
+        }
+
+        FilteredProducts = CurrentSortOrder switch
+        {
+            "price-asc" => FilteredProducts.OrderBy(p => p.ListPrice),
+            "price-desc" => FilteredProducts.OrderByDescending(p => p.ListPrice),
+            "name-asc" => FilteredProducts.OrderBy(p => p.Name),
+            "name-desc" => FilteredProducts.OrderByDescending(p => p.Name),
+            "discount" => FilteredProducts.OrderByDescending(p => p.ListPrice - p.SellingPrice),
+            _ => FilteredProducts
+        };
     }
 }
