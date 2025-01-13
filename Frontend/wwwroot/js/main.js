@@ -209,3 +209,18 @@
     });
 
 })(jQuery);
+
+window.initializeHeroCategories = function () {
+    // Asegúrate de eliminar cualquier evento duplicado
+    $('.hero__categories__all').off('click');
+    $('.hero__categories__all').on('click', function () {
+        $('.hero__categories ul').slideToggle(400);
+    });
+
+    // Cierra el dropdown automáticamente al seleccionar una categoría
+    $('.hero__categories__list a').off('click');
+    $('.hero__categories__list a').on('click', function () {
+        $('.hero__categories ul').slideUp(400);
+    });
+};
+
