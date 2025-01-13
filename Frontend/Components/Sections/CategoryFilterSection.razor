@@ -33,16 +33,17 @@
 <section class="product">
     <div class="container">
         <div class="row">
+            <!-- Sidebar Filters -->
             <div class="col-lg-3 col-md-4">
                 <div class="sidebar">
-                    <div class="">
+                    <div>
                         <span>Filtrar por:</span>
                     </div>
-                            @if (InitialSubCategories.Any())
-                            {
-                                <div class="sidebar__item">
-                                    <h4>Subcategoría</h4>
-                                    <ul class="scrollable-list">
+                    @if (InitialSubCategories.Any())
+                    {
+                        <div class="sidebar__item">
+                            <h4>Subcategoría</h4>
+                            <ul class="scrollable-list">
                                 @foreach (var subcategory in InitialSubCategories)
                                 {
                                     <li>
@@ -52,9 +53,9 @@
                                         </label>
                                     </li>
                                 }
-                                    </ul>
-                                </div>
-                            }
+                            </ul>
+                        </div>
+                    }
                    
                     <div class="sidebar__item">
                         <h4>Marca</h4>
@@ -75,6 +76,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Main Product Grid & Sort -->
             <div class="col-lg-9 col-md-7">
                 <div class="filter__item">
                     <div class="row">
@@ -91,13 +93,20 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="filter__sort">
                                 <span>Ordenar por</span>
-                                <select @onchange="(e) => ChangeSortOrder(e.Value.ToString())">
-                                    <option value="price-asc">Precio: menor a mayor</option>
-                                    <option value="price-desc">Precio: mayor a menor</option>
-                                    <option value="name-asc">Nombre, ascendente</option>
-                                    <option value="name-desc">Nombre, descendente</option>
-                                    <option value="discount">Descuento</option>
-                                </select>
+                                <!-- Custom Nice Select -->
+                                <div class="nice-select" tabindex="0">
+                                    <span class="current">@CurrentSortLabel</span>
+                                    <ul class="list">
+                                        @foreach (var sortOption in SortOptions)
+                                        {
+                                            <li class="option @(CurrentSortOrder == sortOption.Key ? "selected" : "")"
+                                                @onclick="@(() => ChangeSortOrder(sortOption.Key, sortOption.Value))">
+                                                @sortOption.Value
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <!-- End Custom Nice Select -->
                             </div>
                         </div>
                     </div>
@@ -117,13 +126,29 @@
                                         <div class="product__item__pic">
                                             <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
                                             <ul class="product__item__pic__hover">
-                                                <li><a href="/productos/@product.Category/@product.Slug"><i class="fa fa-info"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li>
+                                                    <a href="/productos/@product.Category/@product.Slug">
+                                                        <i class="fa fa-info"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fa fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fa fa-shopping-cart"></i>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
-                                            <h6><a href="/productos/@product.Category/@product.Slug">@product.Name</a></h6>
+                                            <h6>
+                                                <a href="/productos/@product.Category/@product.Slug">
+                                                    @product.Name
+                                                </a>
+                                            </h6>
                                             <h5>Q @product.ListPrice.ToString("F2")</h5>
                                         </div>
                                     </div>
@@ -146,12 +171,25 @@
     private IEnumerable<string> InitialBrands { get; set; } = new List<string>();
     private HashSet<string> SelectedSubCategories { get; set; } = new HashSet<string>();
     private HashSet<string> SelectedBrands { get; set; } = new HashSet<string>();
+
+    // Dictionary holding sort option keys and their corresponding labels.
+    private Dictionary<string, string> SortOptions = new Dictionary<string, string>
+    {
+        { "price-asc", "Precio: menor a mayor" },
+        { "price-desc", "Precio: mayor a menor" },
+        { "name-asc", "Nombre, ascendente" },
+        { "name-desc", "Nombre, descendente" },
+        { "discount", "Descuento" }
+    };
+
     private string CurrentSortOrder { get; set; } = "price-asc";
+    private string CurrentSortLabel { get; set; } = "Precio: menor a mayor";
 
     protected override void OnParametersSet()
     {
         if (ProductService.Products != null && !string.IsNullOrEmpty(Category))
         {
+            // Initialize filter lists
             InitialSubCategories = ProductService.Products
                 .Where(p => p.Category?.Equals(Category, StringComparison.OrdinalIgnoreCase) == true && p.SubCategory != null)
                 .Select(p => p.SubCategory!)
@@ -194,9 +232,15 @@
         ApplyFilters();
     }
 
-    private void ChangeSortOrder(string sortOrder)
+    /// <summary>
+    /// Changes the sort order and updates the label displayed in the nice-select.
+    /// </summary>
+    /// <param name="sortOrder">The sort order key (e.g. "price-asc")</param>
+    /// <param name="sortLabel">The label to display (e.g. "Precio: menor a mayor")</param>
+    private void ChangeSortOrder(string sortOrder, string sortLabel)
     {
         CurrentSortOrder = sortOrder;
+        CurrentSortLabel = sortLabel;
         ApplyFilters();
     }
 
@@ -219,11 +263,11 @@
 
         FilteredProducts = CurrentSortOrder switch
         {
-            "price-asc" => FilteredProducts.OrderBy(p => p.ListPrice),
+            "price-asc"  => FilteredProducts.OrderBy(p => p.ListPrice),
             "price-desc" => FilteredProducts.OrderByDescending(p => p.ListPrice),
-            "name-asc" => FilteredProducts.OrderBy(p => p.Name),
-            "name-desc" => FilteredProducts.OrderByDescending(p => p.Name),
-            "discount" => FilteredProducts.OrderByDescending(p => p.ListPrice - p.SellingPrice),
+            "name-asc"   => FilteredProducts.OrderBy(p => p.Name),
+            "name-desc"  => FilteredProducts.OrderByDescending(p => p.Name),
+            "discount"   => FilteredProducts.OrderByDescending(p => p.ListPrice - p.SellingPrice),
             _ => FilteredProducts
         };
     }
