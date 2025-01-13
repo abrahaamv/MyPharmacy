@@ -16,7 +16,7 @@ namespace WebAPI.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.11")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -56,17 +56,17 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 4,
-                            Name = "ALKOH"
+                            Name = "SUPERIOR"
                         },
                         new
                         {
                             Id = 5,
-                            Name = "VESA"
+                            Name = "ALKA-SELTZER"
                         },
                         new
                         {
                             Id = 6,
-                            Name = "SUPERIOR"
+                            Name = "ALKOH"
                         },
                         new
                         {
@@ -76,52 +76,52 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 8,
-                            Name = "ALKA-SELTZER"
-                        },
-                        new
-                        {
-                            Id = 9,
                             Name = "HIDRAVIDA"
                         },
                         new
                         {
-                            Id = 10,
-                            Name = "PANADOL"
-                        },
-                        new
-                        {
-                            Id = 11,
+                            Id = 9,
                             Name = "MK"
                         },
                         new
                         {
+                            Id = 10,
+                            Name = "VESA"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "PANADOL"
+                        },
+                        new
+                        {
                             Id = 12,
-                            Name = "GLUCERNA"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Name = "CASTILLA"
-                        },
-                        new
-                        {
-                            Id = 14,
                             Name = "GENESIS"
                         },
                         new
                         {
-                            Id = 15,
-                            Name = "VITAFLENACO"
-                        },
-                        new
-                        {
-                            Id = 16,
+                            Id = 13,
                             Name = "CERAVE"
                         },
                         new
                         {
+                            Id = 14,
+                            Name = "VITAFLENACO"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "TUMS"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "CASTILLA"
+                        },
+                        new
+                        {
                             Id = 17,
-                            Name = "ATLEVIT"
+                            Name = "ALKA EXTREME"
                         },
                         new
                         {
@@ -131,57 +131,57 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 19,
-                            Name = "ALKA EXTREME"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Name = "TUMS"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Name = "SANTA FE NATURA"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Name = "EUCERIN"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Name = "EXCELLENT"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Name = "TYLENOL"
-                        },
-                        new
-                        {
-                            Id = 25,
                             Name = "PEDIASURE"
                         },
                         new
                         {
-                            Id = 26,
+                            Id = 20,
+                            Name = "ATLEVIT"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "TYLENOL"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "EXCELLENT"
+                        },
+                        new
+                        {
+                            Id = 23,
                             Name = "DEOPIES"
                         },
                         new
                         {
+                            Id = 24,
+                            Name = "GLUCERNA"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "ASPIRINA"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "METAMUCIL"
+                        },
+                        new
+                        {
                             Id = 27,
-                            Name = "TABCIN"
+                            Name = "EUCERIN"
                         },
                         new
                         {
                             Id = 28,
-                            Name = "AFFECTIVE"
+                            Name = "SANTA FE NATURA"
                         },
                         new
                         {
                             Id = 29,
-                            Name = "ADVIL"
+                            Name = "TABCIN"
                         },
                         new
                         {
@@ -196,257 +196,257 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 32,
-                            Name = "METAMUCIL"
+                            Name = "AFFECTIVE"
                         },
                         new
                         {
                             Id = 33,
-                            Name = "ASPIRINA"
+                            Name = "ADVIL"
                         },
                         new
                         {
                             Id = 34,
-                            Name = "VIROGRIP"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Name = "SAVORÂ"
-                        },
-                        new
-                        {
-                            Id = 36,
                             Name = "VIJOSA"
                         },
                         new
                         {
-                            Id = 37,
-                            Name = "GELA-KIN"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Name = "PEDEX"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Name = "INFASA"
-                        },
-                        new
-                        {
-                            Id = 40,
+                            Id = 35,
                             Name = "SIETE MARES"
                         },
                         new
                         {
-                            Id = 41,
+                            Id = 36,
+                            Name = "VIROGRIP"
+                        },
+                        new
+                        {
+                            Id = 37,
                             Name = "VICK"
                         },
                         new
                         {
-                            Id = 42,
+                            Id = 38,
                             Name = "VICK VAPORUB"
                         },
                         new
                         {
-                            Id = 43,
+                            Id = 39,
                             Name = "LA BONNE VIE"
                         },
                         new
                         {
-                            Id = 44,
-                            Name = "DRIVE MEDICAL"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Name = "FARMANDINA"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Name = "MEDIMART"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Name = "PRUDENCE"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Name = "QUALIPHARM"
-                        },
-                        new
-                        {
-                            Id = 49,
+                            Id = 40,
                             Name = "ALKA AD"
                         },
                         new
                         {
-                            Id = 50,
-                            Name = "JOHNSON & JOHNSON"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Name = "PEPTO BISMOL"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Name = "PASINERVA"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Name = "VITABIOTICS"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Name = "BENET"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Name = "BEPANTHENE"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Name = "BAYER"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Name = "CUREBAND"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            Name = "PIEX"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Name = "CENTRUM"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Name = "GOOD BRANDS"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Name = "DEL PILAR"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            Name = "NEXCARE"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            Name = "LA ROCHE-POSAY"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Name = "ENTEREX"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Name = "MASCARA"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            Name = "REDOXITOS"
-                        },
-                        new
-                        {
-                            Id = 67,
-                            Name = "OMRON"
-                        },
-                        new
-                        {
-                            Id = 68,
+                            Id = 41,
                             Name = "DUREX"
                         },
                         new
                         {
-                            Id = 69,
-                            Name = "AMBIDERM"
+                            Id = 42,
+                            Name = "DRIVE MEDICAL"
                         },
                         new
                         {
-                            Id = 70,
-                            Name = "DONOVAN"
+                            Id = 43,
+                            Name = "PRUDENCE"
                         },
                         new
                         {
-                            Id = 71,
-                            Name = "GUTIS"
+                            Id = 44,
+                            Name = "SAVORÂ"
                         },
                         new
                         {
-                            Id = 72,
-                            Name = "CANESTEN"
+                            Id = 45,
+                            Name = "PASINERVA"
                         },
                         new
                         {
-                            Id = 73,
+                            Id = 46,
+                            Name = "INFASA"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Name = "QUALIPHARM"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Name = "PEPTO BISMOL"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Name = "PEDEX"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Name = "GELA-KIN"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Name = "VITABIOTICS"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Name = "BENET"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Name = "ENTEREX"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Name = "MASCARA"
+                        },
+                        new
+                        {
+                            Id = 55,
                             Name = "VIVE"
                         },
                         new
                         {
-                            Id = 74,
-                            Name = "SUKROL"
+                            Id = 56,
+                            Name = "CUREBAND"
                         },
                         new
                         {
-                            Id = 75,
-                            Name = "BEBERÂ"
+                            Id = 57,
+                            Name = "GOOD BRANDS"
                         },
                         new
                         {
-                            Id = 76,
-                            Name = "NEXT-TABS"
+                            Id = 58,
+                            Name = "MEDIMART"
                         },
                         new
                         {
-                            Id = 77,
-                            Name = "ALKA  GASTRIC"
+                            Id = 59,
+                            Name = "OMRON"
                         },
                         new
                         {
-                            Id = 78,
-                            Name = "ROEMMERS"
+                            Id = 60,
+                            Name = "BEPANTHENE"
                         },
                         new
                         {
-                            Id = 79,
+                            Id = 61,
                             Name = "MEDIHEALTH"
                         },
                         new
                         {
+                            Id = 62,
+                            Name = "VITAL FUERTE"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Name = "JOHNSON & JOHNSON"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Name = "MEDIPRODUCTS"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Name = "CENTRUM"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Name = "NEXCARE"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Name = "LA ROCHE-POSAY"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Name = "CAPLIN POINT LABORAT"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Name = "FRYCIA"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Name = "ALEVE"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Name = "BEBERÂ"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Name = "PIEX"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Name = "AMBIDERM"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Name = "ROEMMERS"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Name = "GUTIS"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Name = "CANESTEN"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Name = "DONOVAN"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Name = "FARMANDINA"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Name = "ISDIN"
+                        },
+                        new
+                        {
                             Id = 80,
-                            Name = "MENARINI"
+                            Name = "DEL PILAR"
                         },
                         new
                         {
                             Id = 81,
-                            Name = "REDOXON"
+                            Name = "NUTRAMEDIX"
                         },
                         new
                         {
                             Id = 82,
-                            Name = "CAPLIN POINT LABORAT"
+                            Name = "ALCON"
                         },
                         new
                         {
@@ -456,17 +456,17 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 84,
-                            Name = "CEBION"
+                            Name = "NEXT-TABS"
                         },
                         new
                         {
                             Id = 85,
-                            Name = "RENU"
+                            Name = "GRIIN"
                         },
                         new
                         {
                             Id = 86,
-                            Name = "MEDIPRODUCTS"
+                            Name = "CEBION"
                         },
                         new
                         {
@@ -476,377 +476,377 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 88,
-                            Name = "VISINA"
-                        },
-                        new
-                        {
-                            Id = 89,
-                            Name = "NIPRO"
-                        },
-                        new
-                        {
-                            Id = 90,
-                            Name = "ALDO UNION"
-                        },
-                        new
-                        {
-                            Id = 91,
-                            Name = "FARKOT"
-                        },
-                        new
-                        {
-                            Id = 92,
-                            Name = "ANCALMO"
-                        },
-                        new
-                        {
-                            Id = 93,
-                            Name = "VITAL FUERTE"
-                        },
-                        new
-                        {
-                            Id = 94,
-                            Name = "ALCON"
-                        },
-                        new
-                        {
-                            Id = 95,
-                            Name = "CARDIOASPIRINA"
-                        },
-                        new
-                        {
-                            Id = 96,
-                            Name = "DIQUIVA"
-                        },
-                        new
-                        {
-                            Id = 97,
-                            Name = "ISDIN"
-                        },
-                        new
-                        {
-                            Id = 98,
-                            Name = "NUTRAMEDIX"
-                        },
-                        new
-                        {
-                            Id = 99,
-                            Name = "ALEVE"
-                        },
-                        new
-                        {
-                            Id = 100,
-                            Name = "BALLENA AZUL"
-                        },
-                        new
-                        {
-                            Id = 101,
-                            Name = "FRYCIA"
-                        },
-                        new
-                        {
-                            Id = 102,
-                            Name = "ABL PHARMA"
-                        },
-                        new
-                        {
-                            Id = 103,
-                            Name = "GRIIN"
-                        },
-                        new
-                        {
-                            Id = 104,
-                            Name = "SIN MARCA"
-                        },
-                        new
-                        {
-                            Id = 105,
                             Name = "COFAL"
                         },
                         new
                         {
-                            Id = 106,
-                            Name = "B&J"
-                        },
-                        new
-                        {
-                            Id = 107,
-                            Name = "VICHY"
-                        },
-                        new
-                        {
-                            Id = 108,
-                            Name = "K-Y GEL"
-                        },
-                        new
-                        {
-                            Id = 109,
-                            Name = "PEDIALYTE"
-                        },
-                        new
-                        {
-                            Id = 110,
-                            Name = "NEUROFORTAN"
-                        },
-                        new
-                        {
-                            Id = 111,
-                            Name = "BABE"
-                        },
-                        new
-                        {
-                            Id = 112,
-                            Name = "CHINOIN"
-                        },
-                        new
-                        {
-                            Id = 113,
-                            Name = "ABBOTT CFR"
-                        },
-                        new
-                        {
-                            Id = 114,
-                            Name = "PIERSAN"
-                        },
-                        new
-                        {
-                            Id = 115,
-                            Name = "MERCK"
-                        },
-                        new
-                        {
-                            Id = 116,
-                            Name = "JALOMA"
-                        },
-                        new
-                        {
-                            Id = 117,
-                            Name = "LEUKOPLAST"
-                        },
-                        new
-                        {
-                            Id = 118,
-                            Name = "FERRER"
-                        },
-                        new
-                        {
-                            Id = 119,
-                            Name = "DOLOKALORUB"
-                        },
-                        new
-                        {
-                            Id = 120,
-                            Name = "BABARIA"
-                        },
-                        new
-                        {
-                            Id = 121,
-                            Name = "GENERIX"
-                        },
-                        new
-                        {
-                            Id = 122,
-                            Name = "ASOFARMA"
-                        },
-                        new
-                        {
-                            Id = 123,
-                            Name = "QUINFICA"
-                        },
-                        new
-                        {
-                            Id = 124,
-                            Name = "LEMON GRASS"
-                        },
-                        new
-                        {
-                            Id = 125,
-                            Name = "BONIN"
-                        },
-                        new
-                        {
-                            Id = 126,
-                            Name = "PROCTER & GAMBLE"
-                        },
-                        new
-                        {
-                            Id = 127,
-                            Name = "SANOFI CHC"
-                        },
-                        new
-                        {
-                            Id = 128,
-                            Name = "COREGA"
-                        },
-                        new
-                        {
-                            Id = 129,
-                            Name = "ISIS PHARMA"
-                        },
-                        new
-                        {
-                            Id = 130,
-                            Name = "UNIPHARM"
-                        },
-                        new
-                        {
-                            Id = 131,
-                            Name = "SCOTT"
-                        },
-                        new
-                        {
-                            Id = 132,
-                            Name = "GMS"
-                        },
-                        new
-                        {
-                            Id = 133,
-                            Name = "VERDE VITA"
-                        },
-                        new
-                        {
-                            Id = 134,
+                            Id = 89,
                             Name = "CHEMILCO"
                         },
                         new
                         {
-                            Id = 135,
-                            Name = "QUIFARMA"
+                            Id = 90,
+                            Name = "K-Y GEL"
                         },
                         new
                         {
-                            Id = 136,
-                            Name = "VITAMIN SHOPPE"
+                            Id = 91,
+                            Name = "REDOXITOS"
                         },
                         new
                         {
-                            Id = 137,
-                            Name = "BMA PHARMA"
+                            Id = 92,
+                            Name = "ALKA  GASTRIC"
                         },
                         new
                         {
-                            Id = 138,
-                            Name = "ICN GROSMAN"
+                            Id = 93,
+                            Name = "VISINA"
                         },
                         new
                         {
-                            Id = 139,
+                            Id = 94,
+                            Name = "NIPRO"
+                        },
+                        new
+                        {
+                            Id = 95,
+                            Name = "BAYER"
+                        },
+                        new
+                        {
+                            Id = 96,
+                            Name = "REDOXON"
+                        },
+                        new
+                        {
+                            Id = 97,
+                            Name = "BALLENA AZUL"
+                        },
+                        new
+                        {
+                            Id = 98,
+                            Name = "FERRER"
+                        },
+                        new
+                        {
+                            Id = 99,
+                            Name = "SIN MARCA"
+                        },
+                        new
+                        {
+                            Id = 100,
+                            Name = "CARDIOASPIRINA"
+                        },
+                        new
+                        {
+                            Id = 101,
+                            Name = "GMS"
+                        },
+                        new
+                        {
+                            Id = 102,
+                            Name = "PROCTER & GAMBLE"
+                        },
+                        new
+                        {
+                            Id = 103,
+                            Name = "PEDIALYTE"
+                        },
+                        new
+                        {
+                            Id = 104,
+                            Name = "VICHY"
+                        },
+                        new
+                        {
+                            Id = 105,
+                            Name = "B&J"
+                        },
+                        new
+                        {
+                            Id = 106,
                             Name = "EXELTIS"
                         },
                         new
                         {
-                            Id = 140,
-                            Name = "MED PHARMA"
+                            Id = 107,
+                            Name = "SUKROL"
                         },
                         new
                         {
-                            Id = 141,
-                            Name = "GEX"
+                            Id = 108,
+                            Name = "FARKOT"
                         },
                         new
                         {
-                            Id = 142,
-                            Name = "GASTRO-BISMOL"
+                            Id = 109,
+                            Name = "ANCALMO"
                         },
                         new
                         {
-                            Id = 143,
-                            Name = "CIRUELAX"
+                            Id = 110,
+                            Name = "MENARINI"
                         },
                         new
                         {
-                            Id = 144,
-                            Name = "GNC"
+                            Id = 111,
+                            Name = "LEMON GRASS"
                         },
                         new
                         {
-                            Id = 145,
-                            Name = "BAYKID"
-                        },
-                        new
-                        {
-                            Id = 146,
-                            Name = "ACIERTO"
-                        },
-                        new
-                        {
-                            Id = 147,
-                            Name = "HIMALAYA"
-                        },
-                        new
-                        {
-                            Id = 148,
-                            Name = "LEONFLAX"
-                        },
-                        new
-                        {
-                            Id = 149,
-                            Name = "PHILLIPS"
-                        },
-                        new
-                        {
-                            Id = 150,
-                            Name = "RUSSELL STOVER"
-                        },
-                        new
-                        {
-                            Id = 151,
-                            Name = "ACON"
-                        },
-                        new
-                        {
-                            Id = 152,
+                            Id = 112,
                             Name = "GLAXOSMITHKLINE"
                         },
                         new
                         {
-                            Id = 153,
-                            Name = "PROTEINOL"
+                            Id = 113,
+                            Name = "RENU"
                         },
                         new
                         {
-                            Id = 154,
+                            Id = 114,
+                            Name = "ABL PHARMA"
+                        },
+                        new
+                        {
+                            Id = 115,
+                            Name = "VITAMIN SHOPPE"
+                        },
+                        new
+                        {
+                            Id = 116,
+                            Name = "SCOTT"
+                        },
+                        new
+                        {
+                            Id = 117,
+                            Name = "GNC"
+                        },
+                        new
+                        {
+                            Id = 118,
+                            Name = "BABARIA"
+                        },
+                        new
+                        {
+                            Id = 119,
+                            Name = "ASOFARMA"
+                        },
+                        new
+                        {
+                            Id = 120,
+                            Name = "GHL INTERNACION"
+                        },
+                        new
+                        {
+                            Id = 121,
+                            Name = "CHINOIN"
+                        },
+                        new
+                        {
+                            Id = 122,
+                            Name = "NEUROFORTAN"
+                        },
+                        new
+                        {
+                            Id = 123,
+                            Name = "PINGUINO"
+                        },
+                        new
+                        {
+                            Id = 124,
+                            Name = "ISIS PHARMA"
+                        },
+                        new
+                        {
+                            Id = 125,
                             Name = "SANTA FE"
                         },
                         new
                         {
-                            Id = 155,
-                            Name = "CARDIO VITAL"
-                        },
-                        new
-                        {
-                            Id = 156,
-                            Name = "DENK"
-                        },
-                        new
-                        {
-                            Id = 157,
+                            Id = 126,
                             Name = "LANCASCO"
                         },
                         new
                         {
-                            Id = 158,
-                            Name = "BENADRYL"
+                            Id = 127,
+                            Name = "JALOMA"
                         },
                         new
                         {
-                            Id = 159,
-                            Name = "LAXMI PHARMAC."
+                            Id = 128,
+                            Name = "CARDIO VITAL"
                         },
                         new
                         {
-                            Id = 160,
-                            Name = "VIZCAINO"
+                            Id = 129,
+                            Name = "BMA PHARMA"
                         },
                         new
                         {
-                            Id = 161,
+                            Id = 130,
+                            Name = "ABBOTT CFR"
+                        },
+                        new
+                        {
+                            Id = 131,
+                            Name = "DOLOKALORUB"
+                        },
+                        new
+                        {
+                            Id = 132,
+                            Name = "HIMALAYA"
+                        },
+                        new
+                        {
+                            Id = 133,
+                            Name = "DIQUIVA"
+                        },
+                        new
+                        {
+                            Id = 134,
                             Name = "LAINEZ"
                         },
                         new
                         {
-                            Id = 162,
+                            Id = 135,
+                            Name = "RUSSELL STOVER"
+                        },
+                        new
+                        {
+                            Id = 136,
+                            Name = "BAYKID"
+                        },
+                        new
+                        {
+                            Id = 137,
+                            Name = "BIODERMA"
+                        },
+                        new
+                        {
+                            Id = 138,
+                            Name = "GASTRO-BISMOL"
+                        },
+                        new
+                        {
+                            Id = 139,
+                            Name = "CIRUELAX"
+                        },
+                        new
+                        {
+                            Id = 140,
+                            Name = "BABE"
+                        },
+                        new
+                        {
+                            Id = 141,
+                            Name = "CICATRICURE"
+                        },
+                        new
+                        {
+                            Id = 142,
+                            Name = "ACIERTO"
+                        },
+                        new
+                        {
+                            Id = 143,
+                            Name = "VIZCAINO"
+                        },
+                        new
+                        {
+                            Id = 144,
+                            Name = "PRUMISA"
+                        },
+                        new
+                        {
+                            Id = 145,
+                            Name = "NIKZON"
+                        },
+                        new
+                        {
+                            Id = 146,
+                            Name = "LEONFLAX"
+                        },
+                        new
+                        {
+                            Id = 147,
+                            Name = "SANOFI CHC"
+                        },
+                        new
+                        {
+                            Id = 148,
+                            Name = "BONIN"
+                        },
+                        new
+                        {
+                            Id = 149,
+                            Name = "MERCK"
+                        },
+                        new
+                        {
+                            Id = 150,
+                            Name = "GENERIX"
+                        },
+                        new
+                        {
+                            Id = 151,
+                            Name = "UNIPHARM"
+                        },
+                        new
+                        {
+                            Id = 152,
+                            Name = "DENK"
+                        },
+                        new
+                        {
+                            Id = 153,
+                            Name = "VERDE VITA"
+                        },
+                        new
+                        {
+                            Id = 154,
+                            Name = "GUASURE"
+                        },
+                        new
+                        {
+                            Id = 155,
+                            Name = "QUIFARMA"
+                        },
+                        new
+                        {
+                            Id = 156,
+                            Name = "PROCAPS"
+                        },
+                        new
+                        {
+                            Id = 157,
+                            Name = "PIERSAN"
+                        },
+                        new
+                        {
+                            Id = 158,
+                            Name = "ICN GROSMAN"
+                        },
+                        new
+                        {
+                            Id = 159,
                             Name = "ZEPOL"
+                        },
+                        new
+                        {
+                            Id = 160,
+                            Name = "MED PHARMA"
+                        },
+                        new
+                        {
+                            Id = 161,
+                            Name = "SEBAPHARMA"
+                        },
+                        new
+                        {
+                            Id = 162,
+                            Name = "VITAGEL"
                         },
                         new
                         {
@@ -856,167 +856,167 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 164,
-                            Name = "BIODERMA"
-                        },
-                        new
-                        {
-                            Id = 165,
-                            Name = "SEBAPHARMA"
-                        },
-                        new
-                        {
-                            Id = 166,
-                            Name = "MEFASA"
-                        },
-                        new
-                        {
-                            Id = 167,
                             Name = "PROFOOT"
                         },
                         new
                         {
+                            Id = 165,
+                            Name = "FUTURO"
+                        },
+                        new
+                        {
+                            Id = 166,
+                            Name = "FARMAMEDICA"
+                        },
+                        new
+                        {
+                            Id = 167,
+                            Name = "QUINFICA"
+                        },
+                        new
+                        {
                             Id = 168,
-                            Name = "GHL INTERNACION"
+                            Name = "BAYER  HEALTHCARE P"
                         },
                         new
                         {
                             Id = 169,
-                            Name = "BAYER HEALTHCARE P"
-                        },
-                        new
-                        {
-                            Id = 170,
-                            Name = "SAFEGUARD"
-                        },
-                        new
-                        {
-                            Id = 171,
                             Name = "JANSSEN"
                         },
                         new
                         {
+                            Id = 170,
+                            Name = "ACON"
+                        },
+                        new
+                        {
+                            Id = 171,
+                            Name = "COREGA"
+                        },
+                        new
+                        {
                             Id = 172,
-                            Name = "CHOLSAMAJ"
-                        },
-                        new
-                        {
-                            Id = 173,
-                            Name = "PINGUINO"
-                        },
-                        new
-                        {
-                            Id = 174,
-                            Name = "NIKZON"
-                        },
-                        new
-                        {
-                            Id = 175,
-                            Name = "ROCHE"
-                        },
-                        new
-                        {
-                            Id = 176,
-                            Name = "PRUMISA"
-                        },
-                        new
-                        {
-                            Id = 177,
-                            Name = "ABBOTT LAB."
-                        },
-                        new
-                        {
-                            Id = 178,
-                            Name = "GUASURE"
-                        },
-                        new
-                        {
-                            Id = 179,
-                            Name = "GRUPO FARMA"
-                        },
-                        new
-                        {
-                            Id = 180,
-                            Name = "ROWE"
-                        },
-                        new
-                        {
-                            Id = 181,
-                            Name = "BOEHRINGER INGELHEIM"
-                        },
-                        new
-                        {
-                            Id = 182,
-                            Name = "GLOBAL FARMA"
-                        },
-                        new
-                        {
-                            Id = 183,
-                            Name = "ACCU-ANSWER"
-                        },
-                        new
-                        {
-                            Id = 184,
                             Name = "BIOCLEAN"
                         },
                         new
                         {
-                            Id = 185,
-                            Name = "LAFAGE"
+                            Id = 173,
+                            Name = "VIFOR"
                         },
                         new
                         {
-                            Id = 186,
-                            Name = "DAVIS LAB."
+                            Id = 174,
+                            Name = "GLOBAL FARMA"
                         },
                         new
                         {
-                            Id = 187,
-                            Name = "ODDENT"
-                        },
-                        new
-                        {
-                            Id = 188,
+                            Id = 175,
                             Name = "CHURCH&DWIGHT"
                         },
                         new
                         {
-                            Id = 189,
-                            Name = "PROCAPS"
+                            Id = 176,
+                            Name = "PROTEINOL"
                         },
                         new
                         {
-                            Id = 190,
-                            Name = "FERRIDOCE"
+                            Id = 177,
+                            Name = "ROCHE"
                         },
                         new
                         {
-                            Id = 191,
-                            Name = "HEIDELG"
+                            Id = 178,
+                            Name = "LAFAGE"
                         },
                         new
                         {
-                            Id = 192,
+                            Id = 179,
+                            Name = "DAVIS LAB."
+                        },
+                        new
+                        {
+                            Id = 180,
+                            Name = "LEUKOPLAST"
+                        },
+                        new
+                        {
+                            Id = 181,
+                            Name = "BIO TRUE"
+                        },
+                        new
+                        {
+                            Id = 182,
                             Name = "ROWA WAGNER"
                         },
                         new
                         {
-                            Id = 193,
-                            Name = "ALFER"
+                            Id = 183,
+                            Name = "BIOTA"
                         },
                         new
                         {
-                            Id = 194,
-                            Name = "PHARMALAT"
+                            Id = 184,
+                            Name = "FERRIDOCE"
                         },
                         new
                         {
-                            Id = 195,
+                            Id = 185,
                             Name = "ASTRA ZENECA"
                         },
                         new
                         {
+                            Id = 186,
+                            Name = "LAXMI PHARMAC."
+                        },
+                        new
+                        {
+                            Id = 187,
+                            Name = "BALIARDA"
+                        },
+                        new
+                        {
+                            Id = 188,
+                            Name = "ALFER"
+                        },
+                        new
+                        {
+                            Id = 189,
+                            Name = "ROWE"
+                        },
+                        new
+                        {
+                            Id = 190,
+                            Name = "ESCUDO"
+                        },
+                        new
+                        {
+                            Id = 191,
+                            Name = "TERAMED"
+                        },
+                        new
+                        {
+                            Id = 192,
+                            Name = "VOLTAREN NOVARTIS"
+                        },
+                        new
+                        {
+                            Id = 193,
+                            Name = "LUNDBECK"
+                        },
+                        new
+                        {
+                            Id = 194,
+                            Name = "NUTRISON"
+                        },
+                        new
+                        {
+                            Id = 195,
+                            Name = "PHARMALAT"
+                        },
+                        new
+                        {
                             Id = 196,
-                            Name = "EUROFARMA"
+                            Name = "ORGANON"
                         },
                         new
                         {
@@ -1026,77 +1026,77 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 198,
-                            Name = "BIO TRUE"
+                            Name = "BOEHRINGER INGELHEIM"
                         },
                         new
                         {
                             Id = 199,
-                            Name = "LABORATORIOS MIDI"
+                            Name = "MERCK SHARP & D"
                         },
                         new
                         {
                             Id = 200,
-                            Name = "TERAMED"
-                        },
-                        new
-                        {
-                            Id = 201,
-                            Name = "LUNDBECK"
-                        },
-                        new
-                        {
-                            Id = 202,
-                            Name = "ORGANON"
-                        },
-                        new
-                        {
-                            Id = 203,
                             Name = "ACINO PHARMA"
                         },
                         new
                         {
-                            Id = 204,
-                            Name = "ESCUDO"
+                            Id = 201,
+                            Name = "BIO-OIL"
                         },
                         new
                         {
-                            Id = 205,
-                            Name = "NUTRISON"
+                            Id = 202,
+                            Name = "LANSIER"
                         },
                         new
                         {
-                            Id = 206,
-                            Name = "NOVARTIS PHARMA"
-                        },
-                        new
-                        {
-                            Id = 207,
-                            Name = "GLAXO PHARMA"
-                        },
-                        new
-                        {
-                            Id = 208,
-                            Name = "PFIZER"
-                        },
-                        new
-                        {
-                            Id = 209,
+                            Id = 203,
                             Name = "VIU"
                         },
                         new
                         {
-                            Id = 210,
-                            Name = "BENESTAR"
+                            Id = 204,
+                            Name = "ABBOTT LAB."
                         },
                         new
                         {
-                            Id = 211,
+                            Id = 205,
+                            Name = "GLAXO PHARMA"
+                        },
+                        new
+                        {
+                            Id = 206,
+                            Name = "OSHI"
+                        },
+                        new
+                        {
+                            Id = 207,
+                            Name = "ALDO UNION"
+                        },
+                        new
+                        {
+                            Id = 208,
+                            Name = "GEX"
+                        },
+                        new
+                        {
+                            Id = 209,
+                            Name = "MEFASA"
+                        },
+                        new
+                        {
+                            Id = 210,
                             Name = "BENESSI"
                         },
                         new
                         {
+                            Id = 211,
+                            Name = "SERVIER"
+                        },
+                        new
+                        {
                             Id = 212,
-                            Name = "CRAYOLA SILLY SCENTS"
+                            Name = "PFIZER"
                         },
                         new
                         {
@@ -1106,312 +1106,312 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 214,
-                            Name = "HIDRATOMIC"
+                            Name = "BIOGAIA"
                         },
                         new
                         {
                             Id = 215,
-                            Name = "SERVIER"
-                        },
-                        new
-                        {
-                            Id = 216,
                             Name = "PHARBEST"
                         },
                         new
                         {
+                            Id = 216,
+                            Name = "HIDRATOMIC"
+                        },
+                        new
+                        {
                             Id = 217,
-                            Name = "VITAGEL"
+                            Name = "ACCU-ANSWER"
                         },
                         new
                         {
                             Id = 218,
-                            Name = "OSHI"
-                        },
-                        new
-                        {
-                            Id = 219,
-                            Name = "MERZ"
-                        },
-                        new
-                        {
-                            Id = 220,
-                            Name = "CHEMINTER"
-                        },
-                        new
-                        {
-                            Id = 221,
-                            Name = "SANOFI"
-                        },
-                        new
-                        {
-                            Id = 222,
-                            Name = "FARMAMEDICA"
-                        },
-                        new
-                        {
-                            Id = 223,
-                            Name = "FUTURO"
-                        },
-                        new
-                        {
-                            Id = 224,
-                            Name = "GARDEN HOUSE"
-                        },
-                        new
-                        {
-                            Id = 225,
                             Name = "NOVARTIS-COHEN"
                         },
                         new
                         {
-                            Id = 226,
-                            Name = "DRIVE DEVILBISS HEALTHCARE"
-                        },
-                        new
-                        {
-                            Id = 227,
+                            Id = 219,
                             Name = "SAVAL"
                         },
                         new
                         {
-                            Id = 228,
-                            Name = "VIFOR"
+                            Id = 220,
+                            Name = "CHOLSAMAJ"
                         },
                         new
                         {
-                            Id = 229,
+                            Id = 221,
+                            Name = "GARDEN HOUSE"
+                        },
+                        new
+                        {
+                            Id = 222,
                             Name = "IPROFASA"
                         },
                         new
                         {
-                            Id = 230,
-                            Name = "BONLIFE"
-                        },
-                        new
-                        {
-                            Id = 231,
+                            Id = 223,
                             Name = "MILAGRO DE LA SELVA"
                         },
                         new
                         {
-                            Id = 232,
-                            Name = "OM"
+                            Id = 224,
+                            Name = "BENESTAR"
                         },
                         new
                         {
-                            Id = 233,
-                            Name = "HARRY POTTER"
+                            Id = 225,
+                            Name = "GRUPO FARMA"
                         },
                         new
                         {
-                            Id = 234,
-                            Name = "MEDITEMP"
-                        },
-                        new
-                        {
-                            Id = 235,
-                            Name = "PANALAB"
-                        },
-                        new
-                        {
-                            Id = 236,
-                            Name = "CHALVER"
-                        },
-                        new
-                        {
-                            Id = 237,
-                            Name = "KRAL"
-                        },
-                        new
-                        {
-                            Id = 238,
-                            Name = "CHILE"
-                        },
-                        new
-                        {
-                            Id = 239,
-                            Name = "QG5"
-                        },
-                        new
-                        {
-                            Id = 240,
+                            Id = 226,
                             Name = "SESDERMA S.A"
                         },
                         new
                         {
-                            Id = 241,
-                            Name = "GRUNENTHAL"
+                            Id = 227,
+                            Name = "HARRY POTTER"
                         },
                         new
                         {
-                            Id = 242,
-                            Name = "HIDRISAGE"
+                            Id = 228,
+                            Name = "CRAYOLA SILLY SCENTS"
                         },
                         new
                         {
-                            Id = 243,
-                            Name = "INTECFA"
+                            Id = 229,
+                            Name = "BONLIFE"
                         },
                         new
                         {
-                            Id = 244,
-                            Name = "ROHAPHARMA"
+                            Id = 230,
+                            Name = "BENADRYL"
                         },
                         new
                         {
-                            Id = 245,
-                            Name = "EISAI"
+                            Id = 231,
+                            Name = "CHALVER"
                         },
                         new
                         {
-                            Id = 246,
-                            Name = "ROTTA"
+                            Id = 232,
+                            Name = "CHILE"
                         },
                         new
                         {
-                            Id = 247,
-                            Name = "MERCK SHARP & D"
+                            Id = 233,
+                            Name = "ODDENT"
                         },
                         new
                         {
-                            Id = 248,
-                            Name = "QUIMIFAR"
+                            Id = 234,
+                            Name = "QG5"
                         },
                         new
                         {
-                            Id = 249,
-                            Name = "ASPEN"
-                        },
-                        new
-                        {
-                            Id = 250,
-                            Name = "ARSAL"
-                        },
-                        new
-                        {
-                            Id = 251,
-                            Name = "BIOTA"
-                        },
-                        new
-                        {
-                            Id = 252,
-                            Name = "PHARMAKON"
-                        },
-                        new
-                        {
-                            Id = 253,
-                            Name = "ANGELINI"
-                        },
-                        new
-                        {
-                            Id = 254,
-                            Name = "OFTISOL"
-                        },
-                        new
-                        {
-                            Id = 255,
-                            Name = "PHISA"
-                        },
-                        new
-                        {
-                            Id = 256,
-                            Name = "SANDOZ"
-                        },
-                        new
-                        {
-                            Id = 257,
-                            Name = "LEVEN"
-                        },
-                        new
-                        {
-                            Id = 258,
-                            Name = "NOVARTIS"
-                        },
-                        new
-                        {
-                            Id = 259,
-                            Name = "BALIARDA"
-                        },
-                        new
-                        {
-                            Id = 260,
-                            Name = "SILANES"
-                        },
-                        new
-                        {
-                            Id = 261,
+                            Id = 235,
                             Name = "SOPHIA"
                         },
                         new
                         {
-                            Id = 262,
-                            Name = "BIOCODEX"
+                            Id = 236,
+                            Name = "HEIDELG"
                         },
                         new
                         {
-                            Id = 263,
-                            Name = "LANSIER"
+                            Id = 237,
+                            Name = "ROHAPHARMA"
                         },
                         new
                         {
-                            Id = 264,
-                            Name = "MEGALABS"
+                            Id = 238,
+                            Name = "MEDITEMP"
                         },
                         new
                         {
-                            Id = 265,
-                            Name = "PROTEC"
+                            Id = 239,
+                            Name = "INTECFA"
                         },
                         new
                         {
-                            Id = 266,
-                            Name = "WELLCO"
+                            Id = 240,
+                            Name = "HIDRISAGE"
                         },
                         new
                         {
-                            Id = 267,
-                            Name = "LUVECK"
-                        },
-                        new
-                        {
-                            Id = 268,
-                            Name = "MICROLIFE"
-                        },
-                        new
-                        {
-                            Id = 269,
-                            Name = "TOP MODEL"
-                        },
-                        new
-                        {
-                            Id = 270,
+                            Id = 241,
                             Name = "ELI LILLY"
                         },
                         new
                         {
-                            Id = 271,
-                            Name = "JR PHARMA"
+                            Id = 242,
+                            Name = "KRAL"
                         },
                         new
                         {
-                            Id = 272,
+                            Id = 243,
+                            Name = "MEGALABS"
+                        },
+                        new
+                        {
+                            Id = 244,
+                            Name = "ROTTA"
+                        },
+                        new
+                        {
+                            Id = 245,
+                            Name = "TOP MODEL"
+                        },
+                        new
+                        {
+                            Id = 246,
+                            Name = "NOVARTIS PHARMA"
+                        },
+                        new
+                        {
+                            Id = 247,
+                            Name = "BAYER HEALTHCARE P"
+                        },
+                        new
+                        {
+                            Id = 248,
+                            Name = "OFTISOL"
+                        },
+                        new
+                        {
+                            Id = 249,
+                            Name = "PHARMAKON"
+                        },
+                        new
+                        {
+                            Id = 250,
+                            Name = "GRUNENTHAL"
+                        },
+                        new
+                        {
+                            Id = 251,
+                            Name = "QUIMIFAR"
+                        },
+                        new
+                        {
+                            Id = 252,
+                            Name = "SAFEGUARD"
+                        },
+                        new
+                        {
+                            Id = 253,
+                            Name = "EUROFARMA"
+                        },
+                        new
+                        {
+                            Id = 254,
+                            Name = "BIOCODEX"
+                        },
+                        new
+                        {
+                            Id = 255,
+                            Name = "ARSAL"
+                        },
+                        new
+                        {
+                            Id = 256,
+                            Name = "PANALAB"
+                        },
+                        new
+                        {
+                            Id = 257,
+                            Name = "PHISA"
+                        },
+                        new
+                        {
+                            Id = 258,
+                            Name = "LEVEN"
+                        },
+                        new
+                        {
+                            Id = 259,
+                            Name = "MICROLIFE"
+                        },
+                        new
+                        {
+                            Id = 260,
+                            Name = "ASPEN"
+                        },
+                        new
+                        {
+                            Id = 261,
+                            Name = "LUVECK"
+                        },
+                        new
+                        {
+                            Id = 262,
+                            Name = "NOVARTIS"
+                        },
+                        new
+                        {
+                            Id = 263,
+                            Name = "EISAI"
+                        },
+                        new
+                        {
+                            Id = 264,
+                            Name = "LABORATORIOS MIDI"
+                        },
+                        new
+                        {
+                            Id = 265,
+                            Name = "WELLCO"
+                        },
+                        new
+                        {
+                            Id = 266,
+                            Name = "SANAMIEL"
+                        },
+                        new
+                        {
+                            Id = 267,
+                            Name = "SILANES"
+                        },
+                        new
+                        {
+                            Id = 268,
+                            Name = "SANOFI"
+                        },
+                        new
+                        {
+                            Id = 269,
+                            Name = "MERZ"
+                        },
+                        new
+                        {
+                            Id = 270,
+                            Name = "CHEMINTER"
+                        },
+                        new
+                        {
+                            Id = 271,
                             Name = "PRODES"
                         },
                         new
                         {
-                            Id = 273,
+                            Id = 272,
                             Name = "ALLERGAN"
                         },
                         new
                         {
-                            Id = 274,
+                            Id = 273,
                             Name = "BAGO"
                         },
                         new
                         {
+                            Id = 274,
+                            Name = "JR PHARMA"
+                        },
+                        new
+                        {
                             Id = 275,
-                            Name = "SANAMIEL"
+                            Name = "RUBIOS"
                         },
                         new
                         {
@@ -1421,17 +1421,17 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 277,
-                            Name = "RUBIOS"
-                        },
-                        new
-                        {
-                            Id = 278,
                             Name = "SANOFI-ETICO"
                         },
                         new
                         {
-                            Id = 279,
+                            Id = 278,
                             Name = "SAN GERMAN"
+                        },
+                        new
+                        {
+                            Id = 279,
+                            Name = "PHILLIPS"
                         },
                         new
                         {
@@ -1441,27 +1441,27 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 281,
-                            Name = "ROSCOE"
+                            Name = "DOGMA"
                         },
                         new
                         {
                             Id = 282,
-                            Name = "GRISI"
-                        },
-                        new
-                        {
-                            Id = 283,
-                            Name = "GENFAR"
-                        },
-                        new
-                        {
-                            Id = 284,
                             Name = "CUMLAUDE LAB"
                         },
                         new
                         {
+                            Id = 283,
+                            Name = "ROSCOE"
+                        },
+                        new
+                        {
+                            Id = 284,
+                            Name = "DRIVE DEVILBISS HEALTHCARE"
+                        },
+                        new
+                        {
                             Id = 285,
-                            Name = "EQUATE"
+                            Name = "GRISI"
                         },
                         new
                         {
@@ -1471,7 +1471,37 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 287,
+                            Name = "EQUATE"
+                        },
+                        new
+                        {
+                            Id = 288,
+                            Name = "OM"
+                        },
+                        new
+                        {
+                            Id = 289,
+                            Name = "SANDOZ"
+                        },
+                        new
+                        {
+                            Id = 290,
                             Name = "NIELSEN BAINBRIDGE"
+                        },
+                        new
+                        {
+                            Id = 291,
+                            Name = "FAES"
+                        },
+                        new
+                        {
+                            Id = 292,
+                            Name = "PROTEC"
+                        },
+                        new
+                        {
+                            Id = 293,
+                            Name = "ANGELINI"
                         });
                 });
 
@@ -1505,7 +1535,7 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 3,
-                            Name = "Estomacales"
+                            Name = "Dolor e inflamación"
                         },
                         new
                         {
@@ -1515,22 +1545,22 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 5,
-                            Name = "Dolor e inflamación"
+                            Name = "Estomacales"
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Multivitamínicos, Suplementos & Sistema Óseo"
-                        },
-                        new
-                        {
-                            Id = 7,
                             Name = "Respiratorios"
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 7,
                             Name = "Dermatología"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Multivitamínicos, Suplementos & Sistema Óseo"
                         },
                         new
                         {
@@ -1550,17 +1580,17 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 12,
-                            Name = "Asma, alergias y nasal"
+                            Name = "Bienestar Sexual"
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Bienestar, equipo médico y soluciones hospitalarias"
+                            Name = "Cuidado de los Pies"
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Cuidado de los Pies"
+                            Name = "Bienestar, equipo médico y soluciones hospitalarias"
                         },
                         new
                         {
@@ -1570,7 +1600,7 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 16,
-                            Name = "Cardiovascular & Hipertensivo"
+                            Name = "Asma, alergias y nasal"
                         },
                         new
                         {
@@ -1580,27 +1610,27 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 18,
-                            Name = "Antimicótico"
+                            Name = "Cardiovascular & Hipertensivo"
                         },
                         new
                         {
                             Id = 19,
-                            Name = "Sistema Nervioso"
+                            Name = "Antimicótico"
                         },
                         new
                         {
                             Id = 20,
-                            Name = "Bienestar Sexual"
+                            Name = "Sistema Nervioso"
                         },
                         new
                         {
                             Id = 21,
-                            Name = "Oftálmicos y Óticos"
+                            Name = "Salud Bucal, Oftalmológico & Oído"
                         },
                         new
                         {
                             Id = 22,
-                            Name = "Salud Bucal, Oftalmológico & Oído"
+                            Name = "Oftálmicos y Óticos"
                         },
                         new
                         {
@@ -1615,22 +1645,22 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 25,
-                            Name = "Embarazo & lactancia infantil"
-                        },
-                        new
-                        {
-                            Id = 26,
                             Name = "Medicamentos de Alta Especialidad"
                         },
                         new
                         {
+                            Id = 26,
+                            Name = "Embarazo & lactancia infantil"
+                        },
+                        new
+                        {
                             Id = 27,
-                            Name = "Colesterol y Triglicérido"
+                            Name = "Sistema Urinario"
                         },
                         new
                         {
                             Id = 28,
-                            Name = "Sistema Urinario"
+                            Name = "Colesterol y Triglicérido"
                         },
                         new
                         {
@@ -1661,7 +1691,7 @@ namespace WebAPI.Data.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ImageUrls")
+                    b.PrimitiveCollection<string>("ImageUrls")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -1722,19 +1752,19 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryId = 3,
-                            Name = "Sueros"
-                        },
-                        new
-                        {
-                            Id = 2,
                             CategoryId = 4,
                             Name = "Dolor"
                         },
                         new
                         {
+                            Id = 2,
+                            CategoryId = 5,
+                            Name = "Sueros"
+                        },
+                        new
+                        {
                             Id = 3,
-                            CategoryId = 7,
+                            CategoryId = 6,
                             Name = "Resfríos"
                         },
                         new
@@ -1752,170 +1782,170 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 6,
-                            CategoryId = 14,
-                            Name = "Talcos"
+                            CategoryId = 12,
+                            Name = "Condones"
                         },
                         new
                         {
                             Id = 7,
-                            CategoryId = 11,
-                            Name = "Vitaminas"
+                            CategoryId = 13,
+                            Name = "Talcos"
                         },
                         new
                         {
                             Id = 8,
-                            CategoryId = 3,
-                            Name = "Dolor y Malestar"
+                            CategoryId = 17,
+                            Name = "Hisopos"
                         },
                         new
                         {
                             Id = 9,
-                            CategoryId = 7,
-                            Name = "Congestión Nasal"
-                        },
-                        new
-                        {
-                            Id = 10,
                             CategoryId = 17,
                             Name = "Otros Materiales"
                         },
                         new
                         {
+                            Id = 10,
+                            CategoryId = 11,
+                            Name = "Vitaminas"
+                        },
+                        new
+                        {
                             Id = 11,
-                            CategoryId = 3,
-                            Name = "Antiácidos"
+                            CategoryId = 6,
+                            Name = "Congestión Nasal"
                         },
                         new
                         {
                             Id = 12,
-                            CategoryId = 20,
-                            Name = "Condones"
+                            CategoryId = 5,
+                            Name = "Dolor y Malestar"
                         },
                         new
                         {
                             Id = 13,
-                            CategoryId = 21,
-                            Name = "Gotas para los ojos"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            CategoryId = 14,
-                            Name = "Accesorios cuidado de pies"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CategoryId = 11,
-                            Name = "Suplementos Nutricionales"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CategoryId = 23,
-                            Name = "Equipos y Accesorios"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CategoryId = 4,
-                            Name = "Musculares e Inflamación"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CategoryId = 11,
-                            Name = "Embarazo"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            CategoryId = 9,
-                            Name = "Aceites y Cremas"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CategoryId = 17,
-                            Name = "Gasas y Vendas"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 9,
-                            Name = "Para Cuidado Bucal"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 7,
-                            Name = "Tos"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 7,
-                            Name = "Alergias"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CategoryId = 21,
-                            Name = "Oídos"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            CategoryId = 20,
-                            Name = "Suplementos"
-                        },
-                        new
-                        {
-                            Id = 26,
                             CategoryId = 17,
                             Name = "Guantes y Cubrebocas"
                         },
                         new
                         {
+                            Id = 14,
+                            CategoryId = 5,
+                            Name = "Antiácidos"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryId = 13,
+                            Name = "Accesorios cuidado de pies"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryId = 11,
+                            Name = "Suplementos Nutricionales"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryId = 22,
+                            Name = "Gotas para los ojos"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryId = 23,
+                            Name = "Equipos y Accesorios"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryId = 13,
+                            Name = "Antimicóticos Pies"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryId = 4,
+                            Name = "Musculares e Inflamación"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CategoryId = 11,
+                            Name = "Vitaminas y Suplementos/Calcio / Embarazo"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CategoryId = 6,
+                            Name = "Tos"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CategoryId = 9,
+                            Name = "Aceites y Cremas"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CategoryId = 6,
+                            Name = "Alergias"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CategoryId = 22,
+                            Name = "Oídos"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CategoryId = 17,
+                            Name = "Banditas y telas adhesivas"
+                        },
+                        new
+                        {
                             Id = 27,
-                            CategoryId = 3,
-                            Name = "Antiparasitarios"
+                            CategoryId = 17,
+                            Name = "Gasas y Vendas"
                         },
                         new
                         {
                             Id = 28,
-                            CategoryId = 3,
-                            Name = "Antidiarreicos"
+                            CategoryId = 5,
+                            Name = "Antiparasitarios"
                         },
                         new
                         {
                             Id = 29,
-                            CategoryId = 26,
+                            CategoryId = 25,
                             Name = "Alta Especialidad"
                         },
                         new
                         {
                             Id = 30,
-                            CategoryId = 20,
-                            Name = "Anticonceptivos"
+                            CategoryId = 9,
+                            Name = "Para Cuidado Bucal"
                         },
                         new
                         {
                             Id = 31,
-                            CategoryId = 9,
-                            Name = "Antiacné PX"
+                            CategoryId = 12,
+                            Name = "Anticonceptivos"
                         },
                         new
                         {
                             Id = 32,
-                            CategoryId = 3,
-                            Name = "Antiulcerantes"
+                            CategoryId = 23,
+                            Name = "Tratamiento Diabetes"
                         },
                         new
                         {
                             Id = 33,
-                            CategoryId = 14,
-                            Name = "Antimicóticos Pies"
+                            CategoryId = 9,
+                            Name = "Antiacné PX"
                         },
                         new
                         {
@@ -1926,32 +1956,32 @@ namespace WebAPI.Data.Migrations
                         new
                         {
                             Id = 35,
-                            CategoryId = 3,
-                            Name = "Probióticos"
+                            CategoryId = 5,
+                            Name = "Antiulcerantes"
                         },
                         new
                         {
                             Id = 36,
-                            CategoryId = 17,
-                            Name = "Banditas y telas adhesivas"
+                            CategoryId = 5,
+                            Name = "Probióticos"
                         },
                         new
                         {
                             Id = 37,
-                            CategoryId = 3,
-                            Name = "Laxante"
+                            CategoryId = 5,
+                            Name = "Antidiarreicos"
                         },
                         new
                         {
                             Id = 38,
-                            CategoryId = 23,
-                            Name = "Tratamiento Diabetes"
+                            CategoryId = 12,
+                            Name = "Suplementos"
                         },
                         new
                         {
                             Id = 39,
-                            CategoryId = 6,
-                            Name = "Calcio"
+                            CategoryId = 5,
+                            Name = "Laxante"
                         });
                 });
 
