@@ -37,9 +37,6 @@
                     <div class="">
                         <span>Filtrar por:</span>
                     </div>
-                    <div class="sidebar__item">
-                        <h4>Subcategoría</h4>
-                        <ul class="scrollable-list">
                             @if (FilteredProducts.Any())
                             {
                                 var subcategories = FilteredProducts
@@ -47,19 +44,24 @@
                                     .Select(p => p.SubCategory)
                                     .Distinct()
                                     .OrderBy(s => s);
-
-                                foreach (var subcategory in subcategories)
+                                if (subcategories != null)
                                 {
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" name="subcategory" value="@subcategory">
-                                            @subcategory
-                                        </label>
-                                    </li>
+                                    <div class="sidebar__item">
+                                        <h4>Subcategoría</h4>
+                                        <ul class="scrollable-list">
+                                            @foreach (var subcategory in subcategories)
+                                            {
+                                                <li>
+                                                    <label>
+                                                        <input type="checkbox" name="subcategory" value="@subcategory">
+                                                        @subcategory
+                                                    </label>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
                                 }
                             }
-                        </ul>
-                    </div>
                     <div class="sidebar__item">
                         <h4>Marca</h4>
                         <ul class="scrollable-list">
