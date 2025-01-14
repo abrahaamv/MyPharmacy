@@ -147,34 +147,6 @@
         </div>
     </div>
 </section>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const lazyImages = document.querySelectorAll("img.lazy");
-
-        if ("IntersectionObserver" in window) {
-            const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove("lazy");
-                        lazyImageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            lazyImages.forEach(img => {
-                lazyImageObserver.observe(img);
-            });
-        } else {
-            // Fallback for browsers without IntersectionObserver support
-            lazyImages.forEach(img => {
-                img.src = img.dataset.src;
-                img.classList.remove("lazy");
-            });
-        }
-    });
-</script>
 
 
 @code {
