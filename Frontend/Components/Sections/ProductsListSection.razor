@@ -1,8 +1,6 @@
 @using Services
-@using Clients
-@inject ProductsClient Client;
 @inject ProductService ProductService
-@inject IJSRuntime JSRuntime;
+@inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
 <!-- Breadcrumb Section Begin -->
@@ -54,7 +52,7 @@
                             </ul>
                         </div>
                     }
-
+                   
                     <div class="sidebar__item">
                         <h4>Marca</h4>
                         <ul class="scrollable-list">
@@ -91,6 +89,7 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="filter__sort">
                                 <span>Ordenar por</span>
+                                <!-- Custom Nice Select -->
                                 <div class="nice-select" tabindex="0">
                                     <span class="current">@CurrentSortLabel</span>
                                     <ul class="list">
@@ -103,6 +102,7 @@
                                         }
                                     </ul>
                                 </div>
+                                <!-- End Custom Nice Select -->
                             </div>
                         </div>
                     </div>
@@ -110,31 +110,45 @@
                 <div class="row">
                     @if (!FilteredProducts.Any())
                     {
-                        <p>No se encontraron productos.</p>
+                        <p>No se encontraron productos en esta categoría.</p>
                     }
                     else
                     {
                         <div class="row product__grid">
                             @foreach (var product in FilteredProducts)
-                            {  @if (product.IsInStock)
-                                {
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <div class="product__item">
-                                            <div class="product__item__pic">
-                                                <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
-                                                <ul class="product__item__pic__hover">
-                                                    <li><a href="/productos/@product.Category/@product.Slug"><i class="fa fa-info"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product__item__text">
-                                                <h6><a href="/productos/@product.Category/@product.Slug">@product.Name</a></h6>
-                                                <h5>Q @product.ListPrice.ToString("F2")</h5>
-                                            </div>
+                            {
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic">
+                                            <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
+                                            <ul class="product__item__pic__hover">
+                                                <li>
+                                                    <a href="/productos/@product.Category/@product.Slug">
+                                                        <i class="fa fa-info"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fa fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fa fa-shopping-cart"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <h6>
+                                                <a href="/productos/@product.Category/@product.Slug">
+                                                    @product.Name
+                                                </a>
+                                            </h6>
+                                            <h5>Q @product.ListPrice.ToString("F2")</h5>
                                         </div>
                                     </div>
-                                }
+                                </div>
                             }
                         </div>
                     }
@@ -151,6 +165,7 @@
     private HashSet<string> SelectedSubCategories { get; set; } = new HashSet<string>();
     private HashSet<string> SelectedBrands { get; set; } = new HashSet<string>();
 
+    // Dictionary holding sort option keys and their corresponding labels.
     private Dictionary<string, string> SortOptions = new Dictionary<string, string>
     {
         { "price-asc", "Precio: menor a mayor" },
@@ -163,19 +178,18 @@
     private string CurrentSortOrder { get; set; } = "price-asc";
     private string CurrentSortLabel { get; set; } = "Precio: menor a mayor";
 
-    protected override void OnInitialized()
+    protected override void OnParametersSet()
     {
         if (ProductService.Products != null)
         {
+            // Initialize filter lists
             InitialSubCategories = ProductService.Products
-                .Where(p => p.SubCategory != null)
-                .Select(p => p.SubCategory)
+                .Select(p => p.SubCategory!)
                 .Distinct()
                 .OrderBy(s => s);
 
             InitialBrands = ProductService.Products
-                .Where(p => p.Brand != null)
-                .Select(p => p.Brand)
+                .Select(p => p.Brand!)
                 .Distinct()
                 .OrderBy(b => b);
 
@@ -209,6 +223,11 @@
         ApplyFilters();
     }
 
+    /// <summary>
+    /// Changes the sort order and updates the label displayed in the nice-select.
+    /// </summary>
+    /// <param name="sortOrder">The sort order key (e.g. "price-asc")</param>
+    /// <param name="sortLabel">The label to display (e.g. "Precio: menor a mayor")</param>
     private void ChangeSortOrder(string sortOrder, string sortLabel)
     {
         CurrentSortOrder = sortOrder;
