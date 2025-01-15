@@ -172,7 +172,8 @@
         if (ProductService.Products != null && !string.IsNullOrEmpty(ProductName))
         {
             BaseFilteredProducts = ProductService.Products
-                .Where(p => p.Name.Contains(ProductName, StringComparison.OrdinalIgnoreCase));
+                .Where(p => p.Name.Contains(ProductName, StringComparison.OrdinalIgnoreCase))
+                .Take(50);
 
             UpdateFilters();
             ApplyFilters();
@@ -237,6 +238,8 @@
             "discount" => FilteredProducts.OrderByDescending(p => p.ListPrice - p.SellingPrice),
             _ => FilteredProducts
         };
+
+        FilteredProducts = FilteredProducts.Take(50);
     }
 
     private void UpdateFilters()
