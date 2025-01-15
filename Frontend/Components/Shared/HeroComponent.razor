@@ -6,7 +6,7 @@
 
 @if (!IsLoginPage)
 {
-    <section class="hero @(!IsHomePage ? "hero-normal" : "")">
+    <section class="hero @(!IsHomePage && !IsNullPage ? "hero-normal" : "")">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                @if (IsHomePage)
+                @if (IsHomePage || IsNullPage)
                 {
                     <div class="hero__item set-bg">
                         <div class="hero__text">
@@ -84,6 +84,7 @@
 
 @code {
     private bool IsHomePage { get; set; }
+    private bool IsNullPage { get; set; }
     private bool IsLoginPage { get; set; }
     private string SearchQuery { get; set; } = string.Empty;
 
@@ -105,6 +106,7 @@
     {
         var currentUrl = NavigationManager.Uri;
         IsHomePage = currentUrl.EndsWith("/");
+        IsNullPage = currentUrl.EndsWith("/#");
         IsLoginPage = currentUrl.EndsWith("/login");
         StateHasChanged();
     }
