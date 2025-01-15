@@ -17,69 +17,65 @@
                     </div>
                     <ul class="hero__categories__list">
                         @if (ProductService.Products != null)
-                        {
-                            var categories = ProductService.Products
+                            {
+                                var categories = ProductService.Products
                                 .Select(p => p.Category)
                                 .Distinct()
                                 .OrderBy(c => c);
 
-                            foreach (var category in categories)
-                            {
-                                <li><a href="/productos/@category">@category</a></li>
+                                foreach (var category in categories)
+                                {
+                                    <li><a href="/productos/@category">@category</a></li>
+                                }
                             }
-                        }
-                        else
-                        {
-                            <li><span>Cargando categorías...</span></li>
-                        }
-                    </ul>
+                            else
+                            {
+                                <li><span>Cargando categorías...</span></li>
+                            }
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-lg-9">
-                <div class="hero__search">
-                    <div class="hero__search__form">
-                        <form @onsubmit="SearchProduct">
-                            <div class="hero__search__categories">
-                                ¿Qué necesitas?
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form @onsubmit="SearchProduct">
+                                <div class="hero__search__categories">
+                                    ¿Qué necesitas?
+                                </div>
+                                <input type="text" placeholder="Inserta el nombre de producto" @bind="SearchQuery">
+                                <button type="submit" class="site-btn">Buscar</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <img src="img/whatsapp-icon.png" />
                             </div>
-                            <input type="text" placeholder="Inserta el nombre de producto" @bind="SearchQuery">
-                            <button type="submit" class="site-btn">Buscar</button>
-                        </form>
-                    </div>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <img src="img/whatsapp-icon.png"/>
-                        </div>
-                        <div class="hero__search__phone__text">
-                            <h5>+502 0000-00000</h5>
-                            <span>Atención al cliente</span>
+                            <div class="hero__search__phone__text">
+                                <h5>+502 0000 0000</h5>
+                                <span>Atención al cliente</span>
+                            </div>
                         </div>
                     </div>
+                    @if (IsHomePage || IsNullPage)
+                    {
+                        <div class="hero__item set-bg">
+                            <div class="hero__text">
+                                <span>TU SALUD, NUESTRA PRIORIDAD</span>
+                                <h2>Cuando el tiempo es Vital <br />Nosotros respondemos</h2>
+                                <p>Resolvemos tus emergencias con envíos inmediatos y un servicio confiable para que cuides de
+                                    ti y de los que más amas</p>
+                                <a href="/productos" class="primary-btn">COMPRAR AHORA</a>
+                            </div>
+                            <dotlottie-player src="https://lottie.host/17b3d8b0-f6b8-4376-ac00-133f8490c863/oX6qVJP45K.lottie"
+                                background="transparent" speed="1" style="width: 300px; height: 300px" loop
+                                autoplay></dotlottie-player>
+                        </div>
+                    }
                 </div>
-                @if (IsHomePage || IsNullPage)
-                {
-                    <div class="hero__item set-bg">
-                        <div class="hero__text">
-                            <span>TU SALUD, NUESTRA PRIORIDAD</span>
-                            <h2>Cuando el tiempo es Vital <br />Nosotros respondemos</h2>
-                            <p>Resolvemos tus emergencias con envíos inmediatos y un servicio confiable para que cuides de ti y de los que más amas</p>
-                            <a href="/productos" class="primary-btn">COMPRAR AHORA</a>
-                        </div>
-                        <dotlottie-player
-                            src="https://lottie.host/17b3d8b0-f6b8-4376-ac00-133f8490c863/oX6qVJP45K.lottie"
-                            background="transparent"
-                            speed="1"
-                            style="width: 300px; height: 300px"
-                            loop
-                            autoplay
-                        ></dotlottie-player>
-                    </div>
-                }
             </div>
         </div>
-    </div>
-</section>
+    </section>
 }
 
 @code {
