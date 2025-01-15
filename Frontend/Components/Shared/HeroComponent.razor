@@ -4,7 +4,9 @@
 @inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
-<section class="hero @(!IsHomePage ? "hero-normal" : "")">
+@if (!IsLoginPage)
+{
+    <section class="hero @(!IsHomePage ? "hero-normal" : "")">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -78,9 +80,11 @@
         </div>
     </div>
 </section>
+}
 
 @code {
     private bool IsHomePage { get; set; }
+    private bool IsLoginPage { get; set; }
     private string SearchQuery { get; set; } = string.Empty;
 
     protected override void OnInitialized()
@@ -101,6 +105,7 @@
     {
         var currentUrl = NavigationManager.Uri;
         IsHomePage = currentUrl.EndsWith("/");
+        IsLoginPage = currentUrl.EndsWith("/login");
         StateHasChanged();
     }
 
