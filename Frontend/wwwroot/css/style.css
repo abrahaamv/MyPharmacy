@@ -410,6 +410,7 @@ ol {
 }
 
 .header__logo {
+	width: 240px;
 	padding: 15px 0;
 }
 
