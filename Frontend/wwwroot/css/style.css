@@ -714,6 +714,9 @@ ol {
 }
 
 .hero__search__phone__text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	overflow: hidden;
 }
 
@@ -2500,6 +2503,7 @@ label:hover {
 
 .blog__item__text {
 	padding-top: 25px;
+	color: black;
 }
 
 .blog__item__text ul {
@@ -3123,6 +3127,15 @@ label:hover {
 	.container {
 		max-width: 1170px;
 	}
+}
+
+
+@media(max-width: 1200px) {
+	.hero__search__phone {
+		display: none;
+	}
+	
+
 }
 
 /* Medium Device = 1200px */
