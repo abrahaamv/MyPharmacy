@@ -1,0 +1,86 @@
+@using Services
+@inject ProductService ProductService
+<!-- Breadcrumb Section Begin -->
+<div id="breadcrumb-container">
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list container">
+            <li class="breadcrumb__item">
+                <a href="/" class="breadcrumb__link">
+                    <svg class="breadcrumb__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="visually-hidden">Inicio</span>
+                </a>
+            </li>
+            <li class="breadcrumb__item">
+                <span class="breadcrumb__divider">/</span>
+                <a href="/productos" class="breadcrumb__link">Productos</a>
+            </li>
+            <li class="breadcrumb__item">
+                <span class="breadcrumb__divider">/</span>
+                <span class="breadcrumb__link">Favoritos</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Favorites Section Begin -->
+<section class="favorites spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping__cart__table">
+                    <h4>Tus Productos</h4>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th class="shoping__product">Favoritos</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var product in FavoriteProducts)
+                        {
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="@product.ImageUrls.FirstOrDefault()" alt="@product.Name">
+                                    <h5>@product.Name</h5>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    Q @product.SellingPrice.ToString("F2")
+                                </td>
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Favorites Section End -->
+
+@code {
+    private List<ProductSummary> CartProducts { get; set; } = new();
+    private List<ProductSummary> FavoriteProducts { get; set; } = new();
+
+    protected override void OnInitialized()
+    {
+        // Simular productos aleatorios en el carrito
+        CartProducts = ProductService.Products
+            .OrderBy(_ => Guid.NewGuid()) // Mezclar aleatoriamente
+            .Take(3) // Tomar 3 productos
+            .ToList();
+
+        // Simular productos favoritos
+        FavoriteProducts = ProductService.Products
+            .OrderBy(_ => Guid.NewGuid()) // Mezclar aleatoriamente
+            .Take(3) // Tomar 3 productos
+            .ToList();
+    }
+}
