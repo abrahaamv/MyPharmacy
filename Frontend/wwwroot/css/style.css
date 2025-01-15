@@ -2136,6 +2136,11 @@ label:hover {
 	text-align: left;
 }
 
+.shoping__cart__table table tbody tr td.shoping__cart__item img{
+	width: 64px;
+	height: 64px;
+}
+
 .shoping__cart__table table tbody tr td.shoping__cart__item img {
 	display: inline-block;
 	margin-right: 25px;
