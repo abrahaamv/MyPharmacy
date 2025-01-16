@@ -3,7 +3,7 @@
 @inject ProductsClient Client;
 @inject ProductService ProductService
 @inject IJSRuntime JSRuntime;
-
+@inject NavigationManager NavigationManager
 
 <!-- Breadcrumb Section Begin -->
 <div id="breadcrumb-container">
@@ -51,7 +51,7 @@
                                 {
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="subcategory" value="@subcategory">
+                                            <input type="checkbox" name="subcategory" value="@subcategory" @(SelectedSubcategories.Contains(subcategory) ? "checked" : "")>
                                             @subcategory
                                         </label>
                                     </li>
@@ -74,7 +74,7 @@
                                 {
                                     <li>
                                         <label>
-                                            <input type="checkbox" name="brand" value="@brand">
+                                            <input type="checkbox" name="brand" value="@brand" @(SelectedBrands.Contains(brand) ? "checked" : "")>
                                             @brand
                                         </label>
                                     </li>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter__found">
-                                <h6><span>@ProductService.Products?.Length</span> Productos</h6>
+                                <h6><span>@FilteredProducts?.Count</span> Productos</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-5">
@@ -123,14 +123,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    @if (ProductService.Products is null)
+                    @if (FilteredProducts == null || FilteredProducts.Count == 0)
                     {
-                        <p>Cargando productos...</p>
+                        <p>No se encontraron productos con los filtros seleccionados.</p>
                     }
                     else
                     {
                         <div class="row product__grid">
-                            @foreach (var product in ProductService.Products)
+                            @foreach (var product in FilteredProducts)
                             {
                                 if (product.IsInStock)
                                 {
@@ -159,77 +159,103 @@
         </div>
     </div>
 </section>
+
 <script>
-    let isAutoScrolling = false;
-    let lastScrollPosition = 0; // Última posición del scroll global
-    let lastGridScrollPosition = 0; // Última posición del scroll del contenedor específico
+    document.addEventListener("DOMContentLoaded", () => {
+        const filterInputs = document.querySelectorAll('input[name="subcategory"], input[name="brand"]');
 
-    document.addEventListener("scroll", () => {
-        const scrollPosition = window.scrollY;
-        const isScrollingDown = scrollPosition > lastScrollPosition;
+        // Inicializar filtros desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        filterInputs.forEach((input) => {
+            const paramValues = urlParams.getAll(input.name);
+            if (paramValues.includes(input.value)) {
+                input.checked = true;
+            }
+        });
 
-        console.log(`Global ScrollY: ${scrollPosition}, Last: ${lastScrollPosition}`);
+        // Actualizar la URL cuando se selecciona un filtro
+        filterInputs.forEach((input) => {
+            input.addEventListener("change", () => {
+                const updatedParams = new URLSearchParams(window.location.search);
 
-        if (
-            !isAutoScrolling &&
-            isScrollingDown &&
-            lastScrollPosition === 0 &&
-            scrollPosition > 0 &&
-            scrollPosition <= 10 // Detectar un scroll inicial entre 1 y 10
-        ) {
-            const breadcrumb = document.getElementById("breadcrumb-container");
-            if (breadcrumb) {
-                isAutoScrolling = true; // Marcar como automático
-                breadcrumb.scrollIntoView({ behavior: "smooth" });
+                // Borrar los valores actuales para este filtro
+                updatedParams.delete(input.name);
 
-                // Resetear el estado después del desplazamiento
-                setTimeout(() => {
-                    isAutoScrolling = false;
-                }, 500);
+                // Agregar todos los valores seleccionados
+                document.querySelectorAll(`input[name="${input.name}"]:checked`).forEach((checkedInput) => {
+                    updatedParams.append(input.name, checkedInput.value);
+                });
+
+                // Actualizar la URL sin recargar
+                const newUrl = `${window.location.pathname}?${updatedParams.toString()}`;
+                history.pushState(null, "", newUrl);
+
+                // Opcional: Llamada a una función para actualizar la UI
+                console.log("Filtros actualizados:", newUrl);
+            });
+        });
+    });
+</script>
+
+@code {
+    private List<ProductSummary> FilteredProducts { get; set; } = new();
+    private HashSet<string> SelectedSubcategories { get; set; } = new();
+    private HashSet<string> SelectedBrands { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+        await ApplyFiltersFromUrl();
+    }
+
+    private async void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        await ApplyFiltersFromUrl();
+        StateHasChanged();
+    }
+
+    private async Task ApplyFiltersFromUrl()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+
+        SelectedSubcategories.Clear();
+        SelectedBrands.Clear();
+
+        if (queryParams.TryGetValue("subcategory", out var subcategories))
+        {
+            foreach (var subcategory in subcategories)
+            {
+                SelectedSubcategories.Add(subcategory);
             }
         }
 
-        lastScrollPosition = scrollPosition;
-    });
-
-    // Detectar scroll dentro de la product__grid
-    document.addEventListener("DOMContentLoaded", () => {
-        const productGrid = document.querySelector(".product__grid");
-
-        if (productGrid) {
-            productGrid.addEventListener("scroll", () => {
-                const gridScrollPosition = productGrid.scrollTop;
-                const isGridScrollingDown = gridScrollPosition > lastGridScrollPosition;
-
-                console.log(`Grid ScrollY: ${gridScrollPosition}, Last: ${lastGridScrollPosition}`);
-
-                if (
-                    !isAutoScrolling &&
-                    isGridScrollingDown
-                ) {
-                    const breadcrumb = document.getElementById("breadcrumb-container");
-                    if (breadcrumb) {
-                        isAutoScrolling = true; // Marcar como automático
-                        breadcrumb.scrollIntoView({ behavior: "smooth" });
-
-                        // Resetear el estado después del desplazamiento
-                        setTimeout(() => {
-                            isAutoScrolling = false;
-                        }, 500);
-                    }
-                }
-
-                lastGridScrollPosition = gridScrollPosition;
-            });
-        }
-    });
-</script>
-@code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
+        if (queryParams.TryGetValue("brand", out var brands))
         {
-            await JSRuntime.InvokeVoidAsync("scrollToBreadcrumbOnFirstScroll");
+            foreach (var brand in brands)
+            {
+                SelectedBrands.Add(brand);
+            }
         }
+
+        if (ProductService.Products != null)
+        {
+            FilteredProducts = ProductService.Products
+                .Where(p =>
+                    (SelectedSubcategories.Count == 0 || SelectedSubcategories.Contains(p.SubCategory)) &&
+                    (SelectedBrands.Count == 0 || SelectedBrands.Contains(p.Brand)))
+                .ToList();
+        }
+        else
+        {
+            FilteredProducts = new List<ProductSummary>();
+        }
+
+        await Task.CompletedTask;
     }
-};
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
