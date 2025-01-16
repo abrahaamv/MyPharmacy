@@ -192,6 +192,9 @@
 
                 // Opcional: Llamada a una función para actualizar la UI
                 console.log("Filtros actualizados:", newUrl);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000)
             });
         });
     });
