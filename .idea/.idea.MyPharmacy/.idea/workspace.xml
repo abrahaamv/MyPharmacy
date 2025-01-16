@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="a77ab64f-8d58-4dd5-8100-e082759832ab" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,6 +170,7 @@
       <workItem from="1733778818726" duration="5090000" />
       <workItem from="1735313295511" duration="9190000" />
       <workItem from="1736727068528" duration="61000" />
+      <workItem from="1737052176341" duration="19000" />
     </task>
     <servers />
   </component>
