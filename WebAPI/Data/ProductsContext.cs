@@ -16,9 +16,9 @@ public class ProductsContext(DbContextOptions<ProductsContext> options) : DbCont
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         var specificationComparer = new ValueComparer<List<Specification>>(
-            (c1, c2) => c1.SequenceEqual(c2), // Comparación por secuencia
-            c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())), // Cálculo del hash
-            c => c.ToList() // Clon para snapshots
+            (c1, c2) => (c1 == null && c2 == null) || (c1 != null && c2 != null && c1.SequenceEqual(c2)),
+            c => c == null ? 0 : c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
+            c => c == null ? new List<Specification>() : c.ToList()
         );
 
         modelBuilder.Entity<Product>()

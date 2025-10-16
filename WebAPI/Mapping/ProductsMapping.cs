@@ -36,7 +36,7 @@ public static class ProductsMapping
             product.ListPrice,
             product.SellingPrice,
             product.IsInStock,
-            product.ImageUrls,
+            product.ImageUrls ?? new List<string>(),
             product.Specifications);
     }
 

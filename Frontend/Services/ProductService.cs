@@ -28,8 +28,12 @@ public class ProductService
     }
 
     // Fetch a specific product by slug
-    public async Task<ProductDetails?> GetProductBySlugAsync(string slug)
+    public async Task<ProductDetails?> GetProductBySlugAsync(string? slug)
     {
+        if (string.IsNullOrEmpty(slug))
+        {
+            return null;
+        }
         return await _productsClient.GetProductAsync(slug);
     }
 }
