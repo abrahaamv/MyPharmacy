@@ -126,7 +126,7 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic">
-                                            <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy">
+                                            <img src="@product.ImageUrls[0]" alt="@product.Name" loading="lazy" onerror="this.closest('.col-lg-3').style.display='none'">
                                             <ul class="product__item__pic__hover">
                                                 <li>
                                                     <a href="/productos/@product.Category/@product.Slug">

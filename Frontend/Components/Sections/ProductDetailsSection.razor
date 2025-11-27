@@ -163,7 +163,7 @@ else
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic">
-                                <img src="@relatedProduct.ImageUrls.FirstOrDefault()" alt="@relatedProduct.Name">
+                                <img src="@relatedProduct.ImageUrls.FirstOrDefault()" alt="@relatedProduct.Name" onerror="this.closest('.col-lg-3').style.display='none'">
                                 <ul class="product__item__pic__hover">
                                     <li>
                                         <a href="/productos/@relatedProduct.Category/@relatedProduct.Slug">
