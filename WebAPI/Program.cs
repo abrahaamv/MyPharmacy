@@ -11,6 +11,7 @@ builder.Services.AddDbContext<ProductsContext>(options =>
 
 var app = builder.Build();
 
+app.MapGet("/health", () => Results.Ok("Healthy"));
 app.MapProductsEndpoints();
 await app.MigrateDbAsync();
 app.Run();
